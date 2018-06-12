@@ -1,0 +1,40 @@
+//
+//  FanweO2O.pch
+//  FanweO2O
+//
+//  Created by mac on 2016/12/8.
+//  Copyright © 2016年 xfg. All rights reserved.
+//
+
+#define FanweO2O_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+// 系统
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+// 第三方
+#import "AFNetworking.h"
+#import <UMSocialCore/UMSocialCore.h>
+#import "MBProgressHUD.h"
+#import "MJExtension.h"
+#import "Masonry.h"
+#import "MJRefresh.h"
+
+// 自定义
+
+#import "AppChangeHeader.h"
+#import "CommonLibrary.h"
+#import "ExtendNSDictionary.h"
+#import "MyTool.h"
+#import "AppDelegate.h"
+#import "UITableView+CNHEmptyDataSet.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "RefCustomView.h"
+#import "UILabel+ChangeLineSpaceAndWordSpace.h"
+
+#endif /* FanweO2O_pch */

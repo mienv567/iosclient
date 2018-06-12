@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QrCodeView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-dl-ahG">
+                    <rect key="frame" x="50" y="165" width="275" height="337"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRa-96-LyZ">
+                            <rect key="frame" x="137.5" y="0.0" width="0.0" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="klO-Ih-djg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q8-r0-ruO">
+                            <rect key="frame" x="240" y="0.0" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="aNx-9u-ruX"/>
+                                <constraint firstAttribute="height" constant="35" id="xWK-Dv-yfH"/>
+                            </constraints>
+                            <state key="normal" image="my_chacha"/>
+                            <connections>
+                                <action selector="clickBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="nV8-Xb-Gy7"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qlZ-rd-0V7">
+                            <rect key="frame" x="20" y="50" width="235" height="2.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="TfT-6A-dHT"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请扫描二维码进行验证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCo-Pg-YJe">
+                            <rect key="frame" x="76.5" y="57.5" width="123" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="uaY-qJ-UcU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bdW-VP-Ozb">
+                            <rect key="frame" x="27.5" y="97.5" width="220" height="220"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="220" id="x4k-fn-P8a"/>
+                                <constraint firstAttribute="width" secondItem="bdW-VP-Ozb" secondAttribute="height" multiplier="1:1" id="yKI-L0-qHs"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qlZ-rd-0V7" secondAttribute="trailing" constant="20" id="3NQ-fG-GvC"/>
+                        <constraint firstItem="ZRa-96-LyZ" firstAttribute="top" secondItem="gaR-dl-ahG" secondAttribute="top" id="955-Pb-zju"/>
+                        <constraint firstItem="qlZ-rd-0V7" firstAttribute="leading" secondItem="gaR-dl-ahG" secondAttribute="leading" constant="20" id="Cjg-2s-DWa"/>
+                        <constraint firstItem="lCo-Pg-YJe" firstAttribute="centerX" secondItem="gaR-dl-ahG" secondAttribute="centerX" id="e5O-Cl-zMk"/>
+                        <constraint firstItem="lCo-Pg-YJe" firstAttribute="top" secondItem="qlZ-rd-0V7" secondAttribute="bottom" constant="5" id="ewN-mu-nBa"/>
+                        <constraint firstItem="ZRa-96-LyZ" firstAttribute="centerX" secondItem="gaR-dl-ahG" secondAttribute="centerX" id="m10-f9-FYD"/>
+                        <constraint firstItem="qlZ-rd-0V7" firstAttribute="top" secondItem="ZRa-96-LyZ" secondAttribute="bottom" id="mIk-tt-miS"/>
+                        <constraint firstItem="bdW-VP-Ozb" firstAttribute="centerX" secondItem="gaR-dl-ahG" secondAttribute="centerX" id="n5h-JK-XaO"/>
+                        <constraint firstItem="8q8-r0-ruO" firstAttribute="top" secondItem="gaR-dl-ahG" secondAttribute="top" id="sxm-yu-xnS"/>
+                        <constraint firstItem="bdW-VP-Ozb" firstAttribute="top" secondItem="lCo-Pg-YJe" secondAttribute="bottom" id="zNf-4j-qUa"/>
+                        <constraint firstAttribute="trailing" secondItem="8q8-r0-ruO" secondAttribute="trailing" id="ztj-dd-r9N"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gaR-dl-ahG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="4uG-EQ-tVZ"/>
+                <constraint firstAttribute="bottom" secondItem="gaR-dl-ahG" secondAttribute="bottom" constant="165" id="8XQ-nZ-dQr"/>
+                <constraint firstItem="gaR-dl-ahG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Oll-MZ-BY3"/>
+                <constraint firstItem="gaR-dl-ahG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="165" id="g9R-ef-jBL"/>
+                <constraint firstAttribute="trailing" secondItem="gaR-dl-ahG" secondAttribute="trailing" constant="50" id="j60-dJ-Ugb"/>
+                <constraint firstItem="gaR-dl-ahG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tJN-aO-AMc"/>
+            </constraints>
+            <connections>
+                <outlet property="aleatLabel" destination="lCo-Pg-YJe" id="scJ-dP-r3q"/>
+                <outlet property="backToViewController" destination="8q8-r0-ruO" id="nl0-7x-dki"/>
+                <outlet property="littleView" destination="gaR-dl-ahG" id="Fgc-NL-xdH"/>
+                <outlet property="qrCodeImageView" destination="bdW-VP-Ozb" id="DwO-3E-BP4"/>
+                <outlet property="qrCodeNumber" destination="ZRa-96-LyZ" id="60J-By-81j"/>
+                <outlet property="xuLine" destination="qlZ-rd-0V7" id="Yok-KV-yNX"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="my_chacha" width="22" height="22"/>
+    </resources>
+</document>

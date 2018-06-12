@@ -21,6 +21,8 @@ static NSString *cellIndent =  @"MallIndexsTBCell";
 
 @end
 
+
+
 @implementation MallIndexsTBCell
 
 + (MallIndexsTBCell *)cellWithTableView:(UITableView *)tableView {

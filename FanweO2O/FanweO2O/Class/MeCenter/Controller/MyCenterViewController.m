@@ -4,11 +4,12 @@
 //
 //  Created by ycp on 17/1/9.
 //  Copyright © 2017年 xfg. All rights reserved.
-//
+//  我的控制器
 
 #import "MyCenterViewController.h"
 #import "GlobalVariables.h"
 #import "O2OAccountLoginVC.h"
+#import "LogInViewController.h"
 #import "WXApi.h"
 #import "MyCenterTopTableViewCell.h"
 #import "MySectionTableViewCell.h"
@@ -271,7 +272,8 @@
        
     }else
     {
-        [self.navigationController pushViewController:[O2OAccountLoginVC new] animated:YES];
+//        [self.navigationController pushViewController:[O2OAccountLoginVC new] animated:YES];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
     }
     
 

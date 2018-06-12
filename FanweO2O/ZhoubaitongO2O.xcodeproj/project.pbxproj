@@ -676,6 +676,8 @@
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
+		E42D801C20D02049009A2D78 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42D801A20D02049009A2D78 /* LogInViewController.m */; };
+		E42D801D20D02049009A2D78 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42D801B20D02049009A2D78 /* LogInViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2103,6 +2105,9 @@
 		DC50638320ADBE960093244C /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityModel.h; sourceTree = "<group>"; };
 		DC50638520ADBE960093244C /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		DC50638620ADBE960093244C /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
+		E42D801920D02049009A2D78 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		E42D801A20D02049009A2D78 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		E42D801B20D02049009A2D78 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4006,6 +4011,9 @@
 				64780C691E30A3D500D5C256 /* NewBindingPhoneViewController.h */,
 				64780C6A1E30A3D500D5C256 /* NewBindingPhoneViewController.m */,
 				64780C6B1E30A3D500D5C256 /* NewBindingPhoneViewController.xib */,
+				E42D801920D02049009A2D78 /* LogInViewController.h */,
+				E42D801A20D02049009A2D78 /* LogInViewController.m */,
+				E42D801B20D02049009A2D78 /* LogInViewController.xib */,
 			);
 			name = "Account-账号";
 			sourceTree = "<group>";
@@ -5479,6 +5487,7 @@
 				645C738B1E77F6F70033E794 /* ClassificationMessageTableViewCell.xib in Resources */,
 				166673B81E72473A001C1260 /* collectCell.xib in Resources */,
 				340792EE1E6E9C4700B570F3 /* MyOrderDetailsSection5TBCell.xib in Resources */,
+				E42D801D20D02049009A2D78 /* LogInViewController.xib in Resources */,
 				34F82EEE1E0248030016F35E /* MyWebViewController.xib in Resources */,
 				34A484931E7936D30011D7D3 /* MyOrderImageView.xib in Resources */,
 				645C73CB1E77FA610033E794 /* RefundTableViewCell.xib in Resources */,
@@ -5834,6 +5843,7 @@
 				341362E51E0A61BB003B11DA /* SVRadialGradientLayer.m in Sources */,
 				9F6704E81EE7923100359078 /* XNVideoRightTableViewCell.m in Sources */,
 				340792E31E6E5D6100B570F3 /* MyOrderDetailsSection3TBCell.m in Sources */,
+				E42D801C20D02049009A2D78 /* LogInViewController.m in Sources */,
 				9F6704E71EE7923100359078 /* XNVideoRecordView.m in Sources */,
 				64471BB31E4AC65700690CD4 /* UINavigationController+WXSTransition.m in Sources */,
 				9F6704D21EE7923100359078 /* XNHPGrowingTextView.m in Sources */,

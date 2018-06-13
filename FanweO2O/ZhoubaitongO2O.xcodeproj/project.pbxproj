@@ -677,6 +677,8 @@
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
 		DCF6152620D1469500BB791B /* LcLeftTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152520D1469500BB791B /* LcLeftTextField.m */; };
+		DCF6152A20D15D8E00BB791B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152820D15D8E00BB791B /* RegistViewController.m */; };
+		DCF6152B20D15D8E00BB791B /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6152920D15D8E00BB791B /* RegistViewController.xib */; };
 		E42D801C20D02049009A2D78 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42D801A20D02049009A2D78 /* LogInViewController.m */; };
 		E42D801D20D02049009A2D78 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42D801B20D02049009A2D78 /* LogInViewController.xib */; };
 /* End PBXBuildFile section */
@@ -2108,6 +2110,9 @@
 		DC50638620ADBE960093244C /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
 		DCF6152420D1469500BB791B /* LcLeftTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LcLeftTextField.h; sourceTree = "<group>"; };
 		DCF6152520D1469500BB791B /* LcLeftTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LcLeftTextField.m; sourceTree = "<group>"; };
+		DCF6152720D15D8E00BB791B /* RegistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		DCF6152820D15D8E00BB791B /* RegistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		DCF6152920D15D8E00BB791B /* RegistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		E42D801920D02049009A2D78 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E42D801A20D02049009A2D78 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		E42D801B20D02049009A2D78 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
@@ -4019,6 +4024,9 @@
 				E42D801920D02049009A2D78 /* LogInViewController.h */,
 				E42D801A20D02049009A2D78 /* LogInViewController.m */,
 				E42D801B20D02049009A2D78 /* LogInViewController.xib */,
+				DCF6152720D15D8E00BB791B /* RegistViewController.h */,
+				DCF6152820D15D8E00BB791B /* RegistViewController.m */,
+				DCF6152920D15D8E00BB791B /* RegistViewController.xib */,
 			);
 			name = "Account-账号";
 			sourceTree = "<group>";
@@ -5516,6 +5524,7 @@
 				9F764D3F1EE641E800878812 /* O2OCommonNavigationBarView.xib in Resources */,
 				64FA60231E45A70800B9A90A /* SecondaryNavigationBarView.xib in Resources */,
 				3489DF5C1E76509100764807 /* EvaluateView.xib in Resources */,
+				DCF6152B20D15D8E00BB791B /* RegistViewController.xib in Resources */,
 				348A346A1EBAD60F002C5CD5 /* MyOrderDetailsSection22TBCell.xib in Resources */,
 				341FE18B1E25DB57007A7A0B /* FavorableTBCell.xib in Resources */,
 				341F15011E00FB4D004FB4A6 /* HomeZtCell.xib in Resources */,
@@ -5791,6 +5800,7 @@
 				04D32B911DF8502C009F3371 /* JSONKit.m in Sources */,
 				04D329E81DF84D47009F3371 /* MKMapView+ZoomLevel.m in Sources */,
 				04D329F91DF84D48009F3371 /* UIImage+ms.m in Sources */,
+				DCF6152A20D15D8E00BB791B /* RegistViewController.m in Sources */,
 				9F6704D31EE7923100359078 /* XNHPTextViewInternal.m in Sources */,
 				34659D7B1DFA44D000498C60 /* AFAutoPurgingImageCache.m in Sources */,
 				34659DB91DFA461A00498C60 /* UIImage+GIF.m in Sources */,

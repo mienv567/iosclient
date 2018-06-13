@@ -36,8 +36,26 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Es-2Q-bif">
                     <rect key="frame" x="20" y="204" width="335" height="300"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HI ,   欢迎登陆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OJ-XV-Fzx">
+                            <rect key="frame" x="113" y="40" width="108" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.2627450980392157" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新用户可直接使用手机号和短信验证码登陆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em0-hG-2rQ">
+                            <rect key="frame" x="41.5" y="71" width="252" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.2666666667" green="1" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="8OJ-XV-Fzx" firstAttribute="centerX" secondItem="4Es-2Q-bif" secondAttribute="centerX" id="K2S-EY-bBA"/>
+                        <constraint firstItem="Em0-hG-2rQ" firstAttribute="top" secondItem="8OJ-XV-Fzx" secondAttribute="bottom" constant="10" id="SDC-ZJ-GdR"/>
+                        <constraint firstItem="8OJ-XV-Fzx" firstAttribute="top" secondItem="4Es-2Q-bif" secondAttribute="top" constant="40" id="eyw-Lh-wI0"/>
+                        <constraint firstItem="Em0-hG-2rQ" firstAttribute="centerX" secondItem="4Es-2Q-bif" secondAttribute="centerX" id="vP0-Al-KW3"/>
                         <constraint firstAttribute="height" constant="300" id="xZ1-Zx-2we"/>
                     </constraints>
                 </view>

@@ -676,6 +676,7 @@
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
+		DCF6152620D1469500BB791B /* LcLeftTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152520D1469500BB791B /* LcLeftTextField.m */; };
 		E42D801C20D02049009A2D78 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42D801A20D02049009A2D78 /* LogInViewController.m */; };
 		E42D801D20D02049009A2D78 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42D801B20D02049009A2D78 /* LogInViewController.xib */; };
 /* End PBXBuildFile section */
@@ -2105,6 +2106,8 @@
 		DC50638320ADBE960093244C /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityModel.h; sourceTree = "<group>"; };
 		DC50638520ADBE960093244C /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		DC50638620ADBE960093244C /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
+		DCF6152420D1469500BB791B /* LcLeftTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LcLeftTextField.h; sourceTree = "<group>"; };
+		DCF6152520D1469500BB791B /* LcLeftTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LcLeftTextField.m; sourceTree = "<group>"; };
 		E42D801920D02049009A2D78 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E42D801A20D02049009A2D78 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		E42D801B20D02049009A2D78 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
@@ -2738,6 +2741,8 @@
 				04D32A381DF84D49009F3371 /* FanweMessage.m */,
 				04D32A391DF84D49009F3371 /* GlobalVariables.h */,
 				04D32A3A1DF84D49009F3371 /* GlobalVariables.m */,
+				DCF6152420D1469500BB791B /* LcLeftTextField.h */,
+				DCF6152520D1469500BB791B /* LcLeftTextField.m */,
 				04D32A3B1DF84D49009F3371 /* MyTool.h */,
 				04D32A3C1DF84D49009F3371 /* MyTool.m */,
 				04D32A3D1DF84D49009F3371 /* NetHttpsManager.h */,
@@ -5781,6 +5786,7 @@
 				34F82EF51E024A080016F35E /* UIBarButtonItem+ms.m in Sources */,
 				64780C761E31EBC300D5C256 /* ChangeNameViewController.m in Sources */,
 				34659D781DFA44D000498C60 /* AFURLRequestSerialization.m in Sources */,
+				DCF6152620D1469500BB791B /* LcLeftTextField.m in Sources */,
 				64E736C11E23758E004C79FB /* MyCenterViewController.m in Sources */,
 				04D32B911DF8502C009F3371 /* JSONKit.m in Sources */,
 				04D329E81DF84D47009F3371 /* MKMapView+ZoomLevel.m in Sources */,

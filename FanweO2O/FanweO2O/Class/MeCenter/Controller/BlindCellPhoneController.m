@@ -1,18 +1,18 @@
 //
-//  RegistViewController.m
+//  BlindCellPhoneController.m
 //  ZhoubaitongO2O
 //
-//  Created by Harlan on 2018/6/13.
+//  Created by Harlan on 2018/6/14.
 //  Copyright © 2018年 xfg. All rights reserved.
 //
 
-#import "RegistViewController.h"
+#import "BlindCellPhoneController.h"
 
-@interface RegistViewController ()
+@interface BlindCellPhoneController ()
 
 @end
 
-@implementation RegistViewController
+@implementation BlindCellPhoneController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

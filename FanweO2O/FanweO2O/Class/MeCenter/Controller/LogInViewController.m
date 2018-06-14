@@ -206,7 +206,7 @@
 -(void)clickWeixin {
     
     [[UMSocialManager defaultManager ]getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
-        
+        NSLog(@"error----%@",error.description);
         UMSocialUserInfoResponse *resp =result;
         NSLog(@"----%@",result);
         NSLog(@" uid: %@", resp.uid);

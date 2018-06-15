@@ -18,7 +18,7 @@
     [super awakeFromNib];
     self.backgroundColor = RGBA(0, 0, 0, 1);
     _fanweApp =[GlobalVariables sharedInstance];
-    self.leftButton.titleLabel.font =kAppTextFont14;
+    self.leftButton.titleLabel.font = kAppTextFont14;
     self.rightButton.layer.masksToBounds =YES;
     self.rightButton.layer.cornerRadius = CGRectGetHeight(self.rightButton.frame) / 2;
     [self.rightButton setTitle:@"搜索商品或店铺" forState:UIControlStateNormal];

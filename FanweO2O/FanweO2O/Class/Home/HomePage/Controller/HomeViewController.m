@@ -106,7 +106,7 @@
     self.tableView.sectionHeaderHeight = 1;
     self.tableView.sectionFooterHeight = 0;
     if (self.fanweApp.city_name) {
-        [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
+//        [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectDefaultCity) name:FW_O2O_CITY_DEFAULT_SELECT_MSG object:nil];
     
@@ -115,7 +115,7 @@
 }
 - (void)refreshtableView
 {
-    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
+//    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
     [self updateNewData];
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -124,7 +124,7 @@
     self.navigationController.navigationBar.hidden =YES;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
-    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
+//    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
     
     [self iconData];
     self.tabBarController.tabBar.hidden = NO;
@@ -963,9 +963,9 @@
 
 - (void)goToDiscoveryViewController
 {
-    self.tabBarController.selectedIndex = 1;
-    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"tabBarItemCount"];
-    [[NSUserDefaults standardUserDefaults]setObject:0 forKey:@"tabBarItemCount"];
+//    self.tabBarController.selectedIndex = 1;
+//    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"tabBarItemCount"];
+//    [[NSUserDefaults standardUserDefaults]setObject:0 forKey:@"tabBarItemCount"];
 }
 
 - (void)customGoodGoNextVC:(CustomGoodsModel *)model {
@@ -1015,7 +1015,7 @@
 
 #pragma mark 默认城市选择
 - (void)selectDefaultCity {
-    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
+//    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
 }
 //选择城市按钮
 - (void)customLeftButton
@@ -1058,7 +1058,7 @@
     if (self.fanweApp.is_refresh_tableview) {
         
         [self updateNewData];
-        [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
+//        [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
         self.fanweApp.is_refresh_tableview = NO;
     }
 }

@@ -9,6 +9,9 @@
 #import "BlindCellPhoneController.h"
 
 @interface BlindCellPhoneController ()
+@property (weak, nonatomic) IBOutlet UITextField *TFTelephone;
+@property (weak, nonatomic) IBOutlet UITextField *TFMessageCode;
+@property (weak, nonatomic) IBOutlet UIButton *BTNGetCode;
 
 @end
 
@@ -16,22 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.BTNGetCode.layer.borderWidth = 1;
+    CGColorSpaceRef colorSpace =CGColorSpaceCreateDeviceRGB();
+    CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 29/255.0, 134/255.0, 255/255.0, 1 });
+    self.BTNGetCode.layer.cornerRadius = 3;
+    self.BTNGetCode.layer.masksToBounds = YES;
+    self.BTNGetCode.layer.borderColor=colorref;
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)getCode:(id)sender {
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//绑定手机号码
+- (IBAction)blindCode:(id)sender {
 }
-*/
+
 
 @end

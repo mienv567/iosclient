@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlindCellPhoneController">
             <connections>
+                <outlet property="BTNGetCode" destination="yLm-fa-VTA" id="2ky-C3-uRy"/>
+                <outlet property="TFMessageCode" destination="1oO-JV-tTW" id="nBB-Cm-3oe"/>
+                <outlet property="TFTelephone" destination="7P1-gE-JoW" id="Lob-eg-RWY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -95,7 +98,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oO-JV-tTW">
-                    <rect key="frame" x="17" y="296" width="262" height="54"/>
+                    <rect key="frame" x="26" y="296" width="262" height="54"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="262" id="UjL-7N-Wgo"/>
                     </constraints>
@@ -112,6 +115,9 @@
                     <state key="normal" title="获取验证码">
                         <color key="titleColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="getCode:" destination="-1" eventType="touchUpInside" id="mKW-p3-ccM"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZP-Iu-dLU">
                     <rect key="frame" x="15" y="376" width="402" height="50"/>
@@ -122,6 +128,15 @@
                     <state key="normal" title="立即绑定">
                         <color key="titleColor" red="0.9882352941176471" green="0.99215686274509807" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="blindCode:" destination="-1" eventType="touchUpInside" id="A7D-QM-v1b"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,13 +148,13 @@
                 <constraint firstAttribute="trailing" secondItem="3ZP-Iu-dLU" secondAttribute="trailing" constant="15" id="KxI-xl-qEG"/>
                 <constraint firstAttribute="trailing" secondItem="VOm-7H-J1D" secondAttribute="trailing" id="L7Y-8x-BUm"/>
                 <constraint firstItem="qox-b3-fDv" firstAttribute="top" secondItem="7P1-gE-JoW" secondAttribute="bottom" id="N3h-JC-8xn"/>
+                <constraint firstItem="1oO-JV-tTW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="26" id="Pk9-3e-pL5"/>
                 <constraint firstItem="Ig6-Py-4fJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="240" id="Pkv-2p-Or4"/>
                 <constraint firstItem="VOm-7H-J1D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q9n-fa-Swo"/>
                 <constraint firstAttribute="trailing" secondItem="Ig6-Py-4fJ" secondAttribute="trailing" id="R3i-jZ-WfE"/>
                 <constraint firstItem="7P1-gE-JoW" firstAttribute="leading" secondItem="doS-99-sNS" secondAttribute="trailing" constant="24" id="RB9-eE-nGR"/>
                 <constraint firstItem="qox-b3-fDv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="295" id="Rnp-tg-y0O"/>
                 <constraint firstItem="doS-99-sNS" firstAttribute="top" secondItem="Ig6-Py-4fJ" secondAttribute="bottom" constant="17" id="STq-0M-oFD"/>
-                <constraint firstItem="1oO-JV-tTW" firstAttribute="leading" secondItem="yZl-EN-I7t" secondAttribute="leading" id="T24-61-Uyz"/>
                 <constraint firstItem="3ZP-Iu-dLU" firstAttribute="top" secondItem="VOm-7H-J1D" secondAttribute="bottom" constant="25" id="TUz-KN-wHd"/>
                 <constraint firstItem="VOm-7H-J1D" firstAttribute="top" secondItem="1oO-JV-tTW" secondAttribute="bottom" id="YF1-MM-EhB"/>
                 <constraint firstItem="dIx-Ch-3t8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="a1D-9U-9hi"/>

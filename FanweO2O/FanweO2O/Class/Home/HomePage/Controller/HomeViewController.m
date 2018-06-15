@@ -608,8 +608,7 @@
 }
 -(UIImage *)getImageWithAlpha:(CGFloat)alpha{
     
-    
-    UIColor *color=[UIColor colorWithRed:132/255.0f green:212/255.0f blue:211/255.0f alpha:alpha];
+    UIColor *color=[UIColor colorWithRed:98/255.0 green:178/255.0 blue:249/255.0 alpha:alpha];
     CGSize colorSize=CGSizeMake(1, 1);
     UIGraphicsBeginImageContext(colorSize);
     CGContextRef context = UIGraphicsGetCurrentContext();

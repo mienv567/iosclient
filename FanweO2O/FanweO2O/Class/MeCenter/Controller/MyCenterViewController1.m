@@ -17,7 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+      self.navigationController.navigationBar.opaque  = 0;
+    self.navigationController.navigationBar.hidden    = YES;
+
+    
+    
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

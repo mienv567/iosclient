@@ -681,6 +681,7 @@
 		DCF6153020D1F93100BB791B /* BlindCellPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6152E20D1F93100BB791B /* BlindCellPhoneController.xib */; };
 		DCF6153420D3EE3300BB791B /* MyCenterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6153220D3EE3300BB791B /* MyCenterViewController1.m */; };
 		DCF6153520D3EE3300BB791B /* MyCenterViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6153320D3EE3300BB791B /* MyCenterViewController1.xib */; };
+		DCF6153820D3FB0500BB791B /* ZMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6153720D3FB0500BB791B /* ZMButton.m */; };
 		E42D801C20D02049009A2D78 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42D801A20D02049009A2D78 /* LogInViewController.m */; };
 		E42D801D20D02049009A2D78 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42D801B20D02049009A2D78 /* LogInViewController.xib */; };
 /* End PBXBuildFile section */
@@ -2118,6 +2119,8 @@
 		DCF6153120D3EE3300BB791B /* MyCenterViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCenterViewController1.h; sourceTree = "<group>"; };
 		DCF6153220D3EE3300BB791B /* MyCenterViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCenterViewController1.m; sourceTree = "<group>"; };
 		DCF6153320D3EE3300BB791B /* MyCenterViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCenterViewController1.xib; sourceTree = "<group>"; };
+		DCF6153620D3FB0400BB791B /* ZMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMButton.h; sourceTree = "<group>"; };
+		DCF6153720D3FB0500BB791B /* ZMButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMButton.m; sourceTree = "<group>"; };
 		E42D801920D02049009A2D78 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E42D801A20D02049009A2D78 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		E42D801B20D02049009A2D78 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
@@ -2743,6 +2746,8 @@
 		04D32A361DF84D49009F3371 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				DCF6153620D3FB0400BB791B /* ZMButton.h */,
+				DCF6153720D3FB0500BB791B /* ZMButton.m */,
 				345F8F3E1E10F818001857A5 /* XDJProgressHUD.h */,
 				345F8F3F1E10F818001857A5 /* XDJProgressHUD.m */,
 				34659D4E1DFA42F700498C60 /* RefreshManager.h */,
@@ -5680,6 +5685,7 @@
 				04D32BBD1DF8502C009F3371 /* MJRefreshConst.m in Sources */,
 				04D32A301DF84D48009F3371 /* TableSearchViewController.m in Sources */,
 				34659DB71DFA461A00498C60 /* SDWebImagePrefetcher.m in Sources */,
+				DCF6153820D3FB0500BB791B /* ZMButton.m in Sources */,
 				645C73971E77F7B90033E794 /* PayListModel.m in Sources */,
 				166673B71E72473A001C1260 /* collectCell.m in Sources */,
 				34659DAF1DFA461A00498C60 /* NSImage+WebCache.m in Sources */,

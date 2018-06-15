@@ -12,7 +12,7 @@
 #import "ShoppingViewController.h"
 #import "MyViewController.h"
 #import "BaseNavigationController.h"
-#import "MyCenterViewController.h"
+#import "MyCenterViewController1.h"
 @interface MainTabBarController ()<UITabBarDelegate>
 
 @end
@@ -41,7 +41,7 @@
         MyViewController *myVC = [MyViewController webControlerWithUrlString:nil andNavTitle:nil isShowIndicator:NO isHideNavBar:YES isHideTabBar:NO];
         [self setupChildViewController:@"我的" viewController:myVC image:@"four_normal" selectedImage:@"four_selected"];
     } else {
-       [self setupChildViewController:@"我的" viewController:[MyCenterViewController new] image:@"four_normal" selectedImage:@"four_selected"];
+       [self setupChildViewController:@"我的" viewController:[MyCenterViewController1 new] image:@"four_normal" selectedImage:@"four_selected"];
     }
     
 }

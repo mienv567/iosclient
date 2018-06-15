@@ -39,31 +39,31 @@
 @implementation MyCenterViewController
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden =YES;
-    [self updateNetwork];
+//    [super viewWillAppear:animated];
+//    self.navigationController.navigationBar.hidden =YES;
+//    [self updateNetwork];
 
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden =NO;
+//    self.navigationController.navigationBar.hidden =NO;
    
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _fanweApp =[GlobalVariables sharedInstance];
-    _httpManager =[NetHttpsManager manager];
-    
-    [self buildTableView];
-    [_myTableView registerNib:[UINib nibWithNibName:@"MyCenterTopTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-    [_myTableView registerClass:[MySectionTableViewCell class] forCellReuseIdentifier:@"sectionCell"];
-    [_myTableView registerClass:[MyThirdSectionTableViewCell class] forCellReuseIdentifier:@"thirdSectionCell"];
-    [_myTableView registerClass:[MyFourTableViewCell class] forCellReuseIdentifier:@"fourSectionCell"];
-    [_myTableView registerNib:[UINib nibWithNibName:@"BingdingPhoneTableViewCell" bundle:nil] forCellReuseIdentifier:@"bingCell"];
+//    _fanweApp =[GlobalVariables sharedInstance];
+//    _httpManager =[NetHttpsManager manager];
+//
+//    [self buildTableView];
+//    [_myTableView registerNib:[UINib nibWithNibName:@"MyCenterTopTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+//    [_myTableView registerClass:[MySectionTableViewCell class] forCellReuseIdentifier:@"sectionCell"];
+//    [_myTableView registerClass:[MyThirdSectionTableViewCell class] forCellReuseIdentifier:@"thirdSectionCell"];
+//    [_myTableView registerClass:[MyFourTableViewCell class] forCellReuseIdentifier:@"fourSectionCell"];
+//    [_myTableView registerNib:[UINib nibWithNibName:@"BingdingPhoneTableViewCell" bundle:nil] forCellReuseIdentifier:@"bingCell"];
     //[self updateNetwork];
 }
 - (void)buildTableView

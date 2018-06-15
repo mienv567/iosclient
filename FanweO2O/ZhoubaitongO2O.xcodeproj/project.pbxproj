@@ -679,6 +679,9 @@
 		DCF6152620D1469500BB791B /* LcLeftTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152520D1469500BB791B /* LcLeftTextField.m */; };
 		DCF6152F20D1F93100BB791B /* BlindCellPhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152D20D1F93100BB791B /* BlindCellPhoneController.m */; };
 		DCF6153020D1F93100BB791B /* BlindCellPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6152E20D1F93100BB791B /* BlindCellPhoneController.xib */; };
+		DCF6153420D3EE3300BB791B /* MyCenterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6153220D3EE3300BB791B /* MyCenterViewController1.m */; };
+		DCF6153520D3EE3300BB791B /* MyCenterViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6153320D3EE3300BB791B /* MyCenterViewController1.xib */; };
+		DCF6153820D3FB0500BB791B /* ZMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6153720D3FB0500BB791B /* ZMButton.m */; };
 		E42D801C20D02049009A2D78 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42D801A20D02049009A2D78 /* LogInViewController.m */; };
 		E42D801D20D02049009A2D78 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42D801B20D02049009A2D78 /* LogInViewController.xib */; };
 /* End PBXBuildFile section */
@@ -2113,6 +2116,11 @@
 		DCF6152C20D1F93100BB791B /* BlindCellPhoneController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlindCellPhoneController.h; sourceTree = "<group>"; };
 		DCF6152D20D1F93100BB791B /* BlindCellPhoneController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlindCellPhoneController.m; sourceTree = "<group>"; };
 		DCF6152E20D1F93100BB791B /* BlindCellPhoneController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlindCellPhoneController.xib; sourceTree = "<group>"; };
+		DCF6153120D3EE3300BB791B /* MyCenterViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCenterViewController1.h; sourceTree = "<group>"; };
+		DCF6153220D3EE3300BB791B /* MyCenterViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCenterViewController1.m; sourceTree = "<group>"; };
+		DCF6153320D3EE3300BB791B /* MyCenterViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCenterViewController1.xib; sourceTree = "<group>"; };
+		DCF6153620D3FB0400BB791B /* ZMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMButton.h; sourceTree = "<group>"; };
+		DCF6153720D3FB0500BB791B /* ZMButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMButton.m; sourceTree = "<group>"; };
 		E42D801920D02049009A2D78 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E42D801A20D02049009A2D78 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		E42D801B20D02049009A2D78 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
@@ -2738,6 +2746,8 @@
 		04D32A361DF84D49009F3371 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				DCF6153620D3FB0400BB791B /* ZMButton.h */,
+				DCF6153720D3FB0500BB791B /* ZMButton.m */,
 				345F8F3E1E10F818001857A5 /* XDJProgressHUD.h */,
 				345F8F3F1E10F818001857A5 /* XDJProgressHUD.m */,
 				34659D4E1DFA42F700498C60 /* RefreshManager.h */,
@@ -2752,12 +2762,12 @@
 				04D32A3C1DF84D49009F3371 /* MyTool.m */,
 				04D32A3D1DF84D49009F3371 /* NetHttpsManager.h */,
 				04D32A3E1DF84D49009F3371 /* NetHttpsManager.m */,
-				341F15041E014DC9004FB4A6 /* FWO2OJump.h */,
 				341F15051E014DC9004FB4A6 /* FWO2OJump.m */,
 				341F150A1E022F76004FB4A6 /* FWO2OJumpModel.h */,
 				341F150B1E022F76004FB4A6 /* FWO2OJumpModel.m */,
 				64629E731E88EFFF00BF33B0 /* DataTool.h */,
 				64629E741E88EFFF00BF33B0 /* DataTool.m */,
+				341F15041E014DC9004FB4A6 /* FWO2OJump.h */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -4156,6 +4166,9 @@
 				64136DEF1DF9311F00AC9ECD /* MyViewController.m */,
 				64E736BF1E23758E004C79FB /* MyCenterViewController.h */,
 				64E736C01E23758E004C79FB /* MyCenterViewController.m */,
+				DCF6153120D3EE3300BB791B /* MyCenterViewController1.h */,
+				DCF6153220D3EE3300BB791B /* MyCenterViewController1.m */,
+				DCF6153320D3EE3300BB791B /* MyCenterViewController1.xib */,
 				64FE87D71E1CED1400E0C7EE /* SetViewController.h */,
 				64FE87D81E1CED1400E0C7EE /* SetViewController.m */,
 				64FE87DD1E1DD8CB00E0C7EE /* MessageCenterViewController.h */,
@@ -5511,6 +5524,7 @@
 				16D040FB1E66BA290038F2D8 /* EditAddrVC.xib in Resources */,
 				64780C721E30AFEB00D5C256 /* BingdingPhoneTableViewCell.xib in Resources */,
 				3447CF8E1E07BC6800B3805E /* O2OAccountRegisterVC.xib in Resources */,
+				DCF6153520D3EE3300BB791B /* MyCenterViewController1.xib in Resources */,
 				64136E281DF9329600AC9ECD /* CustomNavigationView.xib in Resources */,
 				64FE881F1E1F767900E0C7EE /* MyCenterTopTableViewCell.xib in Resources */,
 				166673B01E723AEF001C1260 /* MyCollectVC.xib in Resources */,
@@ -5671,6 +5685,7 @@
 				04D32BBD1DF8502C009F3371 /* MJRefreshConst.m in Sources */,
 				04D32A301DF84D48009F3371 /* TableSearchViewController.m in Sources */,
 				34659DB71DFA461A00498C60 /* SDWebImagePrefetcher.m in Sources */,
+				DCF6153820D3FB0500BB791B /* ZMButton.m in Sources */,
 				645C73971E77F7B90033E794 /* PayListModel.m in Sources */,
 				166673B71E72473A001C1260 /* collectCell.m in Sources */,
 				34659DAF1DFA461A00498C60 /* NSImage+WebCache.m in Sources */,
@@ -5713,6 +5728,7 @@
 				64136E2C1DF9329600AC9ECD /* RightLittleButtonOnBottom.m in Sources */,
 				3463C8FD1E2F132D000409AD /* StoreListTBCell.m in Sources */,
 				04D32A221DF84D48009F3371 /* LibraryNavigationPanel.m in Sources */,
+				DCF6153420D3EE3300BB791B /* MyCenterViewController1.m in Sources */,
 				04D329F21DF84D48009F3371 /* NSString+guoMS.m in Sources */,
 				04D32B971DF8502C009F3371 /* MASLayoutConstraint.m in Sources */,
 				34659DAD1DFA461A00498C60 /* MKAnnotationView+WebCache.m in Sources */,

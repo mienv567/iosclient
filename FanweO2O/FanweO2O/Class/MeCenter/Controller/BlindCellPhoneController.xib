@@ -91,9 +91,38 @@
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7P1-gE-JoW">
                     <rect key="frame" x="95" y="241" width="337" height="54"/>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oO-JV-tTW">
+                    <rect key="frame" x="17" y="296" width="262" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="262" id="UjL-7N-Wgo"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLm-fa-VTA">
+                    <rect key="frame" x="297" y="306.5" width="105" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="inm-hr-yrH"/>
+                        <constraint firstAttribute="height" constant="33" id="pS0-Zc-X2l"/>
+                    </constraints>
+                    <state key="normal" title="获取验证码">
+                        <color key="titleColor" red="0.33725490196078434" green="0.33725490196078434" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZP-Iu-dLU">
+                    <rect key="frame" x="15" y="376" width="402" height="50"/>
+                    <color key="backgroundColor" red="0.29803921568627451" green="0.60784313725490191" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="oEq-e8-Bor"/>
+                    </constraints>
+                    <state key="normal" title="立即绑定">
+                        <color key="titleColor" red="0.9882352941176471" green="0.99215686274509807" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -101,6 +130,7 @@
                 <constraint firstAttribute="trailing" secondItem="qox-b3-fDv" secondAttribute="trailing" id="9K8-nk-Z5L"/>
                 <constraint firstItem="dIx-Ch-3t8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EH7-sS-a7B"/>
                 <constraint firstItem="Ig6-Py-4fJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KiZ-Jf-3kf"/>
+                <constraint firstAttribute="trailing" secondItem="3ZP-Iu-dLU" secondAttribute="trailing" constant="15" id="KxI-xl-qEG"/>
                 <constraint firstAttribute="trailing" secondItem="VOm-7H-J1D" secondAttribute="trailing" id="L7Y-8x-BUm"/>
                 <constraint firstItem="qox-b3-fDv" firstAttribute="top" secondItem="7P1-gE-JoW" secondAttribute="bottom" id="N3h-JC-8xn"/>
                 <constraint firstItem="Ig6-Py-4fJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="240" id="Pkv-2p-Or4"/>
@@ -109,15 +139,22 @@
                 <constraint firstItem="7P1-gE-JoW" firstAttribute="leading" secondItem="doS-99-sNS" secondAttribute="trailing" constant="24" id="RB9-eE-nGR"/>
                 <constraint firstItem="qox-b3-fDv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="295" id="Rnp-tg-y0O"/>
                 <constraint firstItem="doS-99-sNS" firstAttribute="top" secondItem="Ig6-Py-4fJ" secondAttribute="bottom" constant="17" id="STq-0M-oFD"/>
+                <constraint firstItem="1oO-JV-tTW" firstAttribute="leading" secondItem="yZl-EN-I7t" secondAttribute="leading" id="T24-61-Uyz"/>
+                <constraint firstItem="3ZP-Iu-dLU" firstAttribute="top" secondItem="VOm-7H-J1D" secondAttribute="bottom" constant="25" id="TUz-KN-wHd"/>
+                <constraint firstItem="VOm-7H-J1D" firstAttribute="top" secondItem="1oO-JV-tTW" secondAttribute="bottom" id="YF1-MM-EhB"/>
                 <constraint firstItem="dIx-Ch-3t8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="a1D-9U-9hi"/>
                 <constraint firstItem="doS-99-sNS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="39" id="aW0-f3-MsY"/>
                 <constraint firstItem="qox-b3-fDv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ajy-nt-Qvl"/>
+                <constraint firstItem="3ZP-Iu-dLU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="eC8-sQ-7yi"/>
                 <constraint firstItem="yZl-EN-I7t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="kYX-Qj-P2r"/>
                 <constraint firstItem="VOm-7H-J1D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="350" id="lrl-g0-AXR"/>
                 <constraint firstItem="Ig6-Py-4fJ" firstAttribute="top" secondItem="yZl-EN-I7t" secondAttribute="bottom" constant="20" id="o0A-BM-frw"/>
+                <constraint firstItem="1oO-JV-tTW" firstAttribute="top" secondItem="qox-b3-fDv" secondAttribute="bottom" id="oUa-uI-8D1"/>
                 <constraint firstItem="Ig6-Py-4fJ" firstAttribute="top" secondItem="fTy-Kk-Gan" secondAttribute="bottom" constant="20" id="qtQ-8J-fRt"/>
                 <constraint firstAttribute="trailing" secondItem="fTy-Kk-Gan" secondAttribute="trailing" constant="42" id="rmK-FN-xjb"/>
                 <constraint firstItem="7P1-gE-JoW" firstAttribute="top" secondItem="Ig6-Py-4fJ" secondAttribute="bottom" id="vx3-mI-6bj"/>
+                <constraint firstItem="yLm-fa-VTA" firstAttribute="centerY" secondItem="1oO-JV-tTW" secondAttribute="centerY" id="wyn-Xp-p1h"/>
+                <constraint firstAttribute="trailing" secondItem="yLm-fa-VTA" secondAttribute="trailing" constant="30" id="xSG-8r-shu"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

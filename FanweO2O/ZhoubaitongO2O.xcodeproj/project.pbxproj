@@ -673,6 +673,10 @@
 		9F6704F91EE792E800359078 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6704F81EE792E800359078 /* libz.1.tbd */; };
 		9F764D3D1EE641DF00878812 /* O2OCommonNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F764D3C1EE641DF00878812 /* O2OCommonNavigationBarView.m */; };
 		9F764D3F1EE641E800878812 /* O2OCommonNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */; };
+		DC4CEBFC20D6413900858C47 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFB20D6413900858C47 /* CategoryViewController.m */; };
+		DC4CEC0020D6442200858C47 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFE20D6442200858C47 /* CategoryCell.m */; };
+		DC4CEC0120D6442200858C47 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEBFF20D6442200858C47 /* CategoryCell.xib */; };
+		DC4CEC0620D6497000858C47 /* CategoryPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEC0520D6497000858C47 /* CategoryPlist.plist */; };
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
@@ -2105,6 +2109,12 @@
 		9F764D3B1EE641DF00878812 /* O2OCommonNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O2OCommonNavigationBarView.h; sourceTree = "<group>"; };
 		9F764D3C1EE641DF00878812 /* O2OCommonNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O2OCommonNavigationBarView.m; sourceTree = "<group>"; };
 		9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = O2OCommonNavigationBarView.xib; sourceTree = "<group>"; };
+		DC4CEBFA20D6413900858C47 /* CategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		DC4CEBFB20D6413900858C47 /* CategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		DC4CEBFD20D6442200858C47 /* CategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		DC4CEBFE20D6442200858C47 /* CategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		DC4CEBFF20D6442200858C47 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		DC4CEC0520D6497000858C47 /* CategoryPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryPlist.plist; sourceTree = "<group>"; };
 		DC50637F20ADBE960093244C /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		DC50638020ADBE960093244C /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		DC50638220ADBE960093244C /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
@@ -2244,6 +2254,7 @@
 				04D32A491DF84EDE009F3371 /* AppChangeHeader.h */,
 				04D3288D1DF8488A009F3371 /* Assets.xcassets */,
 				04D3287F1DF8488A009F3371 /* main.m */,
+				DC4CEC0520D6497000858C47 /* CategoryPlist.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2270,6 +2281,7 @@
 			isa = PBXGroup;
 			children = (
 				04D32A4E1DF84F4E009F3371 /* Home */,
+				DC4CEBF620D6410800858C47 /* Category */,
 				64136DD71DF9302700AC9ECD /* Discovery */,
 				64136DDB1DF9303500AC9ECD /* MeCenter */,
 				64136DDF1DF9303500AC9ECD /* Shopping */,
@@ -5317,6 +5329,42 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DC4CEBF620D6410800858C47 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DC4CEBF720D6410800858C47 /* Controller */,
+				DC4CEBF820D6410800858C47 /* Model */,
+				DC4CEBF920D6410800858C47 /* View */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DC4CEBF720D6410800858C47 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC4CEBFA20D6413900858C47 /* CategoryViewController.h */,
+				DC4CEBFB20D6413900858C47 /* CategoryViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DC4CEBF820D6410800858C47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC4CEBF920D6410800858C47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC4CEBFD20D6442200858C47 /* CategoryCell.h */,
+				DC4CEBFE20D6442200858C47 /* CategoryCell.m */,
+				DC4CEBFF20D6442200858C47 /* CategoryCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DC50637D20ADBE960093244C /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -5478,10 +5526,12 @@
 				04D32BBC1DF8502C009F3371 /* MJRefresh.bundle in Resources */,
 				645C734B1E77F3380033E794 /* UMSocialSDKResources.bundle in Resources */,
 				3489DF651E769D5900764807 /* SelectRefundShopVC.xib in Resources */,
+				DC4CEC0620D6497000858C47 /* CategoryPlist.plist in Resources */,
 				64E736EE1E27877D004C79FB /* cutPictureView.xib in Resources */,
 				64B6A6C61EE8EA220006F0BB /* GroupBuyTBNav.xib in Resources */,
 				163B42411E67B3DE00EC0450 /* addrregion.plist in Resources */,
 				04D32BA01DF8502C009F3371 /* MBProgressHUD.bundle in Resources */,
+				DC4CEC0120D6442200858C47 /* CategoryCell.xib in Resources */,
 				643A58EA1E85221900E288EC /* RefundDetailsContentTableViewCell.xib in Resources */,
 				643D08B61E2CE05800D13CBC /* CustomGoodsComTBCell.xib in Resources */,
 				3489DF6A1E77937600764807 /* SelectRefundShopTBCell.xib in Resources */,
@@ -5697,6 +5747,7 @@
 				34F82EFD1E02B48C0016F35E /* FWCommonViewController.m in Sources */,
 				64E736D31E2630C8004C79FB /* AccountManagementViewController.m in Sources */,
 				64542C941ED59AB1007E236B /* MerchantSearchCollLayout.m in Sources */,
+				DC4CEC0020D6442200858C47 /* CategoryCell.m in Sources */,
 				645C736D1E77F56B0033E794 /* ConsumptionView.m in Sources */,
 				64FCC4981E02823400FB62E2 /* ClassificationModelSecond.m in Sources */,
 				04D32B851DF8502C009F3371 /* IQUITextFieldView+Additions.m in Sources */,
@@ -5998,6 +6049,7 @@
 				34659DBD1DFA461A00498C60 /* UIImageView+WebCache.m in Sources */,
 				340792E81E6E8E2B00B570F3 /* MyOrderDetailsSection4TBCell.m in Sources */,
 				3486812D1E6D72D00052D0E4 /* MyOrderDetailsSection1TBCell.m in Sources */,
+				DC4CEBFC20D6413900858C47 /* CategoryViewController.m in Sources */,
 				64471BC51E4B020000690CD4 /* PopWhiteView.m in Sources */,
 				04D329EA1DF84D47009F3371 /* NSData+CRC.m in Sources */,
 				04D32A0A1DF84D48009F3371 /* MenuButton.m in Sources */,

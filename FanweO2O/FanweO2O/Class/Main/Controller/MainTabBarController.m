@@ -13,6 +13,7 @@
 #import "MyViewController.h"
 #import "BaseNavigationController.h"
 #import "MyCenterViewController1.h"
+#import "CategoryViewController.h"
 @interface MainTabBarController ()<UITabBarDelegate>
 
 @end
@@ -30,7 +31,7 @@
 {
     [self setupChildViewController:@"首页" viewController:[HomeViewController new] image:@"first_normal" selectedImage:@"first_selected"];
     
-    [self setupChildViewController:@"分类" viewController:[[UIViewController alloc] init] image:@"category" selectedImage:@"category_selected"];
+    [self setupChildViewController:@"分类" viewController:[[CategoryViewController alloc] init] image:@"category" selectedImage:@"category_selected"];
     
     DiscoveryViewController *vc =[DiscoveryViewController new];
     [self setupChildViewController:@"发现" viewController:vc image:@"second_normal" selectedImage:@"second_selected"];

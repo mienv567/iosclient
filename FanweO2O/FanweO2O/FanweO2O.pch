@@ -25,6 +25,27 @@
 #import "Masonry.h"
 #import "MJRefresh.h"
 
+#define ScreenW   [UIScreen mainScreen].bounds.size.width
+#define ScreenH    [UIScreen mainScreen].bounds.size.height
+#define kScreenWidthRatio        (ScreenW / 375.0)
+#define kScreenHeightRatio       (ScreenH / 667.0)
+//************************************************iPhone X适配***************************************************////
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+// iPhone X
+//#define  iPhoneX (kSCREEN_WIDTH == 375.f && kSCREEN_HIGHT == 812.f ? YES : NO)
+// Status bar height.
+#define  KStatusBarHeight      (iPhoneX ? 44.f : 20.f)
+// Navigation bar height.
+#define  KNavigationBarHeight  44.f
+// Tabbar height.
+#define  KTabbarHeight         (iPhoneX ? (49.f+34.f) : 49.f)
+// Tabbar safe bottom margin.
+#define  KTabbarSafeBottomMargin         (iPhoneX ? 34.f : 0.f)
+// Status bar & navigation bar height.
+#define  KStatusBarAndNavigationBarHeight  (iPhoneX ? 88.f : 64.f)
+
+//************************************************iPhone X适配***************************************************////
 // 自定义
 
 #import "AppChangeHeader.h"

@@ -673,6 +673,7 @@
 		9F6704F91EE792E800359078 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6704F81EE792E800359078 /* libz.1.tbd */; };
 		9F764D3D1EE641DF00878812 /* O2OCommonNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F764D3C1EE641DF00878812 /* O2OCommonNavigationBarView.m */; };
 		9F764D3F1EE641E800878812 /* O2OCommonNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */; };
+		DC1497B920D67973000DBDCD /* ZMNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1497B720D67972000DBDCD /* ZMNavigationBar.m */; };
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
@@ -2105,6 +2106,8 @@
 		9F764D3B1EE641DF00878812 /* O2OCommonNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = O2OCommonNavigationBarView.h; sourceTree = "<group>"; };
 		9F764D3C1EE641DF00878812 /* O2OCommonNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = O2OCommonNavigationBarView.m; sourceTree = "<group>"; };
 		9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = O2OCommonNavigationBarView.xib; sourceTree = "<group>"; };
+		DC1497B720D67972000DBDCD /* ZMNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNavigationBar.m; sourceTree = "<group>"; };
+		DC1497B820D67972000DBDCD /* ZMNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNavigationBar.h; sourceTree = "<group>"; };
 		DC50637F20ADBE960093244C /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		DC50638020ADBE960093244C /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		DC50638220ADBE960093244C /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
@@ -2746,6 +2749,8 @@
 		04D32A361DF84D49009F3371 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				DC1497B820D67972000DBDCD /* ZMNavigationBar.h */,
+				DC1497B720D67972000DBDCD /* ZMNavigationBar.m */,
 				DCF6153620D3FB0400BB791B /* ZMButton.h */,
 				DCF6153720D3FB0500BB791B /* ZMButton.m */,
 				345F8F3E1E10F818001857A5 /* XDJProgressHUD.h */,
@@ -5626,6 +5631,7 @@
 				04D32BBE1DF8502C009F3371 /* NSBundle+MJRefresh.m in Sources */,
 				04D32BC11DF8502C009F3371 /* UIView+MJExtension.m in Sources */,
 				643D08C81E2F8C6700D13CBC /* BindingPhoneViewController.m in Sources */,
+				DC1497B920D67973000DBDCD /* ZMNavigationBar.m in Sources */,
 				34E890D61E681A4200524598 /* MyOrderListTBVC.m in Sources */,
 				04D32B961DF8502C009F3371 /* MASConstraintMaker.m in Sources */,
 				64471BBF1E4AC65700690CD4 /* WXSTransitionManager+TypeTool.m in Sources */,

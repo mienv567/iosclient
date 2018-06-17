@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>image</key>
+		<string>gas</string>
+		<key>title</key>
+		<string>加气</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>oil</string>
+		<key>title</key>
+		<string>加油</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>tirechange</string>
+		<key>title</key>
+		<string>换轮胎</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>repair</string>
+		<key>title</key>
+		<string>维修保养</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>insurance</string>
+		<key>title</key>
+		<string>保险</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>lorry</string>
+		<key>title</key>
+		<string>整车</string>
+	</dict>
+</array>
+</plist>

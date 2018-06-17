@@ -674,6 +674,7 @@
 		9F764D3D1EE641DF00878812 /* O2OCommonNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F764D3C1EE641DF00878812 /* O2OCommonNavigationBarView.m */; };
 		9F764D3F1EE641E800878812 /* O2OCommonNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */; };
 		DC1497B920D67973000DBDCD /* ZMNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1497B720D67972000DBDCD /* ZMNavigationBar.m */; };
+		DC1497BA20D68D08000DBDCD /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFB20D6413900858C47 /* CategoryViewController.m */; };
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
@@ -2108,6 +2109,12 @@
 		9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = O2OCommonNavigationBarView.xib; sourceTree = "<group>"; };
 		DC1497B720D67972000DBDCD /* ZMNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNavigationBar.m; sourceTree = "<group>"; };
 		DC1497B820D67972000DBDCD /* ZMNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNavigationBar.h; sourceTree = "<group>"; };
+		DC4CEBFA20D6413900858C47 /* CategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		DC4CEBFB20D6413900858C47 /* CategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		DC4CEBFD20D6442200858C47 /* CategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		DC4CEBFE20D6442200858C47 /* CategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		DC4CEBFF20D6442200858C47 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		DC4CEC0520D6497000858C47 /* CategoryPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryPlist.plist; sourceTree = "<group>"; };
 		DC50637F20ADBE960093244C /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		DC50638020ADBE960093244C /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		DC50638220ADBE960093244C /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
@@ -2247,6 +2254,7 @@
 				04D32A491DF84EDE009F3371 /* AppChangeHeader.h */,
 				04D3288D1DF8488A009F3371 /* Assets.xcassets */,
 				04D3287F1DF8488A009F3371 /* main.m */,
+				DC4CEC0520D6497000858C47 /* CategoryPlist.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2273,6 +2281,7 @@
 			isa = PBXGroup;
 			children = (
 				04D32A4E1DF84F4E009F3371 /* Home */,
+				DC4CEBF620D6410800858C47 /* Category */,
 				64136DD71DF9302700AC9ECD /* Discovery */,
 				64136DDB1DF9303500AC9ECD /* MeCenter */,
 				64136DDF1DF9303500AC9ECD /* Shopping */,
@@ -5322,6 +5331,42 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DC4CEBF620D6410800858C47 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DC4CEBF720D6410800858C47 /* Controller */,
+				DC4CEBF820D6410800858C47 /* Model */,
+				DC4CEBF920D6410800858C47 /* View */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DC4CEBF720D6410800858C47 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DC4CEBFA20D6413900858C47 /* CategoryViewController.h */,
+				DC4CEBFB20D6413900858C47 /* CategoryViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DC4CEBF820D6410800858C47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC4CEBF920D6410800858C47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC4CEBFD20D6442200858C47 /* CategoryCell.h */,
+				DC4CEBFE20D6442200858C47 /* CategoryCell.m */,
+				DC4CEBFF20D6442200858C47 /* CategoryCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DC50637D20ADBE960093244C /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -5575,6 +5620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1497BA20D68D08000DBDCD /* CategoryViewController.m in Sources */,
 				9F6704DB1EE7923100359078 /* XNEvaluateCell.m in Sources */,
 				34A4848E1E79360B0011D7D3 /* XXNibConvention.m in Sources */,
 				64542C911ED59AB1007E236B /* DiscoveryViewController.m in Sources */,

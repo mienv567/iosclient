@@ -9,9 +9,11 @@
 #import "MyCenterViewController1.h"
 #import "ZMNavigationBar.h"
 #import "ZMButton.h"
+#import "LogInViewController.h"
 
 @interface MyCenterViewController1 ()
 @property (nonatomic, strong)  UINavigationBar *bar;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 
 @end
 
@@ -79,6 +81,14 @@
         [self.view addSubview:btn];
          
     }
+}
+- (IBAction)clickLogInBtn:(UIButton *)sender {
+  
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
+}
+- (IBAction)clickPayMoney:(UIButton *)sender {
+}
+- (IBAction)QRCodeScan:(id)sender {
 }
 
 //设置按钮点击

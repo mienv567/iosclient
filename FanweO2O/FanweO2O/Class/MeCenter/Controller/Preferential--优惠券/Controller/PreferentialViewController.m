@@ -4,7 +4,7 @@
 //
 //  Created by ycp on 17/3/7.
 //  Copyright © 2017年 xfg. All rights reserved.
-//
+// 优惠券控制器
 
 #import "PreferentialViewController.h"
 #import "PreferentialView.h"

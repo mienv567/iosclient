@@ -10,8 +10,12 @@
 #import "ZMNavigationBar.h"
 #import "ZMButton.h"
 #import "LogInViewController.h"
+
 #import "SetViewController.h"
 #import "MessageCenterViewController.h"
+
+#import "PreferentialViewController.h"
+#import "MyCollectVC.h"
 
 @interface MyCenterViewController1 ()
 @property (nonatomic, strong)  UINavigationBar *bar;
@@ -96,6 +100,20 @@
 
 //设置按钮点击
 -(void)clickIcon:(UIButton *)btn {
-  
+    if (btn.tag == 1){ //优惠券控制器
+        PreferentialViewController *vc = [[PreferentialViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (btn.tag == 0){ //个人资料控制器
+        
+    } else if (btn.tag == 2) { //我的收藏
+        MyCollectVC *vc = [[MyCollectVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (btn.tag == 3) {//分享有礼
+        
+    } else if (btn.tag == 4) {//客服中心
+        
+    } else if (btn.tag == 5) {//关于我们
+        
+    }
 }
 @end

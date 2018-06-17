@@ -562,7 +562,7 @@
         [cell setTableViewTag:KHomeZt_htm6CellSection];
         [cell setCellContent:self.zt6Html isWebViewDidFinishLoad:self.zt6_isWebViewDidFinishLoad];
         return cell;
-    }else if (indexPath.section == KHomeDeal_listCellSection) {
+    }else if (indexPath.section == KHomeDeal_listCellSection) {  //商品推荐
         CustomGoodsTableViewCell *cell = [CustomGoodsTableViewCell cellWithTbaleview:tableView];
         cell.delegate = self;
         [cell upDataWith:self.dealListArray indexPath:indexPath];

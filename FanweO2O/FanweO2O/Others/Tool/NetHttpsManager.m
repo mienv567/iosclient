@@ -125,7 +125,9 @@ static id _httpsManager;
             
             
             NSDictionary *resposeJson = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-            
+            if(1) {
+                NSLog(@"\n \n/*******************************/ \n url = %@ \n dict = %@\n \n response = %@ \n /**************返回结果结束*****************/\n",urlStr,parmDict,resposeJson);
+            }
             if (resposeJson) {
                 if([resposeJson count]){
                     

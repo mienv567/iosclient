@@ -10,6 +10,8 @@
 #import "ZMNavigationBar.h"
 #import "ZMButton.h"
 #import "LogInViewController.h"
+#import "SetViewController.h"
+#import "MessageCenterViewController.h"
 
 @interface MyCenterViewController1 ()
 @property (nonatomic, strong)  UINavigationBar *bar;
@@ -54,11 +56,12 @@
 }
 //聊天按钮点击
 -(void)tap2 {
-
+    MessageCenterViewController *vc = [[MessageCenterViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 //设置按钮点击
 -(void)tap1 {
-
+    [self.navigationController pushViewController: [[SetViewController alloc] init] animated:YES];
 }
 // 设置底部6个按钮
 -(void)setUI {

@@ -456,6 +456,7 @@
     [self evaluateMyJavaScript:webView];
     
     NSString *curUrl = [webView.URL absoluteString];
+    NSLog(@"~加载URL%@",webView.URL);
     NSMutableString *curMstr = [NSMutableString stringWithString:curUrl];
     NSRange curSubstr = [curMstr rangeOfString:@"show_prog=1"]; //字符串查找,可以判断字符串中是否有
     if (curSubstr.location != NSNotFound || [curUrl hasSuffix:@"show_prog=1"] || _isShowIndicator) {

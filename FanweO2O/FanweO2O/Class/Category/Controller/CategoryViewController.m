@@ -111,6 +111,7 @@ static NSString *collectionID = @"collection";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // 加气 加油 换轮胎 维修保养 保险 整车
+    NSLog(@"%ld",indexPath.row);
     
 }
 

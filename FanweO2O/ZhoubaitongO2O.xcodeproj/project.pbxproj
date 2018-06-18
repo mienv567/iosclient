@@ -675,6 +675,9 @@
 		9F764D3F1EE641E800878812 /* O2OCommonNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */; };
 		DC1497B920D67973000DBDCD /* ZMNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1497B720D67972000DBDCD /* ZMNavigationBar.m */; };
 		DC1497BA20D68D08000DBDCD /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFB20D6413900858C47 /* CategoryViewController.m */; };
+		DC4CEC0720D7836700858C47 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEBFF20D6442200858C47 /* CategoryCell.xib */; };
+		DC4CEC0820D783E300858C47 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFE20D6442200858C47 /* CategoryCell.m */; };
+		DC4CEC0920D784D600858C47 /* CategoryPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEC0520D6497000858C47 /* CategoryPlist.plist */; };
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
@@ -5517,6 +5520,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4CEC0920D784D600858C47 /* CategoryPlist.plist in Resources */,
+				DC4CEC0720D7836700858C47 /* CategoryCell.xib in Resources */,
 				04D32BB91DF8502C009F3371 /* MJRefreshGifHeader.m.orig in Resources */,
 				161103741E6D0CE3000559C1 /* mapapi.bundle in Resources */,
 				9F6704B91EE7923100359078 /* NTalkerUIKitResource.bundle in Resources */,
@@ -5620,6 +5625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4CEC0820D783E300858C47 /* CategoryCell.m in Sources */,
 				DC1497BA20D68D08000DBDCD /* CategoryViewController.m in Sources */,
 				9F6704DB1EE7923100359078 /* XNEvaluateCell.m in Sources */,
 				34A4848E1E79360B0011D7D3 /* XXNibConvention.m in Sources */,

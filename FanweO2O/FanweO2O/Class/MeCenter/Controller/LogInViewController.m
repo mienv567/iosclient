@@ -318,6 +318,9 @@
     });
     dispatch_resume(_timer);
 }
+- (IBAction)clickDismissBtn:(id)sender {
+    [[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

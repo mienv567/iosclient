@@ -21,7 +21,7 @@
     self.leftButton.titleLabel.font = kAppTextFont14;
     self.rightButton.layer.masksToBounds =YES;
     self.rightButton.layer.cornerRadius = CGRectGetHeight(self.rightButton.frame) / 2;
-    [self.rightButton setTitle:@"搜索商品或店铺" forState:UIControlStateNormal];
+    [self.rightButton setTitle:@"搜索店铺" forState:UIControlStateNormal];
     [self.rightButton setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
     self.rightButton.titleLabel.font =kAppTextFont12;
     [self.rightButton setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];

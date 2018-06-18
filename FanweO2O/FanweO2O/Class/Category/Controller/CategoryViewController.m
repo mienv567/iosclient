@@ -25,6 +25,7 @@ static NSString *collectionID = @"collection";
     return _CellWidth;
 }
 
+
 -(NSMutableArray *)array {
     if (!_array) {
         _array = [[NSMutableArray alloc]init];
@@ -43,9 +44,7 @@ static NSString *collectionID = @"collection";
 - (void)loadPlistData {
     // 从plist加载数据
     NSString *path = [[NSBundle mainBundle] pathForResource:@"CategoryPlist" ofType:@"plist"];
-//    NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile: path];
     NSArray *arr = [[NSArray alloc]initWithContentsOfFile:path];
-//    self.array = [dict objectForKey:@"Root"];
     self.array = [arr mutableCopy];
     [self.collectionV reloadData];
 }

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyCenterViewController1">
             <connections>
+                <outlet property="contentView" destination="p3y-mT-0Yk" id="j9C-tW-bhP"/>
                 <outlet property="photoImageView" destination="zhd-xU-R8g" id="7ZS-3T-r7h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

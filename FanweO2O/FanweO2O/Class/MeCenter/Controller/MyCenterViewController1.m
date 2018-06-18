@@ -17,10 +17,13 @@
 #import "PreferentialViewController.h"
 #import "MyCollectVC.h"
 #import "AbountUsViewController.h"
+//#improt "AccountManagementViewController.h"
+#import "AccountManagementViewController.h"
 
 @interface MyCenterViewController1 ()
 @property (nonatomic, strong)  UINavigationBar *bar;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 
@@ -31,8 +34,11 @@
     self.fd_prefersNavigationBarHidden = YES;
     [self.view addSubview:self.bar];
     [self setUI];
-    
-    
+    self.contentView.layer.shadowColor =  [UIColor blackColor].CGColor;
+    self.contentView.layer.shadowOpacity = 0.8f;
+        self.contentView.layer.shadowOffset = CGSizeMake(0,0);
+    self.contentView.layer.cornerRadius = 5;
+    [self.contentView.layer masksToBounds];
 }
 
 - (UINavigationBar *)bar {
@@ -113,7 +119,12 @@
             [[AppDelegate sharedAppDelegate]pushViewController:[PreferentialViewController new]];
         }
     } else if (btn.tag == 0){ //个人资料控制器
-        
+//        if ([_model.user_login_status isEqualToString:@"1"]) {
+            [self.navigationController pushViewController:[AccountManagementViewController new] animated:YES];
+//        }else
+//        {
+//            [self.navigationController pushViewController:[O2OAccountLoginVC new] animated:YES];
+//        }
     } else if (btn.tag == 2) { //我的收藏
         if (kOlderVersion<=2) {
             FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];

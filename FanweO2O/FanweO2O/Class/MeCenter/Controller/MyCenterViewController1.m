@@ -16,6 +16,7 @@
 
 #import "PreferentialViewController.h"
 #import "MyCollectVC.h"
+#import "AbountUsViewController.h"
 
 @interface MyCenterViewController1 ()
 @property (nonatomic, strong)  UINavigationBar *bar;
@@ -27,9 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-      self.navigationController.navigationBar.opaque  = 0;
-    self.navigationController.navigationBar.hidden    = YES;
+    self.fd_prefersNavigationBarHidden = YES;
     [self.view addSubview:self.bar];
     [self setUI];
     
@@ -101,19 +100,52 @@
 //设置按钮点击
 -(void)clickIcon:(UIButton *)btn {
     if (btn.tag == 1){ //优惠券控制器
-        PreferentialViewController *vc = [[PreferentialViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        if (kOlderVersion<=2) {
+            FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];
+            NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_youhui",
+                                  API_LOTTERYOUT_URL];
+            jumpModel.url =urlString;
+            jumpModel.type = 0;
+            jumpModel.isHideNavBar = YES;
+            jumpModel.isHideTabBar = YES;
+            [FWO2OJump didSelect:jumpModel];
+        }else{
+            [[AppDelegate sharedAppDelegate]pushViewController:[PreferentialViewController new]];
+        }
     } else if (btn.tag == 0){ //个人资料控制器
         
     } else if (btn.tag == 2) { //我的收藏
-        MyCollectVC *vc = [[MyCollectVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        if (kOlderVersion<=2) {
+            FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];
+            NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_collect",
+                                  API_LOTTERYOUT_URL];
+            jumpModel.url =urlString;
+            jumpModel.type = 0;
+            jumpModel.isHideNavBar = YES;
+            jumpModel.isHideTabBar = YES;
+            [FWO2OJump didSelect:jumpModel];
+            
+        }else {
+            [[AppDelegate sharedAppDelegate] pushViewController:[[MyCollectVC alloc]initWithNibName:@"MyCollectVC" bundle:nil]];
+        }
+        
     } else if (btn.tag == 3) {//分享有礼
+        FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];
+        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_share",
+                              API_LOTTERYOUT_URL];
+        jumpModel.url =urlString;
+        jumpModel.type = 0;
+        jumpModel.isHideNavBar = YES;
+        jumpModel.isHideTabBar = YES;
+        [FWO2OJump didSelect:jumpModel];
         
     } else if (btn.tag == 4) {//客服中心
         
     } else if (btn.tag == 5) {//关于我们
-        
+        AbountUsViewController *vc =[AbountUsViewController new];
+        UINavigationController *my =[[UINavigationController alloc] initWithRootViewController:vc];
+//        vc.htmlContent =_rowModel.APP_ABOUT_US;
+        [self presentViewController:my animated:YES completion:nil];
     }
 }
 @end

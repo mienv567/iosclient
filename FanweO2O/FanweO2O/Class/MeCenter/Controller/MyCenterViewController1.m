@@ -35,9 +35,9 @@
     [self.view addSubview:self.bar];
     [self setUI];
     self.contentView.layer.shadowColor =  [UIColor blackColor].CGColor;
-    self.contentView.layer.shadowOpacity = 0.8f;
-        self.contentView.layer.shadowOffset = CGSizeMake(0,0);
-    self.contentView.layer.cornerRadius = 5;
+    self.contentView.layer.shadowOpacity = 0.6f;
+    self.contentView.layer.shadowOffset = CGSizeMake(0,3);
+    self.contentView.layer.cornerRadius = 20;
     [self.contentView.layer masksToBounds];
 }
 

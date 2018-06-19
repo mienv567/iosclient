@@ -33,7 +33,8 @@
     
     [self setupChildViewController:@"分类" viewController:[[CategoryViewController alloc] init] image:@"category" selectedImage:@"category_selected"];
     
-    DiscoveryViewController *vc =[DiscoveryViewController new];
+//    DiscoveryViewController *vc =[DiscoveryViewController new];
+    UIViewController *vc = [[UIViewController alloc]init];
     [self setupChildViewController:@"发现" viewController:vc image:@"second_normal" selectedImage:@"second_selected"];
     
     ShoppingViewController *shop = [ShoppingViewController webControlerWithUrlString:nil andNavTitle:nil isShowIndicator:NO isHideNavBar:YES isHideTabBar:NO];

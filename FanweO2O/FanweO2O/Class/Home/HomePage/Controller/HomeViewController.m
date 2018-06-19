@@ -373,8 +373,8 @@
         
     }else if (section == KHomeSupplier_listCellSection ) {
         
-        return 0;
-        
+        return self.supplierListArray.count == 0 ? 0 : 1;
+
     }else if (section == KHomeDeal_listCellSection) {
         
         return ceil(self.dealListArray.count/2.0);
@@ -393,7 +393,7 @@
     if (section == KHomeDeal_listCellSection) {
         return self.dealListArray.count == 0 ? 0.001f : FW_SECTION_HEADEVIEW_HIGHT;
     } else if (section == KHomeSupplier_listCellSection) {
-        return 0;
+        return self.supplierListArray.count == 0 ? 0.001f : 10.0f;
     } else if (section == KHomeZt_htm3CellSection) {
         return 0;
     } else if (section == KHomeZt_htm4CellSection) {
@@ -434,10 +434,10 @@
 //        }
         //return UITableViewAutomaticDimension;
     }else if(indexPath.section == KHomeZt_htm4CellSection) {
-
-        if ([_count2 intValue] !=0) {
-            return [_count2 intValue];
-        }
+        return 0;
+//        if ([_count2 intValue] !=0) {
+//            return [_count2 intValue];
+//        }
     }else if(indexPath.section == KHomeZt_htm5CellSection) {
         if ([_count3 intValue] !=0) {
             return [_count3 intValue];
@@ -450,7 +450,7 @@
         return 0;
     } else if (indexPath.section == KHomeSupplier_listCellSection) {
         
-        return 0;
+        return FW_RECOMMEND_HIGHT;
     }
     
     return UITableViewAutomaticDimension;
@@ -458,12 +458,12 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    //    if (section == KHomeSupplier_listCellSection && _supplierListArray.count > 0) {
-    //
-    //        SectionHeaderView *view = [[SectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, FW_SECTION_HEADEVIEW_HIGHT) imageName:@"group" titleName:@"团购推荐"];
-    //        [view setBackgroundColor:kBackGroundColor];
-    //        return view;
-    //    }
+//        if (section == KHomeSupplier_listCellSection && _supplierListArray.count > 0) {
+//
+//            SectionHeaderView *view = [[SectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, FW_SECTION_HEADEVIEW_HIGHT) imageName:@"group" titleName:@"团购推荐"];
+//            [view setBackgroundColor:kBackGroundColor];
+//            return view;
+//        }
     
     if (section == KHomeDeal_listCellSection && self.dealListArray.count > 0) {
         
@@ -516,11 +516,11 @@
         return cell;
     }else if (indexPath.section == KHomeSupplier_listCellSection) {
         
-//        RecommendTableViewCell *cell = [RecommendTableViewCell cellWithTableView:tableView];
-//        cell.dataArray = self.supplierListArray;
-//
-//        return cell;
-//
+        RecommendTableViewCell *cell = [RecommendTableViewCell cellWithTableView:tableView];
+        cell.dataArray = self.supplierListArray;
+
+        return cell;
+
     } else if (indexPath.section == KHomeZt_htm3CellSection) {
         
 //        static NSString *cellIndent3 =  @"KGroupZt_htm3CellSection";
@@ -534,16 +534,16 @@
 //        return cell;
     }else if (indexPath.section == KHomeZt_htm4CellSection) {
         
-        static NSString *cellIndent4 =  @"KGroupZt_htm4CellSection";
-        HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent4] ;
-        
-        cell.delegate =  self;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone; //cell被选中后的颜色不变
-        cell.backgroundColor = kBackGroundColor;
-        [cell setTableViewTag:KHomeZt_htm4CellSection];
-        
-        [cell setCellContent:self.zt4Html isWebViewDidFinishLoad:self.zt4_isWebViewDidFinishLoad];
-        return cell;
+//        static NSString *cellIndent4 =  @"KGroupZt_htm4CellSection";
+//        HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent4] ;
+//
+//        cell.delegate =  self;
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone; //cell被选中后的颜色不变
+//        cell.backgroundColor = kBackGroundColor;
+//        [cell setTableViewTag:KHomeZt_htm4CellSection];
+//
+//        [cell setCellContent:self.zt4Html isWebViewDidFinishLoad:self.zt4_isWebViewDidFinishLoad];
+//        return cell;
     }else if (indexPath.section == KHomeZt_htm5CellSection) {
         static NSString *cellIndent5 =  @"KGroupZt_htm5CellSection";
         HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent5] ;

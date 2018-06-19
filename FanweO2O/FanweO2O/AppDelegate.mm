@@ -163,7 +163,7 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     
    
-    if (viewController == [tabBarController.viewControllers objectAtIndex:2]) {
+    if (viewController == [tabBarController.viewControllers objectAtIndex:3]) {
         
         ShoppingViewController *shop = [ShoppingViewController webControlerWithUrlString:nil andNavTitle:nil isShowIndicator:NO isHideNavBar:YES isHideTabBar:NO];
         [[AppDelegate sharedAppDelegate] pushViewController:shop];

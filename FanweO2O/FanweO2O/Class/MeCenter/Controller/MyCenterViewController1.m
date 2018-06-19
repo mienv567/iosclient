@@ -17,8 +17,10 @@
 #import "PreferentialViewController.h"
 #import "MyCollectVC.h"
 #import "AbountUsViewController.h"
-//#improt "AccountManagementViewController.h"
 #import "AccountManagementViewController.h"
+
+#import "HWScanViewController.h"
+
 
 @interface MyCenterViewController1 ()
 @property (nonatomic, strong)  UINavigationBar *bar;
@@ -100,7 +102,11 @@
 }
 - (IBAction)clickPayMoney:(UIButton *)sender {
 }
+
+//扫码
 - (IBAction)QRCodeScan:(id)sender {
+    HWScanViewController *vc = [[HWScanViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //设置按钮点击

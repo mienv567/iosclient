@@ -682,6 +682,7 @@
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
+		DCA19A2020D93D4900F97F66 /* HWScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19A1F20D93D4900F97F66 /* HWScanViewController.m */; };
 		DCF6152620D1469500BB791B /* LcLeftTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152520D1469500BB791B /* LcLeftTextField.m */; };
 		DCF6152F20D1F93100BB791B /* BlindCellPhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152D20D1F93100BB791B /* BlindCellPhoneController.m */; };
 		DCF6153020D1F93100BB791B /* BlindCellPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6152E20D1F93100BB791B /* BlindCellPhoneController.xib */; };
@@ -2127,6 +2128,8 @@
 		DC50638320ADBE960093244C /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityModel.h; sourceTree = "<group>"; };
 		DC50638520ADBE960093244C /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		DC50638620ADBE960093244C /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
+		DCA19A1E20D93D4900F97F66 /* HWScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWScanViewController.h; sourceTree = "<group>"; };
+		DCA19A1F20D93D4900F97F66 /* HWScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWScanViewController.m; sourceTree = "<group>"; };
 		DCF6152420D1469500BB791B /* LcLeftTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LcLeftTextField.h; sourceTree = "<group>"; };
 		DCF6152520D1469500BB791B /* LcLeftTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LcLeftTextField.m; sourceTree = "<group>"; };
 		DCF6152C20D1F93100BB791B /* BlindCellPhoneController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlindCellPhoneController.h; sourceTree = "<group>"; };
@@ -5341,6 +5344,8 @@
 		DC1497BB20D9218D000DBDCD /* searchController */ = {
 			isa = PBXGroup;
 			children = (
+				DCA19A1E20D93D4900F97F66 /* HWScanViewController.h */,
+				DCA19A1F20D93D4900F97F66 /* HWScanViewController.m */,
 				DC1497BC20D921A6000DBDCD /* SearchViewController.h */,
 				DC1497BD20D921A6000DBDCD /* SearchViewController.m */,
 			);
@@ -5487,7 +5492,7 @@
 				TargetAttributes = {
 					04D3287A1DF8488A009F3371 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Y9S4FEH265;
+						DevelopmentTeam = K5K35M54KL;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -5674,6 +5679,7 @@
 				341362821E0A5DD6003B11DA /* RNCachingURLProtocol.m in Sources */,
 				34E890EC1E681E1C00524598 /* MyCommonOrderTBCell.m in Sources */,
 				341FE1241E1E1C5F007A7A0B /* ClassSectionView.m in Sources */,
+				DCA19A2020D93D4900F97F66 /* HWScanViewController.m in Sources */,
 				645C72EF1E77F0BD0033E794 /* ConsumptionMeselfLiftViewController.m in Sources */,
 				34271C171E4D963A008D9716 /* MallListClassSectionView.m in Sources */,
 				04D32B861DF8502C009F3371 /* IQUIView+Hierarchy.m in Sources */,
@@ -6335,7 +6341,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y9S4FEH265;
+				DEVELOPMENT_TEAM = K5K35M54KL;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6402,7 +6408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Y9S4FEH265;
+				DEVELOPMENT_TEAM = K5K35M54KL;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

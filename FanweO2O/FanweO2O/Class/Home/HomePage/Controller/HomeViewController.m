@@ -50,7 +50,7 @@
 #import <WebKit/WebKit.h>
 
 #import "NSDictionary+BlocksKit.h"
-
+#import "SearchViewController.h"
 //暂时使用.....
 #import "SetViewController.h"
 #import "MessageCenterViewController.h"
@@ -962,7 +962,8 @@
 }
 
 - (void)goToDiscoveryViewController
-{
+{       SearchViewController *vc = [[SearchViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
 //    self.tabBarController.selectedIndex = 1;
 //    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"tabBarItemCount"];
 //    [[NSUserDefaults standardUserDefaults]setObject:0 forKey:@"tabBarItemCount"];

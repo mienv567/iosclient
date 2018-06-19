@@ -675,6 +675,7 @@
 		9F764D3F1EE641E800878812 /* O2OCommonNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */; };
 		DC1497B920D67973000DBDCD /* ZMNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1497B720D67972000DBDCD /* ZMNavigationBar.m */; };
 		DC1497BA20D68D08000DBDCD /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFB20D6413900858C47 /* CategoryViewController.m */; };
+		DC1497BE20D921A6000DBDCD /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1497BD20D921A6000DBDCD /* SearchViewController.m */; };
 		DC4CEC0720D7836700858C47 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEBFF20D6442200858C47 /* CategoryCell.xib */; };
 		DC4CEC0820D783E300858C47 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFE20D6442200858C47 /* CategoryCell.m */; };
 		DC4CEC0920D784D600858C47 /* CategoryPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEC0520D6497000858C47 /* CategoryPlist.plist */; };
@@ -2112,6 +2113,8 @@
 		9F764D3E1EE641E800878812 /* O2OCommonNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = O2OCommonNavigationBarView.xib; sourceTree = "<group>"; };
 		DC1497B720D67972000DBDCD /* ZMNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMNavigationBar.m; sourceTree = "<group>"; };
 		DC1497B820D67972000DBDCD /* ZMNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMNavigationBar.h; sourceTree = "<group>"; };
+		DC1497BC20D921A6000DBDCD /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		DC1497BD20D921A6000DBDCD /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		DC4CEBFA20D6413900858C47 /* CategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		DC4CEBFB20D6413900858C47 /* CategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		DC4CEBFD20D6442200858C47 /* CategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
@@ -2792,6 +2795,7 @@
 		04D32A4E1DF84F4E009F3371 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DC1497BB20D9218D000DBDCD /* searchController */,
 				341F14EC1DFEBEDC004FB4A6 /* GroupBuy-团购 */,
 				34659F751DFA987800498C60 /* Mall-商城 */,
 				64136DFC1DF9329600AC9ECD /* HomePage-首页 */,
@@ -5334,6 +5338,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DC1497BB20D9218D000DBDCD /* searchController */ = {
+			isa = PBXGroup;
+			children = (
+				DC1497BC20D921A6000DBDCD /* SearchViewController.h */,
+				DC1497BD20D921A6000DBDCD /* SearchViewController.m */,
+			);
+			path = searchController;
+			sourceTree = "<group>";
+		};
 		DC4CEBF620D6410800858C47 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -5744,6 +5757,7 @@
 				34659DB71DFA461A00498C60 /* SDWebImagePrefetcher.m in Sources */,
 				DCF6153820D3FB0500BB791B /* ZMButton.m in Sources */,
 				645C73971E77F7B90033E794 /* PayListModel.m in Sources */,
+				DC1497BE20D921A6000DBDCD /* SearchViewController.m in Sources */,
 				166673B71E72473A001C1260 /* collectCell.m in Sources */,
 				34659DAF1DFA461A00498C60 /* NSImage+WebCache.m in Sources */,
 				64FA601F1E45A6DD00B9A90A /* SecondaryNavigationBarView.m in Sources */,

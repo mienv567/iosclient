@@ -45,6 +45,7 @@
     NSLog(@"点击了搜索");
     return YES;
 }
+
 - (void)viewWillDisappear:(BOOL)animated {
     [self.view endEditing:YES];
 }

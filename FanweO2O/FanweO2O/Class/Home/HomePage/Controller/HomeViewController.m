@@ -961,8 +961,15 @@
     
 }
 
+// 点击首页搜索框调用
 - (void)goToDiscoveryViewController
 {
+    
+    
+    
+    
+    
+    
 //    self.tabBarController.selectedIndex = 1;
 //    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"tabBarItemCount"];
 //    [[NSUserDefaults standardUserDefaults]setObject:0 forKey:@"tabBarItemCount"];

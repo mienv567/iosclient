@@ -27,9 +27,11 @@
 }
 @property (nonatomic, strong) NetHttpsManager *httpManager;
 @property (nonatomic, strong) GlobalVariables *fanweApp;
-@property (nonatomic,strong)NSMutableArray *dateArray;
-@property (nonatomic,strong)UITableView *tableView;
-@property (nonatomic,assign)NSInteger page;
+@property (nonatomic, strong) NSMutableArray *dateArray;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, strong) UIButton *selectedBtn;
+@property (nonatomic, strong) UIView *indicateView;
 @end
 
 @implementation PreferentialViewController
@@ -104,8 +106,9 @@
     self.view.backgroundColor =[UIColor whiteColor];
     self.httpManager =[NetHttpsManager manager];
     _dateArray =[NSMutableArray array];
-     [self bulidNav];
+    [self bulidNav];
     [self bulidTableView];
+    [self creatSelectView];
     [self qrCode];
     
     _tableView.mj_header =  [MJRefreshNormalHeader  headerWithRefreshingBlock:^{
@@ -137,6 +140,45 @@
     [self.view bringSubviewToFront:pop];
     [self.view addSubview:pop];
 }
+// 顶部待使用,已使用,已失效
+- (void)creatSelectView {
+    UIView *selectView = [[UIView alloc]initWithFrame:CGRectMake(0, 63, SCREEN_WIDTH, 40)];
+    selectView.backgroundColor = [UIColor whiteColor];
+    NSArray *arr = @[@"待使用",@"已使用",@"已失效"];
+    for (int i = 0; i < 3; i++) {
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(i * SCREEN_WIDTH / 3, 3, SCREEN_WIDTH / 3, 35)];
+        [btn setTitle:arr[i] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn setTitleColor:kMainColor forState:UIControlStateSelected];
+        btn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [btn addTarget:self action:@selector(selectedBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        if (i == 0) {
+            btn.selected = YES;
+            _selectedBtn = btn;
+        }
+        [selectView addSubview:btn];
+    }
+    [selectView addSubview:self.indicateView];
+    [self.view addSubview:selectView];
+    
+}
+
+// 点击顶部三个按钮调用
+- (void)selectedBtnClick:(UIButton *)sender {
+    if (!sender.isSelected) {
+        _selectedBtn.selected = NO;
+        sender.selected = YES;
+        _selectedBtn = sender;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.indicateView.frame = CGRectMake(CGRectGetMinX(sender.frame) + SCREEN_WIDTH / 9, 39, SCREEN_WIDTH / 9, 2);
+        }];
+        // 请求接口刷新tableview
+        
+    } else {
+        return;
+    }
+}
+
 - (UIView *)qrCode
 {
     qrView =[QrCodeView EditNibFromXib];
@@ -225,7 +267,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     QrCodeTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"QCcell"];
     PreferentialModel *cModel =_dateArray[indexPath.section];
     cell.pModel =cModel;
@@ -350,6 +392,15 @@
             break;
     }
 }
+
+-(UIView *)indicateView {
+    if (!_indicateView) {
+        _indicateView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH / 9, 38, SCREEN_WIDTH / 9, 2)];
+        _indicateView.backgroundColor = kMainColor;
+    }
+    return _indicateView;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

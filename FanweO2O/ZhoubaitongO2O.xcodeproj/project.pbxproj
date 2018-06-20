@@ -678,6 +678,9 @@
 		DC4CEC0720D7836700858C47 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEBFF20D6442200858C47 /* CategoryCell.xib */; };
 		DC4CEC0820D783E300858C47 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEBFE20D6442200858C47 /* CategoryCell.m */; };
 		DC4CEC0920D784D600858C47 /* CategoryPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEC0520D6497000858C47 /* CategoryPlist.plist */; };
+		DC4CEC0D20D9369100858C47 /* CouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEC0B20D9369100858C47 /* CouponCell.m */; };
+		DC4CEC0E20D9369100858C47 /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEC0C20D9369100858C47 /* CouponCell.xib */; };
+		DC4CEC1120D93F6800858C47 /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEC1020D93F6800858C47 /* CouponModel.m */; };
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
@@ -2118,6 +2121,11 @@
 		DC4CEBFE20D6442200858C47 /* CategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		DC4CEBFF20D6442200858C47 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		DC4CEC0520D6497000858C47 /* CategoryPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryPlist.plist; sourceTree = "<group>"; };
+		DC4CEC0A20D9369100858C47 /* CouponCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponCell.h; sourceTree = "<group>"; };
+		DC4CEC0B20D9369100858C47 /* CouponCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CouponCell.m; sourceTree = "<group>"; };
+		DC4CEC0C20D9369100858C47 /* CouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
+		DC4CEC0F20D93F6800858C47 /* CouponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
+		DC4CEC1020D93F6800858C47 /* CouponModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CouponModel.m; sourceTree = "<group>"; };
 		DC50637F20ADBE960093244C /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		DC50638020ADBE960093244C /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		DC50638220ADBE960093244C /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
@@ -4524,6 +4532,8 @@
 				645C72F11E77F1E40033E794 /* ConsumptionModel.m */,
 				64C2F1E91E80BDAF009633CB /* PickUpGoodsModel.h */,
 				64C2F1EA1E80BDAF009633CB /* PickUpGoodsModel.m */,
+				DC4CEC0F20D93F6800858C47 /* CouponModel.h */,
+				DC4CEC1020D93F6800858C47 /* CouponModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4694,6 +4704,9 @@
 				645C73601E77F56B0033E794 /* ConsumptionLiftView.m */,
 				645C73611E77F56B0033E794 /* ConsumptionView.h */,
 				645C73621E77F56B0033E794 /* ConsumptionView.m */,
+				DC4CEC0A20D9369100858C47 /* CouponCell.h */,
+				DC4CEC0B20D9369100858C47 /* CouponCell.m */,
+				DC4CEC0C20D9369100858C47 /* CouponCell.xib */,
 				645C73631E77F56B0033E794 /* QrCodeTableViewCell.h */,
 				645C73641E77F56B0033E794 /* QrCodeTableViewCell.m */,
 				645C73651E77F56B0033E794 /* QrCodeTableViewCell.xib */,
@@ -5536,6 +5549,7 @@
 				64B6A6C61EE8EA220006F0BB /* GroupBuyTBNav.xib in Resources */,
 				163B42411E67B3DE00EC0450 /* addrregion.plist in Resources */,
 				04D32BA01DF8502C009F3371 /* MBProgressHUD.bundle in Resources */,
+				DC4CEC0E20D9369100858C47 /* CouponCell.xib in Resources */,
 				643A58EA1E85221900E288EC /* RefundDetailsContentTableViewCell.xib in Resources */,
 				643D08B61E2CE05800D13CBC /* CustomGoodsComTBCell.xib in Resources */,
 				3489DF6A1E77937600764807 /* SelectRefundShopTBCell.xib in Resources */,
@@ -5815,6 +5829,7 @@
 				341FE1161E1DDDFC007A7A0B /* ClassSelcectVC.m in Sources */,
 				64136E541DFE519C00AC9ECD /* LeftTableViewCell.m in Sources */,
 				341FE1411E2487F5007A7A0B /* UIScrollView+EmptyDataSet.m in Sources */,
+				DC4CEC0D20D9369100858C47 /* CouponCell.m in Sources */,
 				9F6704EE1EE7923100359078 /* XNVideoPlayerController.m in Sources */,
 				34659DD31DFA462000498C60 /* TAPageControl.m in Sources */,
 				643D089D1E28C81A00D13CBC /* AccountManagerModel.m in Sources */,
@@ -5876,6 +5891,7 @@
 				04D329F91DF84D48009F3371 /* UIImage+ms.m in Sources */,
 				9F6704D31EE7923100359078 /* XNHPTextViewInternal.m in Sources */,
 				34659D7B1DFA44D000498C60 /* AFAutoPurgingImageCache.m in Sources */,
+				DC4CEC1120D93F6800858C47 /* CouponModel.m in Sources */,
 				34659DB91DFA461A00498C60 /* UIImage+GIF.m in Sources */,
 				04D32A261DF84D48009F3371 /* NavigationViewController.m in Sources */,
 				643D08C31E2F48C600D13CBC /* AccountXPTableViewCell.m in Sources */,

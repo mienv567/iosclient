@@ -50,13 +50,14 @@
 #import <WebKit/WebKit.h>
 
 #import "NSDictionary+BlocksKit.h"
-
+#import "SearchViewController.h"
 //暂时使用.....
 #import "SetViewController.h"
 #import "MessageCenterViewController.h"
 
 #import "NTalkerChatViewController.h"
 #import "XNGoodsInfoModel.h"
+#import "HWScanViewController.h"
 
 
 #define KHomeArticleCellSection         2   //头条位置
@@ -964,12 +965,8 @@
 // 点击首页搜索框调用
 - (void)goToDiscoveryViewController
 {
-    
-    
-    
-    
-    
-    
+    SearchViewController *vc = [[SearchViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 //    self.tabBarController.selectedIndex = 1;
 //    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"tabBarItemCount"];
 //    [[NSUserDefaults standardUserDefaults]setObject:0 forKey:@"tabBarItemCount"];
@@ -1024,29 +1021,31 @@
 - (void)selectDefaultCity {
 //    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
 }
-//选择城市按钮
+//选择城市按钮  现在修改为扫码
 - (void)customLeftButton
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+    HWScanViewController *vc = [[HWScanViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+////    [UIView animateWithDuration:0.5 animations:^{
+////        m.view.frame =CGRectMake(0, 0, kScreenW, kScreenH);
+//////         self.tabBarController.tabBar.hidden =YES;
+////    }];
+////    [UIView animateWithDuration:0.6 animations:^{
+////        //        m.view.frame = CGRectMake(0, 0, kScreenW, -kScreenH);
+////        self.tabBarController.tabBar.hidden =YES;
+////    }];
 //    [UIView animateWithDuration:0.5 animations:^{
 //        m.view.frame =CGRectMake(0, 0, kScreenW, kScreenH);
-////         self.tabBarController.tabBar.hidden =YES;
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.42 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            self.tabBarController.tabBar.hidden =YES;
+//        });
+//
+//    } completion:^(BOOL finished) {
+//
 //    }];
-//    [UIView animateWithDuration:0.6 animations:^{
-//        //        m.view.frame = CGRectMake(0, 0, kScreenW, -kScreenH);
-//        self.tabBarController.tabBar.hidden =YES;
-//    }];
-    [UIView animateWithDuration:0.5 animations:^{
-        m.view.frame =CGRectMake(0, 0, kScreenW, kScreenH);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.42 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.tabBarController.tabBar.hidden =YES;
-        });
-        
-    } completion:^(BOOL finished) {
-       
-    }];
-   
-    //[self.navigationController pushViewController:[[MessageCenterViewController alloc] init] animated:YES];
+//
+//    //[self.navigationController pushViewController:[[MessageCenterViewController alloc] init] animated:YES];
 
 }
 

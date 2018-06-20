@@ -40,6 +40,7 @@
     self.navigationItem.titleView = TF;
     
     self.view.backgroundColor = [UIColor whiteColor];
+    [TF becomeFirstResponder];
     
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -580,12 +580,7 @@
     else
     {
         [[HUDHelper sharedInstance] tipMessage:@"没有该城市"];
-        
     }
-
-
-    
-
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

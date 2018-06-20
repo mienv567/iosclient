@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *MessageTF;
 @property (weak, nonatomic) IBOutlet UIButton *btnCode;
 @property (weak, nonatomic) IBOutlet UIImageView *weixinImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageVeiw;
 
 @property (nonatomic, assign) NSInteger selectType;
 
@@ -44,7 +45,12 @@
     [self.contentView.layer masksToBounds];
     self.weixinImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickWeixin)];
+      UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgclick)];
+    self.contentView.userInteractionEnabled = YES;
     [self.weixinImageView addGestureRecognizer:tap];
+    [self.contentView addGestureRecognizer:tap1];
+    self.bgImageVeiw.userInteractionEnabled = YES;
+    [self.bgImageVeiw addGestureRecognizer:tap1];
     
 }
 //登录
@@ -322,6 +328,8 @@
     [[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-
+-(void)bgclick {
+    [self.view endEditing:YES];
+}
 
 @end

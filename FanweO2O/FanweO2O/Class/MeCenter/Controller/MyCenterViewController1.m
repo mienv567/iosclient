@@ -41,6 +41,7 @@
     self.contentView.layer.shadowOffset = CGSizeMake(0,3);
     self.contentView.layer.cornerRadius = 20;
     [self.contentView.layer masksToBounds];
+    
 }
 
 - (UINavigationBar *)bar {

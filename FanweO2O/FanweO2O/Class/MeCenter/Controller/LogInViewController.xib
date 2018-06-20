@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="LoginBtn" destination="8l5-WM-Blo" id="5L9-SO-SfR"/>
                 <outlet property="MessageTF" destination="M1g-6d-E7C" id="RdY-0S-sIM"/>
+                <outlet property="bgImageVeiw" destination="PkL-gQ-Eh5" id="U9j-5e-5Jk"/>
                 <outlet property="btnCode" destination="1fQ-NS-d1y" id="htH-Pz-tyi"/>
                 <outlet property="contentView" destination="4Es-2Q-bif" id="F2c-Fd-Qi5"/>
                 <outlet property="teletNumTF" destination="o3T-DB-ypH" id="4zo-Hh-V6W"/>

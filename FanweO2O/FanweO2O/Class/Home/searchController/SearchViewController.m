@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "LcLeftTextField.h"
+#import "ZYPinYinSearch.h"
 @interface SearchViewController ()<UITextFieldDelegate>
 
 @end
@@ -52,5 +53,20 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self.view endEditing:YES];
 }
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+     NSLog(@"点击了搜索1111111");
+}
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+#warning 主要功能，调用方法实现搜索
+    [ZYPinYinSearch searchByPropertyName:@"name" withOriginalArray:@[@"ss",@"rt",@"df",@"sdft"]   searchText:string success:^(NSArray *results) {
+//        _dataSourceArray = results;
+//        [_tableView reloadData];
+        NSLog(@"%@",results);
+    } failure:^(NSString *errorMessage) {
+
+    }];
+    return YES;
+}
 @end

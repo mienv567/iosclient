@@ -58,6 +58,7 @@
 #import "NTalkerChatViewController.h"
 #import "XNGoodsInfoModel.h"
 #import "HWScanViewController.h"
+#import "LogInViewController.h"
 
 
 #define KHomeArticleCellSection         2   //头条位置
@@ -1115,13 +1116,15 @@
         //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ctrl];
         //ctrl.pushOrPresent = NO;
         //[self presentViewController:nav animated:YES completion:nil];
+       
+        
         
         MessageCenterViewController *message =[MessageCenterViewController new];
         message.comeCount=0;
         [self.navigationController pushViewController:message animated:YES];
     }else
     {
-        [self.navigationController pushViewController:[O2OAccountLoginVC new] animated:YES];
+       [[UIApplication sharedApplication].keyWindow.rootViewController  presentViewController:[[LogInViewController alloc] init] animated:YES completion:nil];
     }
 }
 - (NSString *)createHTML:(NSString *)htmlStr {

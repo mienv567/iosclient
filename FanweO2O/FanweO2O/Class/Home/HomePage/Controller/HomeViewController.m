@@ -106,6 +106,7 @@
     [self.tableView.mj_header beginRefreshing];
     self.tableView.sectionHeaderHeight = 1;
     self.tableView.sectionFooterHeight = 0;
+    self.fd_prefersNavigationBarHidden = YES;
     if (self.fanweApp.city_name) {
 //        [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
     }
@@ -122,7 +123,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden =YES;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
 //    [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
@@ -137,7 +137,6 @@
 {
     [super viewWillDisappear:animated];
     HideIndicatorInView(self.view);
-    self.navigationController.navigationBar.hidden = NO;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 }
 

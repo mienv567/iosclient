@@ -39,6 +39,8 @@
     TF.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.navigationItem.titleView = TF;
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {

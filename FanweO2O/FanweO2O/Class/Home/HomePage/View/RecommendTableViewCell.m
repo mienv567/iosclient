@@ -42,7 +42,8 @@ static NSString *cellIndent =  @"RecommendTableViewCell";
 - (void)doInit {
     
     _backGroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenW, 190)];
-    _backGroundView.backgroundColor = [UIColor colorWithRed:1.000 green:0.392 blue:0.318 alpha:1.00];
+//    _backGroundView.backgroundColor = [UIColor colorWithRed:1.000 green:0.392 blue:0.318 alpha:1.00];
+    _backGroundView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:_backGroundView];
     _label = [[UILabel alloc]init];
     _label.center = CGPointMake((SCREEN_WIDTH - 150) / 2, 0);
@@ -66,7 +67,8 @@ static NSString *cellIndent =  @"RecommendTableViewCell";
     [_backGroundView addSubview:_btn];
     
     UIScrollView *scrollView =[[UIScrollView alloc] initWithFrame:CGRectMake(5, CGRectGetMaxY(_label.frame), kScreenW, CGRectGetMaxY(_backGroundView.frame)-40-20)];
-    scrollView.backgroundColor = [UIColor colorWithRed:1.000 green:0.392 blue:0.318 alpha:1.00];
+//    scrollView.backgroundColor = [UIColor colorWithRed:1.000 green:0.392 blue:0.318 alpha:1.00];
+    scrollView.backgroundColor = [UIColor whiteColor];
     scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView = scrollView;
     [_backGroundView addSubview:scrollView];

@@ -21,5 +21,5 @@
 
 + (void)hideHUDForView:(UIView *)view;
 + (void)hideHUD;
-
++ (void )showMessage:(NSString *)message dimissAftertime:(int) second;
 @end

@@ -24,6 +24,7 @@
 #import "MJExtension.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
+#import "MBProgressHUD+MJ.h"
 
 #define ScreenW   [UIScreen mainScreen].bounds.size.width
 #define ScreenH    [UIScreen mainScreen].bounds.size.height

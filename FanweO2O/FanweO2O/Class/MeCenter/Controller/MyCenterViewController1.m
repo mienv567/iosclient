@@ -41,6 +41,9 @@
     self.contentView.layer.shadowOffset = CGSizeMake(0,3);
     self.contentView.layer.cornerRadius = 20;
     [self.contentView.layer masksToBounds];
+    self.photoImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickLogInBtn:)];
+    [self.photoImageView addGestureRecognizer:tap];
     
 }
 
@@ -100,7 +103,10 @@
 - (IBAction)clickLogInBtn:(UIButton *)sender {  
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
 }
+/*付款码*/
 - (IBAction)clickPayMoney:(UIButton *)sender {
+    MBProgressHUD *hud = [MBProgressHUD showMessage:@"该功能正在开发中,敬请期待" ];
+    [hud hide:YES afterDelay:1];
 }
 
 //扫码
@@ -147,14 +153,17 @@
         }
         
     } else if (btn.tag == 3) {//分享有礼
-        FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];
-        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_share",
-                              API_LOTTERYOUT_URL];
-        jumpModel.url =urlString;
-        jumpModel.type = 0;
-        jumpModel.isHideNavBar = YES;
-        jumpModel.isHideTabBar = YES;
-        [FWO2OJump didSelect:jumpModel];
+        
+        MBProgressHUD *hud = [MBProgressHUD showMessage:@"暂无活动,敬请期待" ];
+        [hud hide:YES afterDelay:1];
+//        FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];
+//        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_share",
+//                              API_LOTTERYOUT_URL];
+//        jumpModel.url =urlString;
+//        jumpModel.type = 0;
+//        jumpModel.isHideNavBar = YES;
+//        jumpModel.isHideTabBar = YES;
+//        [FWO2OJump didSelect:jumpModel];
         
     } else if (btn.tag == 4) {//客服中心
         

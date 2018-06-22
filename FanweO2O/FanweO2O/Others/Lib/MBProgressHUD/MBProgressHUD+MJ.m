@@ -76,4 +76,12 @@
 {
     [self hideHUDForView:nil];
 }
+
++ (void )showMessage:(NSString *)message  dimissAftertime:(int) second {
+   MBProgressHUD *hud =  [self showMessage:message toView:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(second * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [hud hide:YES];
+    });
+}
+
 @end

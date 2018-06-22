@@ -39,7 +39,6 @@
     self.LoginBtn.layer.cornerRadius = self.LoginBtn.height / 2;
     self.contentView.layer.shadowColor =  [UIColor blackColor].CGColor;
     self.contentView.layer.shadowOpacity = 0.8f;
-//    self.contentView.layer.shadowOffset = CGSizeMake(4,4);
     [self.LoginBtn.layer masksToBounds];
     self.contentView.layer.cornerRadius = 5;
     [self.contentView.layer masksToBounds];
@@ -274,7 +273,8 @@
             _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
             _FanweApp.session_id = [MyTool dicObject:responseJson[@"sess_id"]];
             _FanweApp.is_login =YES;
-            
+            [[NSUserDefaults standardUserDefaults ] setObject:@"is_log" forKey:@"is_log"];
+         
             if([XNSiteID length] > 0 && [XNKey length] > 0){
                 
                 NSString *userLevel = @"0";       // 用户级别。 普通用户“0”，VIP用户传“1”到“5”。（“0”为默认值）    【必填】

@@ -117,6 +117,11 @@
 
 //设置按钮点击
 -(void)clickIcon:(UIButton *)btn {
+    if (!kis_login) {
+        LogInViewController *vc = [[LogInViewController alloc] init];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+        return;
+    }
     if (btn.tag == 1){ //优惠券控制器
         if (kOlderVersion<=2) {
             FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];

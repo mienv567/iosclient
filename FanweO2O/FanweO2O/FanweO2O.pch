@@ -26,6 +26,8 @@
 #import "MJRefresh.h"
 #import "MBProgressHUD+MJ.h"
 
+
+#define kis_login  [[[NSUserDefaults standardUserDefaults] objectForKey:@"is_log"] isEqualToString:@"is_log"]
 #define ScreenW   [UIScreen mainScreen].bounds.size.width
 #define ScreenH    [UIScreen mainScreen].bounds.size.height
 #define kScreenWidthRatio        (ScreenW / 375.0)

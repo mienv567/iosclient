@@ -51,6 +51,7 @@
     [self.contentView addGestureRecognizer:tap1];
     self.bgImageVeiw.userInteractionEnabled = YES;
     [self.bgImageVeiw addGestureRecognizer:tap1];
+    lesstime = 60;
     
     
     _httpManager = [NetHttpsManager manager];
@@ -71,8 +72,8 @@
             return;
         }
         
-        if ([self.MessageTF.text length] == 0) {
-            [[HUDHelper sharedInstance] tipMessage:@"请输入短信验证码~"];
+        if ([self.MessageTF.text length] != 5) {
+            [[HUDHelper sharedInstance] tipMessage:@"请输入正确的短信验证码~"];
             return;
         }
         if ([self.msg_id length] == 0) {
@@ -89,9 +90,14 @@
         
         [_httpManager POSTWithParameters:parmDict
                             SuccessBlock:^(NSDictionary *responseJson) {
-                                NSLog(@"==================\n%@",responseJson);
-                                [responseJson createPropertyCode];
                                 HideIndicatorInView(self.view);
+                                NSString *info = responseJson[@"info"];
+                                if ([info containsString:@"无"]) {
+                                    [[HUDHelper sharedInstance] tipMessage:@"请输入正确的验证码~"];
+                                    return ;
+                                }
+                                 [[HUDHelper sharedInstance] tipMessage:[MyTool dicObject:responseJson[@"info"]]];
+                                [responseJson createPropertyCode];
                                 if ([responseJson[@"status"] integerValue] == 0) {
                                     
 //                                    _FanweApp.user_id = [MyTool dicObject:responseJson[@"id"]];
@@ -114,7 +120,6 @@
                                     [self dismissViewControllerAnimated:YES completion:nil];
                                     
                                 }
-                                [[HUDHelper sharedInstance] tipMessage:[MyTool dicObject:responseJson[@"info"]]];
                                 
                             } FailureBlock:^(NSError *error) {
                                 
@@ -202,7 +207,6 @@
                             HideIndicatorInView(self.view);
                             self.msg_id = responseJson[@"msg_id"];
                             if ([responseJson[@"status"] integerValue] == 1) {
-                                lesstime = [responseJson[@"lesstime"] integerValue];
                                 [self daojishi];
                             }
                             [[HUDHelper sharedInstance] tipMessage:responseJson[@"info"]];
@@ -296,15 +300,15 @@
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
     
-    [self.btnCode setTitleColor:kAppFontColorLightGray forState:UIControlStateNormal];
-    
+    [self.btnCode setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
     dispatch_source_set_event_handler(_timer, ^{
         if(timeout<=0){ //倒计时结束，关闭
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
                 [self.btnCode setTitle:@"发送验证码" forState:UIControlStateNormal];
-                [self.btnCode setTitleColor:kAppFontColorComblack forState:UIControlStateNormal];
+                [self.btnCode setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 self.btnCode.userInteractionEnabled = YES;
             });
         }else{

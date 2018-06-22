@@ -65,7 +65,7 @@
     int             _loadTimeCount;     //计算webview加载页面的时间
     CGFloat _headImgWH;
     NSData *_headImgData;
-    int i;  //加载图动画
+    int i;  // 加载网页耗时计数用于加载动画
 }
 
 
@@ -137,7 +137,7 @@
     [super viewWillAppear:animated];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
+    [self.timer setFireDate:[NSDate distantPast]];
     if (_isBackReload)
     {
         [self.webView reload];
@@ -154,10 +154,9 @@
     if (_isShowLaunchImgView && _isFirstLoad) {
         _isShowLaunchImgView = NO;
         _launchImgView.hidden = NO;
-    }else{
+    } else {
         _launchImgView.hidden = YES;
     }
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -165,6 +164,12 @@
     if (_isHideNavBar || _isRegist) {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     }
+    [self.timer setFireDate:[NSDate distantFuture]];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)viewDidLoad {
@@ -329,7 +334,7 @@
     UILabel *loadL = [[UILabel alloc]initWithFrame:CGRectMake(21, 100, 88, 10)];
     i = 0;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(repeatOfLoadingImg) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
     loadL.text =@"加载中";
     loadL.textColor = kMainColor;
     loadL.font =[UIFont systemFontOfSize:15];
@@ -383,7 +388,6 @@
 //    }];
     
     [self.view bringSubviewToFront:self.progressView];
-    
 }
 
 - (void)repeatOfLoadingImg {
@@ -509,6 +513,8 @@
 #pragma mark 加载出错
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"%s",__func__);
+    [self.timer invalidate];
+    self.timer = nil;
     
     if([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus<1 && !_isLoadError && !_isFirstLoad)
     {

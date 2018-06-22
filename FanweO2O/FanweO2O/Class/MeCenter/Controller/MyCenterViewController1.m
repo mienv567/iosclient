@@ -97,8 +97,7 @@
          
     }
 }
-- (IBAction)clickLogInBtn:(UIButton *)sender {
-  
+- (IBAction)clickLogInBtn:(UIButton *)sender {  
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
 }
 - (IBAction)clickPayMoney:(UIButton *)sender {

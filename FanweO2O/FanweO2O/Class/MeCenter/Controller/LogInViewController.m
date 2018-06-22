@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageVeiw;
 
 @property (nonatomic, assign) NSInteger selectType;
-
+@property (nonatomic, strong) NSString *msg_id;
 @end
 
 @implementation LogInViewController
@@ -52,6 +52,12 @@
     self.bgImageVeiw.userInteractionEnabled = YES;
     [self.bgImageVeiw addGestureRecognizer:tap1];
     
+    
+    _httpManager = [NetHttpsManager manager];
+    _FanweApp = [GlobalVariables sharedInstance];
+    
+//    _agreement_link = _FanweApp.appModel.privacy_link;
+//    _has_wx_login = (int)_FanweApp.appModel.has_wx_login;
 }
 //登录
 - (IBAction)LogInClick:(id)sender {
@@ -59,25 +65,25 @@
     [self.teletNumTF resignFirstResponder];
 
     
-    if (self.selectType == 1001) {
+    if (self.selectType == 0) {
         if (![self.teletNumTF.text isTelephone]) {
-            
             [[HUDHelper sharedInstance] tipMessage:@"请输入正确的手机号码~"];
-            
             return;
         }
         
         if ([self.MessageTF.text length] == 0) {
-            
             [[HUDHelper sharedInstance] tipMessage:@"请输入短信验证码~"];
-            
             return;
         }
-        
+        if ([self.msg_id length] == 0) {
+            [[HUDHelper sharedInstance] tipMessage:@"验证码已经失效,请重新输入验证码~"];
+            return;
+        }
         ShowIndicatorTextInView(self.view,@"");
         NSMutableDictionary *parmDict = [NSMutableDictionary new];
         [parmDict setObject:@"user" forKey:@"ctl"];
         [parmDict setObject:@"dophlogin" forKey:@"act"];
+        [parmDict setObject:self.msg_id forKey:@"msg_id"];
         [parmDict setObject:self.teletNumTF.text forKey:@"mobile"];
         [parmDict setObject:self.MessageTF.text forKey:@"sms_verify"];
         
@@ -86,13 +92,13 @@
                                 NSLog(@"==================\n%@",responseJson);
                                 [responseJson createPropertyCode];
                                 HideIndicatorInView(self.view);
-                                if ([responseJson[@"status"] integerValue] == 1) {
+                                if ([responseJson[@"status"] integerValue] == 0) {
                                     
-                                    _FanweApp.user_id = [MyTool dicObject:responseJson[@"id"]];
-                                    _FanweApp.user_email = [MyTool dicObject:responseJson[@"email"]];
-                                    _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
+//                                    _FanweApp.user_id = [MyTool dicObject:responseJson[@"id"]];
+//                                    _FanweApp.user_email = [MyTool dicObject:responseJson[@"email"]];
+//                                    _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
                                     _FanweApp.user_mobile = [MyTool dicObject:responseJson[@"mobile"]];
-                                    _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
+//                                    _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
                                     _FanweApp.session_id = [MyTool dicObject:responseJson[@"sess_id"]];
                                     _FanweApp.is_login = YES;
                                     
@@ -105,7 +111,7 @@
                                     [[NSNotificationCenter defaultCenter] postNotificationName:Fw_O2O_ACCOUNT_LOGIN_SUCCESS
                                                                                         object:nil
                                                                                       userInfo:nil];
-                                    [self.navigationController popViewControllerAnimated:YES];
+                                    [self dismissViewControllerAnimated:YES completion:nil];
                                     
                                 }
                                 [[HUDHelper sharedInstance] tipMessage:[MyTool dicObject:responseJson[@"info"]]];
@@ -194,7 +200,7 @@
     [_httpManager POSTWithParameters:parmDict
                         SuccessBlock:^(NSDictionary *responseJson) {
                             HideIndicatorInView(self.view);
-                            NSLog(@"%@",responseJson);
+                            self.msg_id = responseJson[@"msg_id"];
                             if ([responseJson[@"status"] integerValue] == 1) {
                                 lesstime = [responseJson[@"lesstime"] integerValue];
                                 [self daojishi];
@@ -205,6 +211,7 @@
                             HideIndicatorInView(self.view);
                             [[HUDHelper sharedInstance] tipMessage:kNetErrorMsg];
                         }];
+    
 }
 
 
@@ -327,6 +334,7 @@
 - (IBAction)clickDismissBtn:(id)sender {
     [[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 -(void)bgclick {
     [self.view endEditing:YES];

@@ -65,7 +65,7 @@
     int             _loadTimeCount;     //计算webview加载页面的时间
     CGFloat _headImgWH;
     NSData *_headImgData;
-   
+    int i;  //加载图动画
 }
 
 
@@ -322,15 +322,18 @@
         }
     }
     
-
-    
     [self.view addSubview:self.webView];
     UIImageView *imgv = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 44, SCREEN_HEIGHT / 2 - 50, 88, 100)];
     imgv.image = [UIImage imageNamed:@"loading_img"];
     imgv.contentMode= UIViewContentModeScaleAspectFit;
     UILabel *loadL = [[UILabel alloc]initWithFrame:CGRectMake(21, 100, 88, 10)];
-    loadL.text =@"加载中...";
+    i = 0;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(repeatOfLoadingImg) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    loadL.text =@"加载中";
+    loadL.textColor = kMainColor;
     loadL.font =[UIFont systemFontOfSize:15];
+    self.loadingLabel = loadL;
     [imgv addSubview:loadL];
     [self.view addSubview:imgv];
     
@@ -382,12 +385,24 @@
     [self.view bringSubviewToFront:self.progressView];
     
 }
+
+- (void)repeatOfLoadingImg {
+    NSArray *arr = @[@"加载中.",@"加载中..",@"加载中..."];
+    i += 1;
+    self.loadingLabel.text = arr[i % arr.count];
+}
+
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
 
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
         
         CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
         self.loadingImgView.hidden = newprogress != 0 ? YES : NO;
+        if (_loadingImgView.isHidden) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
         if (newprogress == 1) {
             self.progressView.hidden = YES;
             [self.progressView setProgress:0 animated:NO];

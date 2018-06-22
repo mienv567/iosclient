@@ -8,6 +8,7 @@
 
 #import "CategoryViewController.h"
 #import "CategoryCell.h"
+#import "StoreWebViewController.h"
 
 static NSString *collectionID = @"collection";
 @interface CategoryViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -58,7 +59,7 @@ static NSString *collectionID = @"collection";
     collectionView.delegate = self;
     collectionView.dataSource = self;
     collectionView.backgroundColor = [UIColor whiteColor];
-    collectionView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
+    collectionView.contentInset = UIEdgeInsetsMake(35, 20, 20, 20);
     self.collectionV = collectionView;
 }
 
@@ -109,12 +110,11 @@ static NSString *collectionID = @"collection";
     }
 }
 
+// 点击跳转商家列表
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // 加气 加油 换轮胎 维修保养 保险 整车
-    NSLog(@"%ld",indexPath.row);
-    
+    StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:[NSString stringWithFormat:@"http://o2o.365csh.com/wap/index.php?ctl=stores&cid=%ld",(indexPath.row + 1)] andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+    [self.navigationController pushViewController:vc animated:YES];
 }
-
-
 
 @end

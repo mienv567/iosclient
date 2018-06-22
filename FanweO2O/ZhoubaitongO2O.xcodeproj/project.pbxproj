@@ -682,6 +682,7 @@
 		DC4CEC0D20D9369100858C47 /* CouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEC0B20D9369100858C47 /* CouponCell.m */; };
 		DC4CEC0E20D9369100858C47 /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC4CEC0C20D9369100858C47 /* CouponCell.xib */; };
 		DC4CEC1120D93F6800858C47 /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CEC1020D93F6800858C47 /* CouponModel.m */; };
+		DC4E36B320DD2CAF001DB9D0 /* StoreWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4E36B220DD2CAF001DB9D0 /* StoreWebViewController.m */; };
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
@@ -2140,6 +2141,8 @@
 		DC4CEC0C20D9369100858C47 /* CouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
 		DC4CEC0F20D93F6800858C47 /* CouponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
 		DC4CEC1020D93F6800858C47 /* CouponModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CouponModel.m; sourceTree = "<group>"; };
+		DC4E36B120DD2CAF001DB9D0 /* StoreWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreWebViewController.h; sourceTree = "<group>"; };
+		DC4E36B220DD2CAF001DB9D0 /* StoreWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreWebViewController.m; sourceTree = "<group>"; };
 		DC50637F20ADBE960093244C /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		DC50638020ADBE960093244C /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		DC50638220ADBE960093244C /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
@@ -5410,6 +5413,8 @@
 			children = (
 				DC4CEBFA20D6413900858C47 /* CategoryViewController.h */,
 				DC4CEBFB20D6413900858C47 /* CategoryViewController.m */,
+				DC4E36B120DD2CAF001DB9D0 /* StoreWebViewController.h */,
+				DC4E36B220DD2CAF001DB9D0 /* StoreWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -5975,6 +5980,7 @@
 				9F6704D31EE7923100359078 /* XNHPTextViewInternal.m in Sources */,
 				34659D7B1DFA44D000498C60 /* AFAutoPurgingImageCache.m in Sources */,
 				DC4CEC1120D93F6800858C47 /* CouponModel.m in Sources */,
+				DC4E36B320DD2CAF001DB9D0 /* StoreWebViewController.m in Sources */,
 				34659DB91DFA461A00498C60 /* UIImage+GIF.m in Sources */,
 				04D32A261DF84D48009F3371 /* NavigationViewController.m in Sources */,
 				643D08C31E2F48C600D13CBC /* AccountXPTableViewCell.m in Sources */,

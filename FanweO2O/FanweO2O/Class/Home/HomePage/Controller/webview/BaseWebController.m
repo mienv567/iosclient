@@ -325,6 +325,17 @@
 
     
     [self.view addSubview:self.webView];
+    UIImageView *imgv = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 44, SCREEN_HEIGHT / 2 - 50, 88, 100)];
+    imgv.image = [UIImage imageNamed:@"loading_img"];
+    imgv.contentMode= UIViewContentModeScaleAspectFit;
+    UILabel *loadL = [[UILabel alloc]initWithFrame:CGRectMake(21, 100, 88, 10)];
+    loadL.text =@"加载中...";
+    loadL.font =[UIFont systemFontOfSize:15];
+    [imgv addSubview:loadL];
+    [self.view addSubview:imgv];
+    
+    self.loadingImgView = imgv;
+    
 //    self.webView.scrollView.bounces=NO;
     self.webView.scrollView.showsHorizontalScrollIndicator=NO;
     self.webView.scrollView.showsVerticalScrollIndicator=NO;
@@ -376,6 +387,7 @@
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
         
         CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
+        self.loadingImgView.hidden = newprogress != 0 ? YES : NO;
         if (newprogress == 1) {
             self.progressView.hidden = YES;
             [self.progressView setProgress:0 animated:NO];
@@ -486,7 +498,7 @@
     if([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus<1 && !_isLoadError && !_isFirstLoad)
     {
         _isFirstLoad = NO;
-//        [FanweMessage alert:@"亲，您的网络状况不大好哦！"];
+        [FanweMessage alert:@"亲，您的网络状况不大好哦！"];
     }else
     {
         [self performSelector:@selector(loadErrorView) withObject:nil afterDelay:2];

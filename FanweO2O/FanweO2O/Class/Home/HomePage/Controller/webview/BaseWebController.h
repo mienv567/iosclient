@@ -33,6 +33,7 @@
 @property (nonatomic, strong) UIImageView       *launchImgView;         // 某些情况用来遮盖当前页面，等页面加载完后再隐藏
 @property (nonatomic, strong) shareModel        *myShareModel;          //当前分享的实体
 @property (nonatomic, assign) CGSize            size;                   //裁剪图片时的size
+@property (nonatomic, strong) UIImageView       *loadingImgView;
 
 @property (nonatomic,copy) NSString *cookieStr2;
 +(instancetype)webControlerWithWebView:(WKWebView *)webView;

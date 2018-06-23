@@ -20,12 +20,13 @@
 #import "AccountManagementViewController.h"
 
 #import "HWScanViewController.h"
+#import "UIActionSheet+camera.h"
 
-
-@interface MyCenterViewController1 ()
+@interface MyCenterViewController1 ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic, strong)  UINavigationBar *bar;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (nonatomic, strong) UIImage *image;//头像
 
 @end
 
@@ -42,7 +43,7 @@
     self.contentView.layer.cornerRadius = 20;
     [self.contentView.layer masksToBounds];
     self.photoImageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickLogInBtn:)];
+    UITapGestureRecognizer *tap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoClick)];
     [self.photoImageView addGestureRecognizer:tap];
     
 }
@@ -77,6 +78,18 @@
 //设置按钮点击
 -(void)tap1 {
     [self.navigationController pushViewController: [[SetViewController alloc] init] animated:YES];
+}
+
+//头像点击
+-(void)photoClick {
+    if(!kis_login){
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
+    }else {
+        //调用相机
+        UIActionSheet *cameraActionSheet = [UIActionSheet showCameraActionSheet];
+        cameraActionSheet.targer = self;
+        [cameraActionSheet showInView:self.view];
+     }
 }
 // 设置底部6个按钮
 -(void)setUI {
@@ -179,4 +192,56 @@
         [self presentViewController:my animated:YES completion:nil];
     }
 }
+    
+    
+#pragma mark - UIImagePickerController Delegate
+    //当选择一张图片后进入这里
+    -(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+    {
+        
+        NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+        
+        //当选择的类型是图片
+        if ([type isEqualToString:@"public.image"])
+        {
+            //先把图片转成NSData
+            _image = [info objectForKey:UIImagePickerControllerEditedImage];
+            
+            //压缩图片
+            NSData *imageNewData = UIImageJPEGRepresentation(_image, 0.5);
+            //上传到阿里云
+            [self requestCommitImageData:imageNewData];
+            
+            //关闭相册界面
+            [picker dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+    
+    /** 取消相机 */
+    - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+    {
+        [picker dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+    
+#pragma mark - Request
+    /** 上传头像 */
+    -  (void)  requestCommitImageData:(NSData *)imageData{
+//        [WLLoginDataHandle requestUploadPhotoWithUid:self.id filedata:imageData success:^(id responseObject) {
+//            NSDictionary *dic = responseObject;
+//            if ([dic[@"code"]integerValue ] == 1) {
+//                [self.photo setImage:self.image forState:UIControlStateNormal];
+//                [MOProgressHUD showSuccessWithStatus:@"上传成功"];
+//                [MOProgressHUD dismiss];
+//
+//                self.photoUrl = dic[@"link"];
+//            }else{
+//                [MOProgressHUD showErrorWithStatus:dic[@"msg"]];
+//                [MOProgressHUD dismissWithDelay:1];
+//            }
+//        } failure:^(NSError *error) {
+//
+//        }];
+    }
+
 @end

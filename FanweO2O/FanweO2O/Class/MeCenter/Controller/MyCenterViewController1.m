@@ -18,6 +18,7 @@
 #import "MyCollectVC.h"
 #import "AbountUsViewController.h"
 #import "AccountManagementViewController.h"
+#import "MoneyViewController.h"
 
 #import "HWScanViewController.h"
 #import "UIActionSheet+camera.h"
@@ -126,6 +127,16 @@
 - (IBAction)QRCodeScan:(id)sender {
     HWScanViewController *vc = [[HWScanViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)moneyClick:(id)sender {
+    if (kis_login) {
+        LogInViewController *vc = [[LogInViewController alloc] init];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+    } else {
+        MoneyViewController *vc = [[MoneyViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 //设置按钮点击

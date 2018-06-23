@@ -84,12 +84,24 @@
                                 <action selector="clickPayMoney:" destination="-1" eventType="touchUpInside" id="nqN-Pc-tUy"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-FF-hlU">
+                            <rect key="frame" x="30" y="76" width="107" height="84"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="107" id="1fg-vU-RDX"/>
+                                <constraint firstAttribute="height" constant="84" id="fyz-3o-jim"/>
+                            </constraints>
+                            <connections>
+                                <action selector="moneyClick:" destination="-1" eventType="touchUpInside" id="Vvy-zj-AdG"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.13725490196078433" green="0.14509803921568629" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="zhd-xU-R8g" firstAttribute="top" secondItem="p3y-mT-0Yk" secondAttribute="top" constant="-37" id="0Bz-wU-Nkd"/>
+                        <constraint firstItem="FlP-FF-hlU" firstAttribute="top" secondItem="zhd-xU-R8g" secondAttribute="bottom" constant="24" id="0dS-dk-y81"/>
                         <constraint firstItem="k67-rX-xVR" firstAttribute="top" secondItem="p3y-mT-0Yk" secondAttribute="top" id="2gA-PH-RGa"/>
                         <constraint firstItem="txT-zp-3uu" firstAttribute="top" secondItem="rmx-CX-cDq" secondAttribute="bottom" constant="16" id="5Yq-SL-NgW"/>
+                        <constraint firstItem="FlP-FF-hlU" firstAttribute="leading" secondItem="p3y-mT-0Yk" secondAttribute="leading" constant="30" id="CJx-rJ-eLr"/>
                         <constraint firstAttribute="height" constant="216" id="FVs-tl-Xjb"/>
                         <constraint firstAttribute="trailing" secondItem="k67-rX-xVR" secondAttribute="trailing" constant="-45" id="LxA-8m-J5d"/>
                         <constraint firstItem="zhd-xU-R8g" firstAttribute="leading" secondItem="p3y-mT-0Yk" secondAttribute="leading" constant="30" id="N4e-eD-aUe"/>

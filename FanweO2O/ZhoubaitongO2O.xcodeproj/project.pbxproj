@@ -687,6 +687,10 @@
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
 		DC65D55820DE7F8200F57413 /* UIActionSheet+camera.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65D55720DE7F8100F57413 /* UIActionSheet+camera.m */; };
+		DC65D55B20DE835F00F57413 /* MoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65D55A20DE835F00F57413 /* MoneyViewController.m */; };
+		DC65D55F20DE83A700F57413 /* MoneyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65D55D20DE83A700F57413 /* MoneyViewCell.m */; };
+		DC65D56020DE83A700F57413 /* MoneyViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC65D55E20DE83A700F57413 /* MoneyViewCell.xib */; };
+		DC65D56320DE856200F57413 /* MoneyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65D56220DE856200F57413 /* MoneyModel.m */; };
 		DCA19A2020D93D4900F97F66 /* HWScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19A1F20D93D4900F97F66 /* HWScanViewController.m */; };
 		DCA19A9420DA836700F97F66 /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19A8420DA836600F97F66 /* NSString+PinYin4Cocoa.m */; };
 		DCA19A9520DA836700F97F66 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCA19A8520DA836600F97F66 /* unicode_to_hanyu_pinyin.txt */; };
@@ -2152,6 +2156,13 @@
 		DC50638620ADBE960093244C /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
 		DC65D55620DE7F8100F57413 /* UIActionSheet+camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+camera.h"; sourceTree = "<group>"; };
 		DC65D55720DE7F8100F57413 /* UIActionSheet+camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+camera.m"; sourceTree = "<group>"; };
+		DC65D55920DE835F00F57413 /* MoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyViewController.h; sourceTree = "<group>"; };
+		DC65D55A20DE835F00F57413 /* MoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyViewController.m; sourceTree = "<group>"; };
+		DC65D55C20DE83A700F57413 /* MoneyViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyViewCell.h; sourceTree = "<group>"; };
+		DC65D55D20DE83A700F57413 /* MoneyViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyViewCell.m; sourceTree = "<group>"; };
+		DC65D55E20DE83A700F57413 /* MoneyViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoneyViewCell.xib; sourceTree = "<group>"; };
+		DC65D56120DE856200F57413 /* MoneyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyModel.h; sourceTree = "<group>"; };
+		DC65D56220DE856200F57413 /* MoneyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyModel.m; sourceTree = "<group>"; };
 		DCA19A1E20D93D4900F97F66 /* HWScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWScanViewController.h; sourceTree = "<group>"; };
 		DCA19A1F20D93D4900F97F66 /* HWScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWScanViewController.m; sourceTree = "<group>"; };
 		DCA19A8120DA836600F97F66 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
@@ -3314,6 +3325,13 @@
 				16D040F71E66BA290038F2D8 /* EditAddrVC.h */,
 				16D040F81E66BA290038F2D8 /* EditAddrVC.m */,
 				16D040F91E66BA290038F2D8 /* EditAddrVC.xib */,
+				DC65D55920DE835F00F57413 /* MoneyViewController.h */,
+				DC65D55A20DE835F00F57413 /* MoneyViewController.m */,
+				DC65D55C20DE83A700F57413 /* MoneyViewCell.h */,
+				DC65D55D20DE83A700F57413 /* MoneyViewCell.m */,
+				DC65D55E20DE83A700F57413 /* MoneyViewCell.xib */,
+				DC65D56120DE856200F57413 /* MoneyModel.h */,
+				DC65D56220DE856200F57413 /* MoneyModel.m */,
 			);
 			path = useraddr;
 			sourceTree = "<group>";
@@ -5662,6 +5680,7 @@
 				340792E91E6E8E2B00B570F3 /* MyOrderDetailsSection4TBCell.xib in Resources */,
 				04D3288E1DF8488A009F3371 /* Assets.xcassets in Resources */,
 				643D08C91E2F8C6700D13CBC /* BindingPhoneViewController.xib in Resources */,
+				DC65D56020DE83A700F57413 /* MoneyViewCell.xib in Resources */,
 				341FE1861E24EC15007A7A0B /* ActivityTableViewCell.xib in Resources */,
 				645C73451E77F3380033E794 /* read_me.txt in Resources */,
 				341362E31E0A61BB003B11DA /* SVProgressHUD.bundle in Resources */,
@@ -6024,6 +6043,7 @@
 				64C2F1E81E80B76C009633CB /* ConsumptionPickUpGoodsViewController.m in Sources */,
 				3463C8F91E2F0E80000409AD /* StoreListModel.m in Sources */,
 				04D32A201DF84D48009F3371 /* CommonBaseViewController.m in Sources */,
+				DC65D55F20DE83A700F57413 /* MoneyViewCell.m in Sources */,
 				64471BB61E4AC65700690CD4 /* WXSPercentDrivenInteractiveTransition.m in Sources */,
 				64471BBB1E4AC65700690CD4 /* WXSTransitionManager+InsideThenPushAnimation.m in Sources */,
 				9F6054EA1ED284980054106C /* DLAVAlertViewButtonTheme.m in Sources */,
@@ -6093,6 +6113,7 @@
 				04D32A1D1DF84D48009F3371 /* BaseAppDelegate.m in Sources */,
 				64E736CD1E25BF22004C79FB /* SetFristTableViewCell.m in Sources */,
 				341362E41E0A61BB003B11DA /* SVProgressHUD.m in Sources */,
+				DC65D55B20DE835F00F57413 /* MoneyViewController.m in Sources */,
 				9F6704C01EE7923100359078 /* NTalkerSDWebImageDownloader.m in Sources */,
 				9F6704CB1EE7923100359078 /* NTalkerTTTAttributedLabel.m in Sources */,
 				04D32B931DF8502C009F3371 /* NSObject+Json.m in Sources */,
@@ -6210,6 +6231,7 @@
 				9F6704E61EE7923100359078 /* XNVideoPlayerView.m in Sources */,
 				348ED47E1DFE2EDE00491185 /* BannerModel.m in Sources */,
 				341362B81E0A5F30003B11DA /* NSString+Addition.m in Sources */,
+				DC65D56320DE856200F57413 /* MoneyModel.m in Sources */,
 				9F6704D61EE7923100359078 /* NTalkerImageRightTableViewCell.m in Sources */,
 				04D32A1C1DF84D48009F3371 /* PathUtility.m in Sources */,
 				9F6704C71EE7923100359078 /* UIImageView+NTalkerHighlightedWebCache.m in Sources */,

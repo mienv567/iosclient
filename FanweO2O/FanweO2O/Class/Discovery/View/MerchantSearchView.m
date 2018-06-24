@@ -46,6 +46,7 @@ static NSString *const headerViewInden = @"headView";
         [self addSubview:self.MyCollectionVeiw];
         [self addSubview:self.searchTextFieldView];
         [self addSubview:self.hiddenBlackView];
+        [self.searchTextFieldView.searchTextField becomeFirstResponder];
         _httpManager =[NetHttpsManager manager];
         [self updataNewData];
     }
@@ -69,12 +70,11 @@ static NSString *const headerViewInden = @"headView";
         NSMutableDictionary *parameters = [NSMutableDictionary new];
         if (_middleBtnStr ==nil ||[_middleBtnStr isEqualToString:@"团购"]) {
             [parameters setValue:@"tuan" forKey:@"ctl"];
-        }else if([_middleBtnStr isEqualToString:@"商品"]){
+        } else if ([_middleBtnStr isEqualToString:@"商品"]){
             [parameters setValue:@"goods" forKey:@"ctl"];
-        }else if([_middleBtnStr isEqualToString:@"活动"]){
+        } else if ([_middleBtnStr isEqualToString:@"活动"]){
             [parameters setValue:@"events" forKey:@"ctl"];
-        }else
-        {
+        } else {
             [parameters setValue:@"stores" forKey:@"ctl"];
         }
         if (str) {
@@ -95,21 +95,20 @@ static NSString *const headerViewInden = @"headView";
         model.isHideTabBar = YES;
         [FWO2OJump didSelect:model];
 
-    }else if(kOlderVersion >1){
-        if (_middleBtnStr ==nil ||[_middleBtnStr isEqualToString:@"团购"]) {
-            if (_delegate && [_delegate respondsToSelector:@selector(navToViewController:andContent:)]) {
-                [_delegate navToViewController:1 andContent:str];
-            }
-        }else if([_middleBtnStr isEqualToString:@"商城"]){
+    } else if (kOlderVersion >1){
+        if (_middleBtnStr ==nil ||[_middleBtnStr isEqualToString:@"店铺"]) {
             if (_delegate && [_delegate respondsToSelector:@selector(navToViewController:andContent:)]) {
                 [_delegate navToViewController:2 andContent:str];
             }
-        }else if([_middleBtnStr isEqualToString:@"活动"]){
+        } else if ([_middleBtnStr isEqualToString:@"团购"]){
+            if (_delegate && [_delegate respondsToSelector:@selector(navToViewController:andContent:)]) {
+                [_delegate navToViewController:1 andContent:str];
+            }
+        }else if ([_middleBtnStr isEqualToString:@"活动"]){
             if (_delegate && [_delegate respondsToSelector:@selector(navToViewController:andContent:)]) {
                 [_delegate navToViewController:3 andContent:str];
             }
-        }else
-        {
+        } else {
             if (_delegate && [_delegate respondsToSelector:@selector(navToViewController:andContent:)]) {
                 [_delegate navToViewController:4  andContent:str];
             }
@@ -177,7 +176,6 @@ static NSString *const headerViewInden = @"headView";
             [testDict setObject:@"热门搜索" forKey:@"section_title"];
             [testDict setObject:dic forKey:@"section_content"];
             [self.modelArray addObject:testDict];
-            
         }
         NSMutableDictionary *historyDic = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"1",@"section_id",@"历史搜索",@"section_title", nil];
         NSArray *historyArray = [[NSUserDefaults standardUserDefaults] objectForKey:MerchantSearch];
@@ -387,15 +385,14 @@ static NSString *const headerViewInden = @"headView";
        _hiddenBlackView.frame =CGRectMake(12, CGRectGetMaxY(_searchTextFieldView.frame), 80, 120);
        _triangleImageView.frame =CGRectMake(22, CGRectGetMaxY(_searchTextFieldView.frame)-15, 25, 28);
         
-    }else
-    {
+    } else {
         _hiddenBlackView.frame= CGRectMake(42, CGRectGetMaxY(_searchTextFieldView.frame), 80, 120);
         _triangleImageView.frame = CGRectMake(52, CGRectGetMaxY(_searchTextFieldView.frame)-15, 25, 28);
     }
 }
 - (UIView *)hiddenBlackView
 {
-    array =@[@"团购",@"商城",@"活动",@"店铺"];
+    array =@[@"店铺",@"团购",@"活动",@"店铺"];
     if (_hiddenBlackView ==nil) {
         _hiddenBlackView =[[UIView alloc] init];
         _hiddenBlackView.backgroundColor =[UIColor colorWithRed:0.200 green:0.200 blue:0.200 alpha:0.9];
@@ -442,8 +439,7 @@ static NSString *const headerViewInden = @"headView";
     NSLog(@"%@",_searchTextFieldView.searchTextField.text);
     if ([[_searchTextFieldView.searchTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""] ) {
         [FanweMessage alert:@"请输入搜索内容"];
-    }else
-    {
+    } else {
         if ([self.searchArray containsObject:_searchTextFieldView.searchTextField.text]) {
             [self endEditing:YES];
             [self upDateInternet:_searchTextFieldView.searchTextField.text];
@@ -457,7 +453,6 @@ static NSString *const headerViewInden = @"headView";
         [[NSUserDefaults standardUserDefaults]setObject:self.searchArray forKey:@"MerchantSearch"];
         [self upDateInternet:_searchTextFieldView.searchTextField.text];
         self.searchTextFieldView.searchTextField.text =nil;
-
     }
    
 }

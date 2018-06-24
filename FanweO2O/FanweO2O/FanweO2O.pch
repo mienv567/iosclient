@@ -26,6 +26,11 @@
 #import "MJRefresh.h"
 #import "MBProgressHUD+MJ.h"
 
+// 发送通知
+#define NOTIFY_POST(_notifyName,_notifyObject)   [[NSNotificationCenter defaultCenter] postNotificationName:_notifyName object:_notifyObject];
+
+// 移除通知
+#define NOTIFY_REMOVE(_notifyName) [[NSNotificationCenter defaultCenter] removeObserver:self name:_notifyName object:nil];
 
 #define kis_login  [[[NSUserDefaults standardUserDefaults] objectForKey:@"is_log"] isEqualToString:@"is_log"]
 #define ScreenW   [UIScreen mainScreen].bounds.size.width

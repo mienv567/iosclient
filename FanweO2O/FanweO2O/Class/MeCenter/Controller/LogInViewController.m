@@ -91,22 +91,24 @@
                             SuccessBlock:^(NSDictionary *responseJson) {
                                 HideIndicatorInView(self.view);
                                 NSString *info = responseJson[@"info"];
-                                if (![info  isKindOfClass: [NSNull class]]) {
                                     if ([info containsString:@"无"]) {
                                         [[HUDHelper sharedInstance] tipMessage:@"请输入正确的验证码~"];
                                         return ;
                                     }
-                                }
-                               
+                                [[NSUserDefaults standardUserDefaults] setObject:@"is_log" forKey:@"is_log"];
                                  [[HUDHelper sharedInstance] tipMessage:[MyTool dicObject:responseJson[@"info"]]];
                                 [responseJson createPropertyCode];
-                                if ([responseJson[@"status"] integerValue] == 0) {
-                                    
-//                                    _FanweApp.user_id = [MyTool dicObject:responseJson[@"id"]];
+                                if ([responseJson[@"status"] integerValue] == 1) {
+//      http://o2o.365csh.com/mapi/public/avatar/noavatar.gif
+                                    _FanweApp.user_id = [MyTool dicObject:responseJson[@"id"]];
 //                                    _FanweApp.user_email = [MyTool dicObject:responseJson[@"email"]];
-//                                    _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
+                                    _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
+//                                    头像
+//                                    _FanweApp.user_avatar = [MyTool dicObject:[NSString stringWithFormat:@"http://o2o.365csh.com/mapi/%@",responseJson[@"avatar"]]];
+                                    _FanweApp.user_avatar =@"http://o2o.365csh.com/public/avatar/noavatar.gif";
+                                    NOTIFY_POST(@"user_avatar", _FanweApp.user_avatar);
                                     _FanweApp.user_mobile = [MyTool dicObject:responseJson[@"mobile"]];
-//                                    _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
+                                    _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
                                     _FanweApp.session_id = [MyTool dicObject:responseJson[@"sess_id"]];
                                     _FanweApp.is_login = YES;
                                     

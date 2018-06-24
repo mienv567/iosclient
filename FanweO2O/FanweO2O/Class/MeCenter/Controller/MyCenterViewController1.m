@@ -24,6 +24,11 @@
 #import "UIActionSheet+camera.h"
 
 @interface MyCenterViewController1 ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+{
+        NetHttpsManager *_httpManager;
+        GlobalVariables *_FanweApp;
+        NSInteger lesstime;
+}
 @property (nonatomic, strong)  UINavigationBar *bar;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -48,7 +53,36 @@
     UITapGestureRecognizer *tap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoClick)];
     [self.photoImageView addGestureRecognizer:tap];
     self.httpsManager = [NetHttpsManager manager];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoChange:) name:@"user_avatar" object:nil];
+}
+- (void)photoChange:(NSNotification *)notification{
+   
+    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"http://o2o.365csh.com/public/avatar/noavatar.gif"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    
+        CGFloat w = 90;
+        CGFloat h = 90;
+        CGRect ctxRect = CGRectMake(0, 0, w, h);
+        if (image == nil) return ;
+        // 1.开启图形上下文
+        // scale:比例因子 像素与点比例
+        UIGraphicsBeginImageContextWithOptions(ctxRect.size,NO, 0);
+        // 2.描述圆形裁剪区域
+        UIBezierPath *clipPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, w, h)];
+        // 3.设置裁剪区域
+        [clipPath addClip];
+        
+        // 4.画图片
+        [image drawAtPoint:CGPointZero];
+        
+        // 5.获取图片
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        // 6.关闭上下文
+        UIGraphicsEndImageContext();
+        self.photoImageView.image = image;
+    }];
+  
+  
 }
 
 - (UINavigationBar *)bar {
@@ -133,7 +167,7 @@
 }
 
 - (IBAction)moneyClick:(id)sender {
-    if (kis_login) {
+    if (!kis_login) {
         LogInViewController *vc = [[LogInViewController alloc] init];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
     } else {

@@ -15,8 +15,8 @@
     if (rowCount == 0) {
         // Display a message when the table is empty
         UIView *emptyView = [[UIView alloc]initWithFrame:self.frame];
-        CGFloat imgW = 168.0f;
-        CGFloat imgH = 122.0f;
+        CGFloat imgW = 150.0f;
+        CGFloat imgH = 91.0f;
         CGFloat centerX = self.frame.size.width * 0.5;
         CGFloat centerY = self.frame.size.height * 0.4;
         UIImageView *emptyImageView  = [[UIImageView alloc] initWithFrame:CGRectMake(centerX-imgW*0.5,centerY-imgH, imgW, imgH)];
@@ -24,8 +24,8 @@
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(emptyImageView.frame)+20, self.frame.size.width, 15)];
         label.text = message;
+        label.textColor = kMainColor;
         label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = kAppFontColorLightGray;
         label.font = [UIFont systemFontOfSize:15];
         
         

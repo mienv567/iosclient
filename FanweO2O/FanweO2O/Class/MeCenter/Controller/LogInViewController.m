@@ -99,8 +99,8 @@
                                  [[HUDHelper sharedInstance] tipMessage:[MyTool dicObject:responseJson[@"info"]]];
                                 [responseJson createPropertyCode];
                                 if ([responseJson[@"status"] integerValue] == 1) {
-//      http://o2o.365csh.com/mapi/public/avatar/noavatar.gif
                                     _FanweApp.user_id = [MyTool dicObject:responseJson[@"id"]];
+                                    _FanweApp.user_money = [MyTool dicObject:responseJson[@"money"]];
 //                                    _FanweApp.user_email = [MyTool dicObject:responseJson[@"email"]];
                                     _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
 //                                    头像

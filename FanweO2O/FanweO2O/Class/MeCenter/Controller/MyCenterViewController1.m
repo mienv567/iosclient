@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic, strong) UIImage *image;//头像
 @property (nonatomic, strong) NetHttpsManager   *httpsManager;      // 网络请求封装
+@property (weak, nonatomic) IBOutlet UILabel *monyLable;
 
 @end
 
@@ -54,7 +55,10 @@
     [self.photoImageView addGestureRecognizer:tap];
     self.httpsManager = [NetHttpsManager manager];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoChange:) name:@"user_avatar" object:nil];
+    _FanweApp = [GlobalVariables sharedInstance];
+
 }
+
 - (void)photoChange:(NSNotification *)notification{
    
     [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"http://o2o.365csh.com/public/avatar/noavatar.gif"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
@@ -81,7 +85,8 @@
         UIGraphicsEndImageContext();
         self.photoImageView.image = image;
     }];
-  
+    NSString *money = _FanweApp.user_money;
+    self.monyLable.text =[NSString stringWithFormat:@"%0.2f", [money floatValue]];
   
 }
 

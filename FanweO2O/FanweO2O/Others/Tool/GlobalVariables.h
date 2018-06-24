@@ -13,6 +13,7 @@
 
 @property (nonatomic, copy) NSString *user_id;        //用户id
 @property (nonatomic, copy) NSString *user_name;      //用户名
+@property (nonatomic, copy) NSString *user_money;      //用户钱
 @property (nonatomic, copy) NSString *user_pwd;       //用户密码
 @property (nonatomic, copy) NSString *user_avatar;    //用户头像
 @property (nonatomic, copy) NSString *user_email;     //用户邮箱

@@ -54,6 +54,7 @@
 //暂时使用.....
 #import "SetViewController.h"
 #import "MessageCenterViewController.h"
+#import "DiscoveryViewController.h"
 
 #import "NTalkerChatViewController.h"
 #import "XNGoodsInfoModel.h"
@@ -965,7 +966,8 @@
 // 点击首页搜索框调用
 - (void)goToDiscoveryViewController
 {
-    SearchViewController *vc = [[SearchViewController alloc] init];
+    DiscoveryViewController *vc = [[DiscoveryViewController alloc] init];
+//    SearchViewController *vc = [[SearchViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 //    self.tabBarController.selectedIndex = 1;
 //    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"tabBarItemCount"];

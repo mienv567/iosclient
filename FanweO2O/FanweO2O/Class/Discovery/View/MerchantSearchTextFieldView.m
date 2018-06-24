@@ -39,7 +39,7 @@
         _middleBtn =[UIButton buttonWithType:UIButtonTypeCustom];
         _middleBtn.frame =CGRectMake(5, 0, 50, 28);
         
-        [_middleBtn setTitle:@"团购" forState:UIControlStateNormal];
+        [_middleBtn setTitle:@"店铺" forState:UIControlStateNormal];
         
         [_middleBtn setTitleColor:KAppMainTextBackColor forState:UIControlStateNormal];
         _middleBtn.titleLabel.font =kAppTextFont12;
@@ -57,7 +57,7 @@
         imageView.image =[UIImage imageNamed:@"search"];
         [_middleView addSubview:imageView];
         self.searchTextField =[[UITextField alloc] init];
-        self.searchTextField.placeholder =@"搜索团购";
+        self.searchTextField.placeholder =@"搜索店铺";
         self.searchTextField.font =KAppTextFont13;
         self.searchTextField.clearButtonMode = UITextFieldViewModeAlways;
         [_middleView addSubview:self.searchTextField];

@@ -7,7 +7,7 @@
 //
 
 #import "MoneyViewController.h"
-
+#import "MoneyViewCell.h"
 @interface MoneyViewController ()
 
 @end
@@ -18,31 +18,29 @@
     [super viewDidLoad];
     
     self.tableView.tableHeaderView = nil;
+    [self.tableView registerNib:[UINib nibWithNibName:@"MoneyViewCell" bundle:nil] forCellReuseIdentifier:@"MoneyViewCell"];
     
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 20;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    MoneyViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MoneyViewCell" forIndexPath:indexPath];
+ 
+ 
     return cell;
 }
-*/
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 64;
+}
 
 @end

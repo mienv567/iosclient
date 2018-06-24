@@ -121,8 +121,9 @@
 }
 /*付款码*/
 - (IBAction)clickPayMoney:(UIButton *)sender {
-    MBProgressHUD *hud = [MBProgressHUD showMessage:@"该功能正在开发中,敬请期待" ];
-    [hud hide:YES afterDelay:1];
+//    MBProgressHUD *hud = [MBProgressHUD showMessage:@"该功能正在开发中,敬请期待" ];
+//    [hud hide:YES afterDelay:1];
+     [[HUDHelper sharedInstance] tipMessage:@"该功能正在开发中,敬请期待~"];
 }
 
 //扫码
@@ -184,9 +185,7 @@
         }
         
     } else if (btn.tag == 3) {//分享有礼
-        
-        MBProgressHUD *hud = [MBProgressHUD showMessage:@"暂无活动,敬请期待" ];
-        [hud hide:YES afterDelay:1];
+        [[HUDHelper sharedInstance] tipMessage:@"暂无活动,敬请期待~"];
 //        FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];
 //        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_share",
 //                              API_LOTTERYOUT_URL];

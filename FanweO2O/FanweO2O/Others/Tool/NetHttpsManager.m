@@ -346,6 +346,7 @@ static id _httpsManager;
 
 
         }  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"上传成功  349")
             NSHTTPCookie *sessinCookie;
             NSHTTPCookieStorage *sharedHTTPCookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
             NSArray *cookies = [sharedHTTPCookieStorage cookiesForURL:[NSURL URLWithString:urlString]];
@@ -363,6 +364,7 @@ static id _httpsManager;
 
 
             NSDictionary *resposeJson = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+            NSLog(@"上传成功  %@",resposeJson);
 
             if (resposeJson) {
                 if([resposeJson count]){
@@ -395,6 +397,8 @@ static id _httpsManager;
 
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             DebugLog(@"%@",error);
+            NSLog(@"上传失败  400")
+
             if (PostFailure!=nil) {
                 PostFailure(error);
             }

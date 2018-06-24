@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic, strong) UIImage *image;//头像
+@property (nonatomic, strong) NetHttpsManager   *httpsManager;      // 网络请求封装
 
 @end
 
@@ -46,7 +47,8 @@
     self.photoImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoClick)];
     [self.photoImageView addGestureRecognizer:tap];
-    
+    self.httpsManager = [NetHttpsManager manager];
+
 }
 
 - (UINavigationBar *)bar {
@@ -228,31 +230,27 @@
         }
     }
     
-    /** 取消相机 */
-    - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-    {
-        [picker dismissViewControllerAnimated:YES completion:nil];
-    }
-    
+/** 取消相机 */
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
     
 #pragma mark - Request
-    /** 上传头像 */
-    -  (void)  requestCommitImageData:(NSData *)imageData{
-//        [WLLoginDataHandle requestUploadPhotoWithUid:self.id filedata:imageData success:^(id responseObject) {
-//            NSDictionary *dic = responseObject;
-//            if ([dic[@"code"]integerValue ] == 1) {
-//                [self.photo setImage:self.image forState:UIControlStateNormal];
-//                [MOProgressHUD showSuccessWithStatus:@"上传成功"];
-//                [MOProgressHUD dismiss];
-//
-//                self.photoUrl = dic[@"link"];
-//            }else{
-//                [MOProgressHUD showErrorWithStatus:dic[@"msg"]];
-//                [MOProgressHUD dismissWithDelay:1];
-//            }
-//        } failure:^(NSError *error) {
-//
-//        }];
-    }
+/** 上传头像 */
+-  (void)  requestCommitImageData:(NSData *)imageData{
+    NSMutableDictionary *parmDict = [NSMutableDictionary dictionary];
+    
+    [parmDict setObject:@"uc_account" forKey:@"ctl"];
+    [parmDict setObject:@"upload_avatar" forKey:@"act"];
+
+    [self.httpsManager imageResponse:parmDict imageData:imageData SuccessBlock:^(NSDictionary *responseJson) {
+
+    } FailureBlock:^(NSError *error) {
+        NSLog(@"%@",error.description);
+          NSLog(@"%@上传失败",error.description);
+    }];
+}
 
 @end

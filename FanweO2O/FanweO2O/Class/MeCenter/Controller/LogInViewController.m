@@ -71,7 +71,7 @@
             return;
         }
         
-        if ([self.MessageTF.text length] != 5) {
+        if ([self.MessageTF.text length] != 6) {
             [[HUDHelper sharedInstance] tipMessage:@"请输入正确的短信验证码~"];
             return;
         }
@@ -91,10 +91,13 @@
                             SuccessBlock:^(NSDictionary *responseJson) {
                                 HideIndicatorInView(self.view);
                                 NSString *info = responseJson[@"info"];
-                                if ([info containsString:@"无"]) {
-                                    [[HUDHelper sharedInstance] tipMessage:@"请输入正确的验证码~"];
-                                    return ;
+                                if (![info  isKindOfClass: [NSNull class]]) {
+                                    if ([info containsString:@"无"]) {
+                                        [[HUDHelper sharedInstance] tipMessage:@"请输入正确的验证码~"];
+                                        return ;
+                                    }
                                 }
+                               
                                  [[HUDHelper sharedInstance] tipMessage:[MyTool dicObject:responseJson[@"info"]]];
                                 [responseJson createPropertyCode];
                                 if ([responseJson[@"status"] integerValue] == 0) {

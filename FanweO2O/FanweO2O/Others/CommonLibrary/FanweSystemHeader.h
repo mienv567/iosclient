@@ -51,18 +51,18 @@ static __inline__ CGFloat MainScreenHeight()
 
 #endif
 
-// 日志输出宏定义2
-#ifdef DEBUG
-// 调试状态
-#ifndef DebugLog
-#define DebugLog(fmt, ...) NSLog((@"[%s Line %d]" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#endif
-#else
-// 发布状态
-#ifndef DebugLog
-#define DebugLog(fmt, ...) // NSLog((@"[%s Line %d]" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#endif
-#endif
+//// 日志输出宏定义2
+//#ifdef DEBUG
+//// 调试状态
+//#ifndef DebugLog
+//#define DebugLog(fmt, ...) NSLog((@"[%s Line %d]" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+//#endif
+//#else
+//// 发布状态
+//#ifndef DebugLog
+//#define DebugLog(fmt, ...) // NSLog((@"[%s Line %d]" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+//#endif
+//#endif
 
 
 #endif /* FanweSystemHeader_h */

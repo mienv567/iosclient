@@ -67,7 +67,7 @@
 - (void)logChange:(NSNotification *)notification{
     NSString * infoDic = [notification object];
     if ([infoDic isEqualToString:@"login"]) {
-    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"http://o2o.365csh.com/public/avatar/noavatar.gif"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:nil];
+    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"ht"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:nil];
 
         NSString *money = _FanweApp.user_money;
         self.monyLable.text =[NSString stringWithFormat:@"%0.2f元", [money floatValue]];

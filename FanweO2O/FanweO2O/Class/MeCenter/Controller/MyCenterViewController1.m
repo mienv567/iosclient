@@ -60,47 +60,26 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logChange:) name:@"logChange" object:nil];
 
     _FanweApp = [GlobalVariables sharedInstance];
+    [self logChange:nil];
 
 }
 
 - (void)logChange:(NSNotification *)notification{
     NSString * infoDic = [notification object];
     if ([infoDic isEqualToString:@"login"]) {
-    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"http://o2o.365csh.com/public/avatar/noavatar.gif"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-    
-        CGFloat w = 90;
-        CGFloat h = 90;
-        CGRect ctxRect = CGRectMake(0, 0, w, h);
-        if (image == nil) return ;
-        // 1.开启图形上下文
-        // scale:比例因子 像素与点比例
-        UIGraphicsBeginImageContextWithOptions(ctxRect.size,NO, 0);
-        // 2.描述圆形裁剪区域
-        UIBezierPath *clipPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, w, h)];
-        // 3.设置裁剪区域
-        [clipPath addClip];
-        
-        // 4.画图片
-        [image drawAtPoint:CGPointZero];
-        
-        // 5.获取图片
-        image = UIGraphicsGetImageFromCurrentImageContext();
-        
-        // 6.关闭上下文
-        UIGraphicsEndImageContext();
-        self.photoImageView.image = image;
-    }];
-    NSString *money = _FanweApp.user_money;
-    self.monyLable.text =[NSString stringWithFormat:@"%0.2f元", [money floatValue]];
-    self.monyLable.textColor =  RGB(212,163,88);
-    self.vipImage.hidden = NO;
-    self.vipLable.hidden = NO;
-    self.loginBtn.hidden = YES;
-    self.nameLable.hidden = NO;
+    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"http://o2o.365csh.com/public/avatar/noavatar.gif"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:nil];
+
+        NSString *money = _FanweApp.user_money;
+        self.monyLable.text =[NSString stringWithFormat:@"%0.2f元", [money floatValue]];
+        self.monyLable.textColor =  RGB(212,163,88);
+        self.vipImage.hidden = NO;
+        self.vipLable.hidden = NO;
+        self.loginBtn.hidden = YES;
+        self.nameLable.hidden = NO;
 //    self.vipLable.text = [NSString stringWithFormat:@"%@",];
-    self.nameLable.text  = _FanweApp.user_name;
-        
-        
+        self.nameLable.text  = _FanweApp.user_name;
+        self.photoImageView.layer.borderColor = RGB(212,163,88).CGColor;
+        self.photoImageView.layer.borderWidth = 2;
     }  else {
         self.monyLable.text =[NSString stringWithFormat:@"登录后查看"];
         self.monyLable.textColor =  [UIColor whiteColor];

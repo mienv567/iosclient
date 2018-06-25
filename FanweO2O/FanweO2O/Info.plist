@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
-	<string>易通购</string>
+	<string>方维O2O</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -194,18 +194,6 @@
 	<string>访问地理位置</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>是否允许此App使用你的麦克风？</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>是否允许此app使用相册？
-
-</string>
-	<key>Privacy - Photo Library Additions Usage Description
-
-Privacy - Photo Library Additions Usage Description
-
-</key>
-	<string>是否允许此app使用相册？
-
-</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -218,5 +206,17 @@ Privacy - Photo Library Additions Usage Description
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>是否允许此app使用相册？
+
+</string>
+	<key>Privacy - Photo Library Additions Usage Description
+
+Privacy - Photo Library Additions Usage Description
+
+</key>
+	<string>是否允许此app使用相册？
+
+</string>
 </dict>
 </plist>

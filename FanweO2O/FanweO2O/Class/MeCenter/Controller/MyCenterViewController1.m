@@ -236,7 +236,18 @@
 //        [FWO2OJump didSelect:jumpModel];
         
     } else if (btn.tag == 4) {//客服中心
-        
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"客服电话" message:@"是否拨打客服电话:0000000" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *act1 = [UIAlertAction actionWithTitle:@"拨打" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // 拨打电话
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://000000"]];
+
+        }];
+        UIAlertAction *act2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [alertC dismissViewControllerAnimated:true completion:nil];
+        }];
+        [alertC addAction:act1];
+        [alertC addAction:act2];
+        [self presentViewController:alertC animated:true completion:nil];
     } else if (btn.tag == 5) {//关于我们
         AbountUsViewController *vc =[AbountUsViewController new];
         UINavigationController *my =[[UINavigationController alloc] initWithRootViewController:vc];

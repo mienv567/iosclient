@@ -40,11 +40,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3y-mT-0Yk">
                     <rect key="frame" x="16" y="103" width="339" height="216"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_headphoto_def" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-xU-R8g">
-                            <rect key="frame" x="30" y="-37" width="89" height="89"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_headphoto_def" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-xU-R8g">
+                            <rect key="frame" x="30" y="-37" width="90" height="90"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="Gal-eB-PdT"/>
+                                <constraint firstAttribute="height" constant="90" id="O3e-g8-mxJ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="45"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k67-rX-xVR">
-                            <rect key="frame" x="120" y="0.0" width="264" height="52"/>
+                            <rect key="frame" x="120" y="0.0" width="264" height="53"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="264" id="aMJ-5Q-Zl3"/>
                             </constraints>
@@ -56,19 +67,19 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的余额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtp-uA-sGJ">
-                            <rect key="frame" x="47" y="98" width="61.5" height="18"/>
+                            <rect key="frame" x="47" y="99" width="61.5" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录后查看" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9re-ew-0km">
-                            <rect key="frame" x="46" y="124" width="66.5" height="16"/>
+                            <rect key="frame" x="46" y="125" width="66.5" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.98823529409999999" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmx-CX-cDq" customClass="ZMButton">
-                            <rect key="frame" x="245" y="67" width="72" height="48"/>
+                            <rect key="frame" x="245" y="68" width="72" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="Z3W-h4-Tfb"/>
                             </constraints>
@@ -79,7 +90,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txT-zp-3uu" customClass="ZMButton">
-                            <rect key="frame" x="245" y="131" width="72" height="48"/>
+                            <rect key="frame" x="245" y="132" width="72" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="233-YF-kfc"/>
                             </constraints>
@@ -90,7 +101,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-FF-hlU">
-                            <rect key="frame" x="30" y="76" width="107" height="84"/>
+                            <rect key="frame" x="30" y="77" width="107" height="84"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="107" id="1fg-vU-RDX"/>
                                 <constraint firstAttribute="height" constant="84" id="fyz-3o-jim"/>
@@ -100,7 +111,7 @@
                             </connections>
                         </button>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDW-36-ioq">
-                            <rect key="frame" x="120" y="16" width="31" height="20"/>
+                            <rect key="frame" x="121" y="16" width="31" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

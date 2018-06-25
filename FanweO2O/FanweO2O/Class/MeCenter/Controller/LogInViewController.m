@@ -104,9 +104,9 @@
 //                                    _FanweApp.user_email = [MyTool dicObject:responseJson[@"email"]];
                                     _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
 //                                    头像
-//                                    _FanweApp.user_avatar = [MyTool dicObject:[NSString stringWithFormat:@"http://o2o.365csh.com/mapi/%@",responseJson[@"avatar"]]];
+                                    _FanweApp.user_avatar = [MyTool dicObject:[NSString stringWithFormat:@"http://o2o.365csh.com/mapi/%@",responseJson[@"avatar"]]];
                                     _FanweApp.user_avatar =@"http://o2o.365csh.com/public/avatar/noavatar.gif";
-                                    NOTIFY_POST(@"user_avatar", _FanweApp.user_avatar);
+                                    NOTIFY_POST(@"logChange", @"login");
                                     _FanweApp.user_mobile = [MyTool dicObject:responseJson[@"mobile"]];
                                     _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
                                     _FanweApp.session_id = [MyTool dicObject:responseJson[@"sess_id"]];

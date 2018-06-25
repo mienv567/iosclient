@@ -365,35 +365,35 @@ static id _httpsManager;
 
             NSDictionary *resposeJson = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"上传成功  %@",resposeJson);
-
-            if (resposeJson) {
-                if([resposeJson count]){
-
-                    if ([[resposeJson allKeys] containsObject:@"user_login_status"])
-                    { //判断字典中是否含有这个key
-                        if ([resposeJson toInt:@"user_login_status"] == 1) { //判断是否登录状态
-                            if (PostSuccess!=nil) {
-                                PostSuccess(resposeJson);
-                            }
-
-                        }else{
-                                                        //未登录
-                                                        if (PostSuccess!=nil) {
-                                                            PostSuccess(resposeJson);
-                                                        }
-                        }
-                    }else{
-                        if (PostSuccess!=nil) {
-                            PostSuccess(resposeJson);
-                        }
-                    }
-
-                }else {
-                    if (PostSuccess!=nil) {
-                        PostSuccess(resposeJson);
-                    }
-                }
-            }
+            PostSuccess(resposeJson);
+//            if (resposeJson) {
+//                if([resposeJson count]){
+//
+//                    if ([[resposeJson allKeys] containsObject:@"user_login_status"])
+//                    { //判断字典中是否含有这个key
+//                        if ([resposeJson toInt:@"user_login_status"] == 1) { //判断是否登录状态
+//                            if (PostSuccess!=nil) {
+//                                PostSuccess(resposeJson);
+//                            }
+//
+//                        }else{
+//                                                        //未登录
+//                                                        if (PostSuccess!=nil) {
+//                                                            PostSuccess(resposeJson);
+//                                                        }
+//                        }
+//                    }else{
+//                        if (PostSuccess!=nil) {
+//                            PostSuccess(resposeJson);
+//                        }
+//                    }
+//
+//                }else {
+//                    if (PostSuccess!=nil) {
+//                        PostSuccess(resposeJson);
+//                    }
+//                }
+//            }
 
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             DebugLog(@"%@",error);

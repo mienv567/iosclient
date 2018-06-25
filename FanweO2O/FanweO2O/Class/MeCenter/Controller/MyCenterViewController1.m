@@ -21,9 +21,8 @@
 #import "MoneyViewController.h"
 
 #import "HWScanViewController.h"
-#import "UIActionSheet+camera.h"
 
-@interface MyCenterViewController1 ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface MyCenterViewController1 ()
 {
         NetHttpsManager *_httpManager;
         GlobalVariables *_FanweApp;
@@ -38,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLable;
 @property (weak, nonatomic) IBOutlet UILabel *vipLable;
 @property (weak, nonatomic) IBOutlet UIImageView *vipImage;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -57,13 +57,15 @@
     UITapGestureRecognizer *tap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoClick)];
     [self.photoImageView addGestureRecognizer:tap];
     self.httpsManager = [NetHttpsManager manager];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoChange:) name:@"user_avatar" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logChange:) name:@"logChange" object:nil];
+
     _FanweApp = [GlobalVariables sharedInstance];
 
 }
 
-- (void)photoChange:(NSNotification *)notification{
-   
+- (void)logChange:(NSNotification *)notification{
+    NSString * infoDic = [notification object];
+    if ([infoDic isEqualToString:@"login"]) {
     [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"http://o2o.365csh.com/public/avatar/noavatar.gif"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     
         CGFloat w = 90;
@@ -89,11 +91,25 @@
         self.photoImageView.image = image;
     }];
     NSString *money = _FanweApp.user_money;
-    self.monyLable.text =[NSString stringWithFormat:@"%0.2f", [money floatValue]];
+    self.monyLable.text =[NSString stringWithFormat:@"%0.2f元", [money floatValue]];
     self.monyLable.textColor =  RGB(212,163,88);
     self.vipImage.hidden = NO;
     self.vipLable.hidden = NO;
+    self.loginBtn.hidden = YES;
+    self.nameLable.hidden = NO;
 //    self.vipLable.text = [NSString stringWithFormat:@"%@",];
+    self.nameLable.text  = _FanweApp.user_name;
+        
+        
+    }  else {
+        self.monyLable.text =[NSString stringWithFormat:@"登录后查看"];
+        self.monyLable.textColor =  [UIColor whiteColor];
+        self.vipImage.hidden = YES;
+        self.vipLable.hidden = YES;
+        self.loginBtn.hidden = NO;
+        self.nameLable.hidden = YES;
+        self.photoImageView.image = [UIImage imageNamed:@"mine_headphoto_def"];
+    }
 
   
 }
@@ -136,9 +152,7 @@
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
     }else {
         //调用相机
-        UIActionSheet *cameraActionSheet = [UIActionSheet showCameraActionSheet];
-        cameraActionSheet.targer = self;
-        [cameraActionSheet showInView:self.view];
+      [self.navigationController pushViewController:[AccountManagementViewController new] animated:YES];
      }
 }
 // 设置底部6个按钮
@@ -252,51 +266,6 @@
     }
 }
     
-    
-#pragma mark - UIImagePickerController Delegate
-    //当选择一张图片后进入这里
-    -(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-    {
-        
-        NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
-        
-        //当选择的类型是图片
-        if ([type isEqualToString:@"public.image"])
-        {
-            //先把图片转成NSData
-            _image = [info objectForKey:UIImagePickerControllerEditedImage];
-            
-            //压缩图片
-            NSData *imageNewData = UIImageJPEGRepresentation(_image, 0.5);
-            //上传到阿里云
-            [self requestCommitImageData:imageNewData];
-            
-            //关闭相册界面
-            [picker dismissViewControllerAnimated:YES completion:nil];
-        }
-    }
-    
-/** 取消相机 */
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
 
-    
-#pragma mark - Request
-/** 上传头像 */
--  (void)  requestCommitImageData:(NSData *)imageData{
-    NSMutableDictionary *parmDict = [NSMutableDictionary dictionary];
-    
-    [parmDict setObject:@"uc_account" forKey:@"ctl"];
-    [parmDict setObject:@"upload_avatar" forKey:@"act"];
-
-    [self.httpsManager imageResponse:parmDict imageData:imageData SuccessBlock:^(NSDictionary *responseJson) {
-
-    } FailureBlock:^(NSError *error) {
-        NSLog(@"%@",error.description);
-          NSLog(@"%@上传失败",error.description);
-    }];
-}
 
 @end

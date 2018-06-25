@@ -686,7 +686,6 @@
 		DC50638720ADBE960093244C /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638020ADBE960093244C /* ActivityViewController.m */; };
 		DC50638820ADBE960093244C /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638220ADBE960093244C /* ActivityModel.m */; };
 		DC50638920ADBE960093244C /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50638520ADBE960093244C /* ActivityView.m */; };
-		DC65D55820DE7F8200F57413 /* UIActionSheet+camera.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65D55720DE7F8100F57413 /* UIActionSheet+camera.m */; };
 		DC65D55B20DE835F00F57413 /* MoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65D55A20DE835F00F57413 /* MoneyViewController.m */; };
 		DC65D55F20DE83A700F57413 /* MoneyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC65D55D20DE83A700F57413 /* MoneyViewCell.m */; };
 		DC65D56020DE83A700F57413 /* MoneyViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC65D55E20DE83A700F57413 /* MoneyViewCell.xib */; };
@@ -2154,8 +2153,6 @@
 		DC50638320ADBE960093244C /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityModel.h; sourceTree = "<group>"; };
 		DC50638520ADBE960093244C /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
 		DC50638620ADBE960093244C /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
-		DC65D55620DE7F8100F57413 /* UIActionSheet+camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+camera.h"; sourceTree = "<group>"; };
-		DC65D55720DE7F8100F57413 /* UIActionSheet+camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+camera.m"; sourceTree = "<group>"; };
 		DC65D55920DE835F00F57413 /* MoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyViewController.h; sourceTree = "<group>"; };
 		DC65D55A20DE835F00F57413 /* MoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyViewController.m; sourceTree = "<group>"; };
 		DC65D55C20DE83A700F57413 /* MoneyViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyViewCell.h; sourceTree = "<group>"; };
@@ -2822,8 +2819,6 @@
 		04D32A361DF84D49009F3371 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				DC65D55620DE7F8100F57413 /* UIActionSheet+camera.h */,
-				DC65D55720DE7F8100F57413 /* UIActionSheet+camera.m */,
 				DC1497B820D67972000DBDCD /* ZMNavigationBar.h */,
 				DC1497B720D67972000DBDCD /* ZMNavigationBar.m */,
 				DCF6153620D3FB0400BB791B /* ZMButton.h */,
@@ -5589,7 +5584,7 @@
 				TargetAttributes = {
 					04D3287A1DF8488A009F3371 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = GSQLARTU74;
+						DevelopmentTeam = Y9S4FEH265;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -5815,7 +5810,6 @@
 				34277C401E0A0F11000344BC /* FMDatabaseAdditions.m in Sources */,
 				04D32BAC1DF8502C009F3371 /* NSString+MJExtension.m in Sources */,
 				04D328831DF8488A009F3371 /* AppDelegate.mm in Sources */,
-				DC65D55820DE7F8200F57413 /* UIActionSheet+camera.m in Sources */,
 				341362801E0A5DD6003B11DA /* NSString+Sha1.m in Sources */,
 				04D32A1A1DF84D48009F3371 /* NetworkUtility.m in Sources */,
 				34659DB41DFA461A00498C60 /* SDWebImageDownloader.m in Sources */,
@@ -6457,7 +6451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GSQLARTU74;
+				DEVELOPMENT_TEAM = Y9S4FEH265;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -6524,7 +6518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = GSQLARTU74;
+				DEVELOPMENT_TEAM = Y9S4FEH265;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

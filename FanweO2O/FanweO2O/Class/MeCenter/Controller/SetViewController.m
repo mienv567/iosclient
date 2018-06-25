@@ -285,6 +285,7 @@
             self.fanweApp.user_pwd = @"";
             self.fanweApp.session_id = @"";
             self.fanweApp.is_login =NO;
+            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"is_log"];
             [[XNSDKCore sharedInstance] logout];
             [self.navigationController popViewControllerAnimated:YES];
         }

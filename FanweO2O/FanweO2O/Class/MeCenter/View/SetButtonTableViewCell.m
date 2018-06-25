@@ -33,6 +33,7 @@
 }
 - (void)exitButtonClick
 {
+    NOTIFY_POST(@"logChange", @"logout");
     NSLog(@"----> %@",_delegate);
     if (_delegate && [_delegate respondsToSelector:@selector(loginOutEnd)]) {
         [_delegate loginOutEnd];

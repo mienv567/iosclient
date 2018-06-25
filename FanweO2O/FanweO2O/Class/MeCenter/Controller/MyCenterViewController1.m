@@ -60,7 +60,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logChange:) name:@"logChange" object:nil];
 
     _FanweApp = [GlobalVariables sharedInstance];
-    [self logChange:nil];
 
 }
 

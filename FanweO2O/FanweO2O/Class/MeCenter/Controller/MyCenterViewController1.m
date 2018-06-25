@@ -35,6 +35,9 @@
 @property (nonatomic, strong) UIImage *image;//头像
 @property (nonatomic, strong) NetHttpsManager   *httpsManager;      // 网络请求封装
 @property (weak, nonatomic) IBOutlet UILabel *monyLable;
+@property (weak, nonatomic) IBOutlet UILabel *nameLable;
+@property (weak, nonatomic) IBOutlet UILabel *vipLable;
+@property (weak, nonatomic) IBOutlet UIImageView *vipImage;
 
 @end
 
@@ -87,6 +90,11 @@
     }];
     NSString *money = _FanweApp.user_money;
     self.monyLable.text =[NSString stringWithFormat:@"%0.2f", [money floatValue]];
+    self.monyLable.textColor =  RGB(212,163,88);
+    self.vipImage.hidden = NO;
+    self.vipLable.hidden = NO;
+//    self.vipLable.text = [NSString stringWithFormat:@"%@",];
+
   
 }
 

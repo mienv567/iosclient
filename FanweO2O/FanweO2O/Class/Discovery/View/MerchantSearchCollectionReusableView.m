@@ -22,14 +22,12 @@
         UIButton *delectButton = [UIButton buttonWithType:UIButtonTypeCustom];
         delectButton.frame = CGRectMake(kScreenW-16-20,(30-16)/2, 16, 16);
         [delectButton setTitleColor:KAppMainTextBackColor  forState:UIControlStateNormal];
-        [delectButton setImage:[UIImage imageNamed:@"Merchant_search_trash"] forState:UIControlStateNormal];
+        [delectButton setImage:[UIImage imageNamed:@"trash_icon"] forState:UIControlStateNormal];
         [delectButton.titleLabel setFont:KAppTextFont13];
         [delectButton setImage:[UIImage imageNamed:@"trash_icon"] forState:UIControlStateNormal];
         [delectButton addTarget:self action:@selector(delect) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:delectButton];
         _delectButton = delectButton;
-
-
     }
     return self;
 }
@@ -64,10 +62,9 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex ==0) {
+    if (buttonIndex == 0) {
         return;
-    }else
-    {
+    } else {
         if ([self.delectDelegate respondsToSelector:@selector(delectData:)]) {
             [self.delectDelegate delectData:self];
         }

@@ -51,17 +51,15 @@
     self.view.backgroundColor =[UIColor whiteColor];
     [self hiddenNavigationToTbarBarAndBulidNewNavigation];
 }
+
 - (void)hiddenNavigationToTbarBarAndBulidNewNavigation
 {
     merView = [[MerchantSearchView alloc] initSearchViewWithFrame:CGRectMake(0, 0,kScreenW, kScreenH) Parament:nil search:^(NSString *string) {
     }];
     merView.delegate = self;
     [self.view addSubview:merView];
-
-    
-   
-    
 }
+
 - (void)leftButtonClick
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -108,12 +106,5 @@
             break;
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 
 @end

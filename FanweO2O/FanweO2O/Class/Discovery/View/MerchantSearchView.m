@@ -244,8 +244,7 @@ static NSString *const headerViewInden = @"headView";
         }
 //        view.delectButton.hidden = NO;
         reusableView = view;
-    }
-    else {
+    } else {
         
         UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"foot" forIndexPath:indexPath ];
         reusableView = view;

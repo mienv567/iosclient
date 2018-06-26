@@ -21,6 +21,8 @@
 #import "MoneyViewController.h"
 
 #import "HWScanViewController.h"
+#import "InteractiveWebController.h"
+
 
 @interface MyCenterViewController1 ()
 {
@@ -202,8 +204,10 @@
         LogInViewController *vc = [[LogInViewController alloc] init];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
     } else {
-        MoneyViewController *vc = [[MoneyViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_money&act=money_log",
+                              API_LOTTERYOUT_URL];
+        InteractiveWebController *tmpController = [InteractiveWebController webControlerWithUrlString:urlString andNavTitle:@"资金明细" isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+        [[AppDelegate sharedAppDelegate] pushViewController:tmpController];
     }
 }
 
@@ -250,6 +254,7 @@
         }
         
     } else if (btn.tag == 3) {//分享有礼
+        
         [[HUDHelper sharedInstance] tipMessage:@"暂无活动,敬请期待~"];
 //        FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];
 //        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_share",

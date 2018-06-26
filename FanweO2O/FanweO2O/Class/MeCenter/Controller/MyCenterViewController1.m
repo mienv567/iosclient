@@ -60,13 +60,39 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logChange:) name:@"logChange" object:nil];
 
     _FanweApp = [GlobalVariables sharedInstance];
+    
+    if(_FanweApp.is_login)
+    {
+        [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"ht"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:nil];
+        
+        NSString *money = _FanweApp.user_money;
+        self.monyLable.text =[NSString stringWithFormat:@"%0.2f元", [money floatValue]];
+        self.monyLable.textColor =  RGB(212,163,88);
+        self.vipImage.hidden = NO;
+        self.vipLable.hidden = NO;
+        self.loginBtn.hidden = YES;
+        self.nameLable.hidden = NO;
+        //    self.vipLable.text = [NSString stringWithFormat:@"%@",];
+        self.nameLable.text  = _FanweApp.user_name;
+        self.photoImageView.layer.borderColor = RGB(212,163,88).CGColor;
+        self.photoImageView.layer.borderWidth = 2;
+        
+    } else {
+        self.monyLable.text =[NSString stringWithFormat:@"登录后查看"];
+        self.monyLable.textColor =  [UIColor whiteColor];
+        self.vipImage.hidden = YES;
+        self.vipLable.hidden = YES;
+        self.loginBtn.hidden = NO;
+        self.nameLable.hidden = YES;
+        self.photoImageView.image = [UIImage imageNamed:@"mine_headphoto_def"];
+    }
 
 }
 
 - (void)logChange:(NSNotification *)notification{
     NSString * infoDic = [notification object];
     if ([infoDic isEqualToString:@"login"]) {
-    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"ht"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:nil];
+    [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:_FanweApp.user_avatar] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:nil];
 
         NSString *money = _FanweApp.user_money;
         self.monyLable.text =[NSString stringWithFormat:@"%0.2f元", [money floatValue]];
@@ -126,7 +152,7 @@
 
 //头像点击
 -(void)photoClick {
-    if(!kis_login){
+    if(!_FanweApp.is_login){
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
     }else {
         //调用相机
@@ -172,7 +198,7 @@
 }
 
 - (IBAction)moneyClick:(id)sender {
-    if (!kis_login) {
+    if (!_FanweApp.is_login) {
         LogInViewController *vc = [[LogInViewController alloc] init];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
     } else {
@@ -183,7 +209,7 @@
 
 //设置按钮点击
 -(void)clickIcon:(UIButton *)btn {
-    if (!kis_login) {
+    if (!_FanweApp.is_login) {
         LogInViewController *vc = [[LogInViewController alloc] init];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
         return;

@@ -95,7 +95,6 @@
                                         [[HUDHelper sharedInstance] tipMessage:@"请输入正确的验证码~"];
                                         return ;
                                     }
-                                [[NSUserDefaults standardUserDefaults] setObject:@"is_log" forKey:@"is_log"];
                                  [[HUDHelper sharedInstance] tipMessage:[MyTool dicObject:responseJson[@"info"]]];
                                 [responseJson createPropertyCode];
                                 if ([responseJson[@"status"] integerValue] == 1) {
@@ -104,8 +103,8 @@
 //                                    _FanweApp.user_email = [MyTool dicObject:responseJson[@"email"]];
                                     _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
 //                                    头像
-                                    _FanweApp.user_avatar = [MyTool dicObject:[NSString stringWithFormat:@"http://o2o.365csh.com/mapi/%@",responseJson[@"avatar"]]];
-                                    _FanweApp.user_avatar =@"http://o2o.365csh.com/public/avatar/noavatar.gif";
+                                    _FanweApp.user_avatar = [MyTool dicObject:responseJson[@"avatar"]];
+                                 
                                     NOTIFY_POST(@"logChange", @"login");
                                     _FanweApp.user_mobile = [MyTool dicObject:responseJson[@"mobile"]];
                                     _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
@@ -206,12 +205,13 @@
     [parmDict setObject:@"send_sms_code" forKey:@"act"];
     [parmDict setObject:_teletNumTF.text forKey:@"mobile"];
     [parmDict setObject:@"0" forKey:@"unique"];
+     [self daojishi];
     [_httpManager POSTWithParameters:parmDict
                         SuccessBlock:^(NSDictionary *responseJson) {
                             HideIndicatorInView(self.view);
                             self.msg_id = responseJson[@"msg_id"];
                             if ([responseJson[@"status"] integerValue] == 1) {
-                                [self daojishi];
+                               
                             }
                             [[HUDHelper sharedInstance] tipMessage:responseJson[@"info"]];
                             
@@ -278,7 +278,6 @@
             _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
             _FanweApp.session_id = [MyTool dicObject:responseJson[@"sess_id"]];
             _FanweApp.is_login =YES;
-            [[NSUserDefaults standardUserDefaults ] setObject:@"is_log" forKey:@"is_log"];
          
             if([XNSiteID length] > 0 && [XNKey length] > 0){
                 

@@ -19,9 +19,7 @@
 #import "AbountUsViewController.h"
 #import "AccountManagementViewController.h"
 #import "MoneyViewController.h"
-
 #import "HWScanViewController.h"
-#import "InteractiveWebController.h"
 
 
 @interface MyCenterViewController1 ()
@@ -204,10 +202,8 @@
         LogInViewController *vc = [[LogInViewController alloc] init];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
     } else {
-        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_money&act=money_log",
-                              API_LOTTERYOUT_URL];
-        InteractiveWebController *tmpController = [InteractiveWebController webControlerWithUrlString:urlString andNavTitle:@"资金明细" isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
-        [[AppDelegate sharedAppDelegate] pushViewController:tmpController];
+        MoneyViewController *vc = [[MoneyViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

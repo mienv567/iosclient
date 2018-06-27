@@ -701,6 +701,8 @@
 		DCA19A9B20DA836700F97F66 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19A9020DA836600F97F66 /* ChineseToPinyinResource.m */; };
 		DCA19A9C20DA836700F97F66 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19A9120DA836600F97F66 /* PinyinFormatter.m */; };
 		DCA19A9D20DA836700F97F66 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA19A9220DA836600F97F66 /* PinYinForObjc.m */; };
+		DCE2EFC220E3BB350066922A /* headMonerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE2EFC020E3BB350066922A /* headMonerView.m */; };
+		DCE2EFC320E3BB350066922A /* headMonerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE2EFC120E3BB350066922A /* headMonerView.xib */; };
 		DCF6152620D1469500BB791B /* LcLeftTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152520D1469500BB791B /* LcLeftTextField.m */; };
 		DCF6152F20D1F93100BB791B /* BlindCellPhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6152D20D1F93100BB791B /* BlindCellPhoneController.m */; };
 		DCF6153020D1F93100BB791B /* BlindCellPhoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF6152E20D1F93100BB791B /* BlindCellPhoneController.xib */; };
@@ -2181,6 +2183,9 @@
 		DCA19A9120DA836600F97F66 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
 		DCA19A9220DA836600F97F66 /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
 		DCA19A9320DA836600F97F66 /* ZYSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSearchModel.h; sourceTree = "<group>"; };
+		DCE2EFBF20E3BB350066922A /* headMonerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = headMonerView.h; sourceTree = "<group>"; };
+		DCE2EFC020E3BB350066922A /* headMonerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = headMonerView.m; sourceTree = "<group>"; };
+		DCE2EFC120E3BB350066922A /* headMonerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = headMonerView.xib; sourceTree = "<group>"; };
 		DCF6152420D1469500BB791B /* LcLeftTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LcLeftTextField.h; sourceTree = "<group>"; };
 		DCF6152520D1469500BB791B /* LcLeftTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LcLeftTextField.m; sourceTree = "<group>"; };
 		DCF6152C20D1F93100BB791B /* BlindCellPhoneController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlindCellPhoneController.h; sourceTree = "<group>"; };
@@ -3312,6 +3317,9 @@
 				16D040E71E6670D10038F2D8 /* MyAddrVC.h */,
 				16D040E81E6670D10038F2D8 /* MyAddrVC.m */,
 				16D040E91E6670D10038F2D8 /* MyAddrVC.xib */,
+				DCE2EFBF20E3BB350066922A /* headMonerView.h */,
+				DCE2EFC020E3BB350066922A /* headMonerView.m */,
+				DCE2EFC120E3BB350066922A /* headMonerView.xib */,
 				16D040EC1E6675D90038F2D8 /* addrCell.h */,
 				16D040ED1E6675D90038F2D8 /* addrCell.m */,
 				16D040EE1E6675D90038F2D8 /* addrCell.xib */,
@@ -5653,6 +5661,7 @@
 				643D08B61E2CE05800D13CBC /* CustomGoodsComTBCell.xib in Resources */,
 				3489DF6A1E77937600764807 /* SelectRefundShopTBCell.xib in Resources */,
 				643D08BF1E2F1BDC00D13CBC /* AccountTPTableViewCell.xib in Resources */,
+				DCE2EFC320E3BB350066922A /* headMonerView.xib in Resources */,
 				6475B00A1E8F55120044369A /* AlipaySDK.bundle in Resources */,
 				16D040EB1E6670D10038F2D8 /* MyAddrVC.xib in Resources */,
 				161103511E6CF3C2000559C1 /* searchMapVC.xib in Resources */,
@@ -6234,6 +6243,7 @@
 				04D329DA1DF84D47009F3371 /* ADScaleTransition.m in Sources */,
 				34659DBE1DFA461A00498C60 /* UIView+WebCache.m in Sources */,
 				64471B901E49B2D100690CD4 /* PopView.m in Sources */,
+				DCE2EFC220E3BB350066922A /* headMonerView.m in Sources */,
 				9F6704ED1EE7923100359078 /* XNShowProductWebController.m in Sources */,
 				04D329FD1DF84D48009F3371 /* UIView+CaptureImage.m in Sources */,
 				34659DB31DFA461A00498C60 /* SDWebImageDecoder.m in Sources */,

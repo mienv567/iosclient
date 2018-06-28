@@ -64,5 +64,5 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "RefCustomView.h"
 #import "UILabel+ChangeLineSpaceAndWordSpace.h"
-
+#import "WXApi.h"
 #endif /* FanweO2O_pch */

@@ -50,8 +50,8 @@
 #define     UmengKey                @"57689a68e0f55a2a32004ca8"
 // 友盟Secret
 #define     UmengSecret             @"z3ikva5jfcurxvtrycgrbzglayl0lkml"
-// 微信AppID
-#define     WeixinAppId             @"wx35c6c77293983275"
+// 微信AppID     需要修改的上线
+#define     WeixinAppId             @"wxe85ae2c668d01c8f"
 // 微信Secret
 #define     WeixinSecret            @"80d9d4026fe15d63245f44819b3fe315"
 // QQ的AppID

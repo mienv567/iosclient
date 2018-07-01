@@ -19,16 +19,16 @@
 
 #if DEBUGMODE == 0
 
-#define API_BASE_URL          @"http://o2o.365csh.com/mapi/index.php"
-#define API_LOTTERYOUT_URL    @"http://o2o.365csh.com/wap/index.php"
+#define API_BASE_URL          @"https://dev.yitonggo.com/mapi/index.php"
+#define API_LOTTERYOUT_URL    @"https://dev.yitonggo.com/wap/index.php"
 
 //#define API_BASE_URL        @"http://o2o.fanwe.cn/mapi/index.php"
 //#define API_LOTTERYOUT_URL  @"http://o2o.fanwe.cn/wap/index.php"
 
 #else
 
-#define API_BASE_URL          @"http://o2o.365csh.com/mapi/index.php"
-#define API_LOTTERYOUT_URL    @"http://o2o.365csh.com/wap/index.php"
+#define API_BASE_URL          @"https://app.yitonggo.com/mapi/index.php"
+#define API_LOTTERYOUT_URL    @"https://app.yitonggo.com/wap/index.php"
 //#define API_BASE_URL        @"http://testo2onew.fanwe.net/mapi/index.php"
 //#define API_LOTTERYOUT_URL  @"http://testo2onew.fanwe.net/wap/index.php"
 

@@ -152,17 +152,17 @@
                         <action selector="LogInClick:" destination="-1" eventType="touchUpInside" id="yaE-TN-eei"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wexin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lyT-pK-cIP">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wexin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lyT-pK-cIP">
                     <rect key="frame" x="169" y="579" width="38" height="38"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7X-Ks-CM6">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7X-Ks-CM6">
                     <rect key="frame" x="212" y="598" width="143" height="1"/>
                     <color key="backgroundColor" red="0.65490196078431373" green="0.6705882352941176" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="gTf-bg-vtD"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFA-CM-fOR">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFA-CM-fOR">
                     <rect key="frame" x="20" y="598" width="144" height="1"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

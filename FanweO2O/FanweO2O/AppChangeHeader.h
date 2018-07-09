@@ -15,7 +15,7 @@
 #define     VersionNum              @"2.6.4"
 
 
-#define DEBUGMODE 0
+#define DEBUGMODE 1
 
 #if DEBUGMODE == 0
 

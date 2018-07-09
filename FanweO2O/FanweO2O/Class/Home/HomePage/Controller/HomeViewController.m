@@ -344,7 +344,7 @@
     }else if (section == KHomeZt_htm3CellSection) {
         
         if ([self.zt3Html length]) {
-            return 0;
+            return 1;
         }else{
             return 0;
         }
@@ -397,7 +397,8 @@
     } else if (section == KHomeSupplier_listCellSection) {
         return self.supplierListArray.count == 0 ? 0.001f : 10.0f;
     } else if (section == KHomeZt_htm3CellSection) {
-        return 0;
+//        return 0;
+        return [self.zt4Html length] > 0 ? 10.0f : 0.001f;
     } else if (section == KHomeZt_htm4CellSection) {
         return [self.zt4Html length] > 0 ? 10.0f : 0.001f;
     } else if (section == KHomeZt_htm5CellSection) {
@@ -430,11 +431,11 @@
         return FW_HEADELINE_HIGHT;
         
     }else if(indexPath.section == KHomeZt_htm3CellSection) {
-        return 0;
-//        if ([_count1 intValue] !=0) {
-//            return [_count1 intValue];
-//        }
-        //return UITableViewAutomaticDimension;
+//        return 0;
+        if ([_count1 intValue] !=0) {
+            return [_count1 intValue];
+        }
+        return UITableViewAutomaticDimension;
     }else if(indexPath.section == KHomeZt_htm4CellSection) {
         return 0;
 //        if ([_count2 intValue] !=0) {
@@ -525,15 +526,15 @@
 
     } else if (indexPath.section == KHomeZt_htm3CellSection) {
         
-//        static NSString *cellIndent3 =  @"KGroupZt_htm3CellSection";
-//        HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent3] ;
-//        cell.delegate =  self;
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone; //cell被选中后的颜色不变
-//        cell.backgroundColor = kBackGroundColor;
-//        [cell setTableViewTag:KHomeZt_htm3CellSection];
-////        NSLog(@"-------------+++++++++++%@",[self createHTML:self.zt3Html])   ;
-//        [cell setCellContent:self.zt3Html isWebViewDidFinishLoad:self.zt3_isWebViewDidFinishLoad];
-//        return cell;
+        static NSString *cellIndent3 =  @"KGroupZt_htm3CellSection";
+        HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent3] ;
+        cell.delegate =  self;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone; //cell被选中后的颜色不变
+        cell.backgroundColor = kBackGroundColor;
+        [cell setTableViewTag:KHomeZt_htm3CellSection];
+//        NSLog(@"-------------+++++++++++%@",[self createHTML:self.zt3Html])   ;
+        [cell setCellContent:self.zt3Html isWebViewDidFinishLoad:self.zt3_isWebViewDidFinishLoad];
+        return cell;
     }else if (indexPath.section == KHomeZt_htm4CellSection) {
         
 //        static NSString *cellIndent4 =  @"KGroupZt_htm4CellSection";

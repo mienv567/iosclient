@@ -20,13 +20,15 @@
 #import "AccountManagementViewController.h"
 #import "HWScanViewController.h"
 #import "InteractiveWebController.h"
-
+#import "SetModel.h"
 
 @interface MyCenterViewController1 ()
 {
         NetHttpsManager *_httpManager;
         GlobalVariables *_FanweApp;
         NSInteger lesstime;
+        SetModel *_rowModel;
+
 }
 @property (nonatomic, strong)  UINavigationBar *bar;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
@@ -278,13 +280,41 @@
         [alertC addAction:act2];
         [self presentViewController:alertC animated:true completion:nil];
     } else if (btn.tag == 5) {//关于我们
-        AbountUsViewController *vc =[AbountUsViewController new];
-        UINavigationController *my =[[UINavigationController alloc] initWithRootViewController:vc];
-//        vc.htmlContent =_rowModel.APP_ABOUT_US;
-        [self presentViewController:my animated:YES completion:nil];
+    
+        [self updateNetWork];
+       
     }
 }
     
-
+- (void)updateNetWork
+{
+    NSMutableDictionary *dic =[NSMutableDictionary new];
+    [dic setObject:@"setting" forKey:@"ctl"];
+    if (_FanweApp.session_id ==nil) {
+        [dic setObject:@"" forKey:@"session_id"];
+    }else{
+        [dic setObject:_FanweApp.session_id forKey:@"session_id"];
+    }
+    ShowIndicatorTextInView(self.view,@"");
+    [_httpManager POSTWithParameters:dic SuccessBlock:^(NSDictionary *responseJson) {
+        
+        HideIndicatorInView(self.view);
+        
+        if ([responseJson toInt:@"status"] ==1) {
+            _rowModel =[SetModel mj_objectWithKeyValues:responseJson];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                AbountUsViewController *vc =[AbountUsViewController new];
+                UINavigationController *my =[[UINavigationController alloc] initWithRootViewController:vc];
+                vc.htmlContent =_rowModel.APP_ABOUT_US;
+                [self presentViewController:my animated:YES completion:nil];
+            });
+        }
+        
+    } FailureBlock:^(NSError *error) {
+        HideIndicatorInView(self.view);
+        [[HUDHelper sharedInstance] tipMessage:kNetErrorMsg];
+    }];
+    
+}
 
 @end

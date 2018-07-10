@@ -91,11 +91,15 @@
 - (NSString *)seturlString {
 
     NSString *urlString = @"";
-    urlString = [NSString stringWithFormat:@"%@?ctl=cart&sess_id=%@%@",
-                 API_LOTTERYOUT_URL,
-                 self.fanweApp.session_id,
-                 WEB_BASE_INFO
+//    urlString = [NSString stringWithFormat:@"%@?ctl=cart&sess_id=%@%@",
+//                 API_LOTTERYOUT_URL,
+//                 self.fanweApp.session_id,
+//                 WEB_BASE_INFO
+//                 ];
+    urlString = [NSString stringWithFormat:@"%@?ctl=uc_order&tuan=1",
+                 API_LOTTERYOUT_URL
                  ];
+
     return urlString;
 }
 

@@ -100,12 +100,8 @@ static id _httpsManager;
                 if (![cookie.name isEqualToString:@""] && ![cookie.value isEqualToString:@""] ) {
                     [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
                 }
-                
             }
         }
-        
-
-        
         [[DataTool shareDataTool] POST:urlStr parameters:parmDict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
             NSHTTPCookie *sessinCookie;

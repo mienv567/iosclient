@@ -46,7 +46,7 @@
         
         self.view.backgroundColor=RGBOF(hexValue);
     }else{
-        self.view.backgroundColor=RGB(85, 172, 239);
+        self.view.backgroundColor= kBackGroundColor;
     }
     
     self.backGroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, kScreenW, kScreenH-20)];

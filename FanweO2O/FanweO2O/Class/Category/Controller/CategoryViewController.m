@@ -113,7 +113,7 @@ static NSString *collectionID = @"collection";
 // 点击跳转商家列表
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // 加气 加油 换轮胎 维修保养 保险 整车
-    StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:[NSString stringWithFormat:@"http://o2o.365csh.com/wap/index.php?ctl=stores&cid=%ld",(indexPath.row + 1)] andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+    StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:[NSString stringWithFormat:@"https://app.yitonggo.com/wap/index.php?ctl=stores&cid=%ld",(indexPath.row + 1)] andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

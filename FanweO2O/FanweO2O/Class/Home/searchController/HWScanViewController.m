@@ -7,6 +7,7 @@
 //
 
 #import "HWScanViewController.h"
+#import "StoreWebViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 #define KMainW [UIScreen mainScreen].bounds.size.width
@@ -229,7 +230,17 @@
         //停止扫描
         [self stopScanning];
         //显示结果
-        [self showAlertWithTitle:@"扫描结果" message:[[metadataObjects firstObject] stringValue] sureHandler:nil cancelHandler:nil];
+//        [self showAlertWithTitle:@"确认付款吗" message:[[metadataObjects firstObject] stringValue] sureHandler:nil cancelHandler:nil];
+        [self showAlertWithTitle:@"确认付款吗" message:nil sureHandler:^{
+            //                [self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>]
+            //                NSLog(@"%@%@"API_BASE_URL,[[features firstObject] messageString] );
+            NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/%@",[[metadataObjects firstObject] stringValue]];
+//            NSString *url = [NSString stringWithFormat:@"%@user/offline_pay",MAINEWNURL];
+            StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+            [self.navigationController pushViewController:vc animated:YES];
+        } cancelHandler:^{
+            
+        }];
     }
 }
 
@@ -254,8 +265,16 @@
 
         //识别结果
         if (features.count > 0) {
-            [self showAlertWithTitle:@"扫描结果" message:[[features firstObject] messageString] sureHandler:nil cancelHandler:nil];
-            
+//            [self showAlertWithTitle:@"确认付款吗" message:[[features firstObject] messageString] sureHandler:nil cancelHandler:nil];
+            [self showAlertWithTitle:@"确认付款吗" message:nil sureHandler:^{
+//                [self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>]
+//                NSLog(@"%@%@"API_BASE_URL,[[features firstObject] messageString] );
+                NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/mapi/index.php%@",[[features firstObject] messageString] ];
+                StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+            } cancelHandler:^{
+                
+            }];
         }else{
             [self showAlertWithTitle:@"没有识别到二维码或条形码" message:nil sureHandler:nil cancelHandler:nil];
         }
@@ -265,7 +284,7 @@
 //提示弹窗
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message sureHandler:(void (^)())sureHandler cancelHandler:(void (^)())cancelHandler
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:sureHandler];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:cancelHandler];
     [alertController addAction:sureAction];

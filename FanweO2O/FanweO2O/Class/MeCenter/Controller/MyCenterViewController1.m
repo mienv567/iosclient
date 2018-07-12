@@ -63,7 +63,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logChange:) name:@"logChange" object:nil];
 
     _FanweApp = [GlobalVariables sharedInstance];
-    
+    _httpManager = [NetHttpsManager  manager];
     if(_FanweApp.is_login)
     {
         [self.photoImageView sd_setImageWithURL:[NSURL URLWithString:@"ht"] placeholderImage:[UIImage imageNamed:@"mine_headphoto_def"] options:0 completed:nil];
@@ -89,7 +89,6 @@
         self.nameLable.hidden = YES;
         self.photoImageView.image = [UIImage imageNamed:@"mine_headphoto_def"];
     }
-
 }
 
 - (void)logChange:(NSNotification *)notification{
@@ -197,16 +196,7 @@
 //扫码
 - (IBAction)QRCodeScan:(id)sender {
     LoginVCshow
-    if(_FanweApp.is_set_pass){
-        HWScanViewController *vc = [[HWScanViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else {
-        [[HUDHelper sharedInstance] tipMessage:@"请先设置支付密码~"];
-        NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/wap/index.php?ctl=uc_money&act=altPass"];
-        StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-
+    [self askPayPassword];
 }
 
 - (IBAction)moneyClick:(id)sender {
@@ -310,6 +300,34 @@
                 vc.htmlContent =_rowModel.APP_ABOUT_US;
                 [self presentViewController:my animated:YES completion:nil];
             });
+        }
+        
+    } FailureBlock:^(NSError *error) {
+        HideIndicatorInView(self.view);
+        [[HUDHelper sharedInstance] tipMessage:kNetErrorMsg];
+    }];
+    
+}
+
+- (void)askPayPassword
+{
+    NSMutableDictionary *dic =[NSMutableDictionary new];
+    [dic setObject:@"user" forKey:@"ctl"];
+    [dic setObject:@"paypass" forKey:@"act"];
+
+    ShowIndicatorTextInView(self.view,@"");
+    [_httpManager POSTWithParameters:dic SuccessBlock:^(NSDictionary *responseJson) {
+        
+        HideIndicatorInView(self.view);
+
+        if ([responseJson[@"is_set_pass"] isEqualToString:@"1" ]) {
+                    HWScanViewController *vc = [[HWScanViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+        } else {
+            [[HUDHelper sharedInstance] tipMessage:@"请先设置支付密码~"];
+            NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/wap/index.php?ctl=uc_money&act=altPass"];
+            StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         
     } FailureBlock:^(NSError *error) {

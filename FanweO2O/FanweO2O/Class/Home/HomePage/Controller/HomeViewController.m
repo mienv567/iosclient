@@ -1032,15 +1032,7 @@
 - (void)customLeftButton
 {
     LoginVCshow
-    if(_fanweApp.is_set_pass){
-        HWScanViewController *vc = [[HWScanViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    } else {
-         [[HUDHelper sharedInstance] tipMessage:@"请先设置支付密码~"];
-        NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/wap/index.php?ctl=uc_money&act=altPass"];
-             StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+    [self askPayPassword];
  
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
 ////    [UIView animateWithDuration:0.5 animations:^{
@@ -1284,5 +1276,32 @@
     }
 }
 
+- (void)askPayPassword
+{
+    NSMutableDictionary *dic =[NSMutableDictionary new];
+    [dic setObject:@"user" forKey:@"ctl"];
+    [dic setObject:@"paypass" forKey:@"act"];
+    
+    ShowIndicatorTextInView(self.view,@"");
+    [self.httpManager POSTWithParameters:dic SuccessBlock:^(NSDictionary *responseJson) {
+        
+        HideIndicatorInView(self.view);
+        
+        if ([responseJson[@"is_set_pass"] isEqualToString:@"1" ]) {
+            HWScanViewController *vc = [[HWScanViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        } else {
+            [[HUDHelper sharedInstance] tipMessage:@"请先设置支付密码~"];
+            NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/wap/index.php?ctl=uc_money&act=altPass"];
+            StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
+    } FailureBlock:^(NSError *error) {
+        HideIndicatorInView(self.view);
+        [[HUDHelper sharedInstance] tipMessage:kNetErrorMsg];
+    }];
+    
+}
 
 @end

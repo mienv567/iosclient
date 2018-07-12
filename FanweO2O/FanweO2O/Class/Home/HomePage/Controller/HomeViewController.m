@@ -1052,6 +1052,16 @@
 
 }
 
+- (void)checkPayPass {
+    // 查看用户是否已设置支付密码
+    
+    
+    
+}
+
+
+
+
 
 //关闭城市按钮
 - (void)closeBtn

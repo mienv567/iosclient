@@ -104,13 +104,14 @@
                                     _FanweApp.user_name = [MyTool dicObject:responseJson[@"user_name"]];
 //                                    头像
                                     _FanweApp.user_avatar = [MyTool dicObject:responseJson[@"avatar"]];
-                                 
+                                    _FanweApp.is_set_pass = [(NSNumber *)(responseJson[@"is_set_pass"]) isEqual: @(1)] ? YES : NO;
                                     NOTIFY_POST(@"logChange", @"login");
                                     _FanweApp.user_mobile = [MyTool dicObject:responseJson[@"mobile"]];
                                     _FanweApp.user_pwd = [MyTool dicObject:responseJson[@"user_pwd"]];
                                     _FanweApp.session_id = [MyTool dicObject:responseJson[@"sess_id"]];
                                     _FanweApp.is_login = YES;
-                                    
+                                    [[NSUserDefaults standardUserDefaults] setObject:_FanweApp forKey:@"UserInfo"];
+                                    [[NSUserDefaults standardUserDefaults] synchronize];
                                     if([XNSiteID length] > 0 && [XNKey length] > 0){
                                         NSString *userLevel = @"0";       // 用户级别。 普通用户“0”，VIP用户传“1”到“5”。（“0”为默认值）    【必填】
                                         [[XNSDKCore sharedInstance] loginWithUserid:_FanweApp.user_id  andUsername: _FanweApp.user_name andUserLevel: userLevel];

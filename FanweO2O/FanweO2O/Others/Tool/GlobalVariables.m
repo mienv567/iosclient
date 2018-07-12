@@ -41,6 +41,16 @@
     return myInstance;
 }
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+        @"user_id":@"id",
+        @"user_money":@"money",
+        @"user_mobile":@"mobile",
+        @"session_id":@"sess_id",
+        @"user_avatar":@"avatar"
+    };
+}
+
 - (void)mapInit {
     // 要使用百度地图，请先启动BaiduMapManager
     _mapManager = [[BMKMapManager alloc]init];
@@ -280,3 +290,15 @@
 
 
 @end
+
+@implementation UserInfo
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+             @"user_id":@"id"
+             };
+}
+
+@end
+
+

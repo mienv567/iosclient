@@ -42,7 +42,6 @@
 //    [super viewWillAppear:animated];
 //    self.navigationController.navigationBar.hidden =YES;
 //    [self updateNetwork];
-
 }
 
 - (void)viewWillDisappear:(BOOL)animated

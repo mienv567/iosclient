@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSString *user_email;     //用户邮箱
 @property (nonatomic, copy) NSString *user_mobile;    //用户手机号
 @property (nonatomic, copy) NSString *session_id;     //session_id
+@property (nonatomic, assign) BOOL is_set_pass;       //是否已设支付密码
 @property (nonatomic, assign) BOOL needCustomUI;      //是否审核
 @property (nonatomic, assign) BOOL forcedUpgrade;     //是否强制升级
 @property (nonatomic, assign) BOOL needUpgrade;       //是否强制升级
@@ -55,3 +56,24 @@
 - (void)startLocation;
 
 @end
+
+#pragma 存储用户数据的类
+@interface UserInfo : NSObject
+
+@property (nonatomic, copy) NSString        *user_id;
+@property (nonatomic, copy) NSString        *city_name;
+@property (nonatomic, copy) NSString        *money;
+@property (nonatomic, copy) NSString        *mobile;
+@property (nonatomic, copy) NSString        *user_pwd;
+@property (nonatomic, copy) NSString        *sess_id;
+@property (nonatomic, assign) BOOL          *is_set_pass;
+@property (nonatomic, assign) BOOL          *status;
+@property (nonatomic, copy) NSString        *avatar;
+@property (nonatomic, copy) NSString        *is_tmp;
+@property (nonatomic, copy) NSString        *ctl;
+@property (nonatomic, copy) NSString        *act;
+@property (nonatomic, copy) NSString        *user_name;
+@property (nonatomic, copy) NSString        *info;
+
+@end
+

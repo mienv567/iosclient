@@ -10,7 +10,7 @@
 #define AppChangeHeader_h
 
 // app时间版本号（主要用来提示升级等）
-#define     VersionTime             @"2017083003"
+#define     VersionTime             @"6.3"
 // app版本号
 #define     VersionNum              @"2.6.4"
 

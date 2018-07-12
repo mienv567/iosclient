@@ -230,13 +230,9 @@
         //停止扫描
         [self stopScanning];
         //显示结果
-//        [self showAlertWithTitle:@"确认付款吗" message:[[metadataObjects firstObject] stringValue] sureHandler:nil cancelHandler:nil];
         [self showAlertWithTitle:@"确认付款吗" message:nil sureHandler:^{
-            //                [self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>]
-            //                NSLog(@"%@%@"API_BASE_URL,[[features firstObject] messageString] );
             [self.navigationController popToRootViewControllerAnimated:YES];
             NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/%@",[[metadataObjects firstObject] stringValue]];
-//            NSString *url = [NSString stringWithFormat:@"%@user/offline_pay",MAINEWNURL];
             StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
             UITableViewController *tab = [UIApplication sharedApplication].keyWindow.rootViewController;
             [tab.navigationController pushViewController:vc animated:YES];

@@ -57,23 +57,4 @@
 
 @end
 
-#pragma 存储用户数据的类
-@interface UserInfo : NSObject
-
-@property (nonatomic, copy) NSString        *user_id;
-@property (nonatomic, copy) NSString        *city_name;
-@property (nonatomic, copy) NSString        *money;
-@property (nonatomic, copy) NSString        *mobile;
-@property (nonatomic, copy) NSString        *user_pwd;
-@property (nonatomic, copy) NSString        *sess_id;
-@property (nonatomic, assign) BOOL          *is_set_pass;
-@property (nonatomic, assign) BOOL          *status;
-@property (nonatomic, copy) NSString        *avatar;
-@property (nonatomic, copy) NSString        *is_tmp;
-@property (nonatomic, copy) NSString        *ctl;
-@property (nonatomic, copy) NSString        *act;
-@property (nonatomic, copy) NSString        *user_name;
-@property (nonatomic, copy) NSString        *info;
-
-@end
 

@@ -21,6 +21,7 @@
 #import "HWScanViewController.h"
 #import "InteractiveWebController.h"
 #import "SetModel.h"
+#import "StoreWebViewController.h"
 
 @interface MyCenterViewController1 ()
 {
@@ -195,8 +196,15 @@
 
 //扫码
 - (IBAction)QRCodeScan:(id)sender {
-    HWScanViewController *vc = [[HWScanViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    if(_FanweApp.is_set_pass){
+        HWScanViewController *vc = [[HWScanViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        [[HUDHelper sharedInstance] tipMessage:@"请先设置支付密码~"];
+        NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/wap/index.php?ctl=uc_money&act=altPass"];
+        StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (IBAction)moneyClick:(id)sender {

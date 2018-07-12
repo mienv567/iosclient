@@ -229,10 +229,20 @@
     if ([metadataObjects count] > 0) {
         //停止扫描
         [self stopScanning];
+        NSString *url = [NSString stringWithFormat:@"%@",[[metadataObjects firstObject] stringValue]];
+        if (![url containsString:@"/wap/index.php?ctl=uc_money"]) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            [[HUDHelper sharedInstance] tipMessage:@"请扫描指定的商家二维码~"];
+            return ;
+        }
         //显示结果
         [self showAlertWithTitle:@"确认付款吗" message:nil sureHandler:^{
+            
+            
             [self.navigationController popToRootViewControllerAnimated:YES];
             NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/%@",[[metadataObjects firstObject] stringValue]];
+            
+
             StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
             UITableViewController *tab = [UIApplication sharedApplication].keyWindow.rootViewController;
             [tab.navigationController pushViewController:vc animated:YES];
@@ -264,11 +274,18 @@
         //识别结果
         if (features.count > 0) {
 //            [self showAlertWithTitle:@"确认付款吗" message:[[features firstObject] messageString] sureHandler:nil cancelHandler:nil];
+            
+            NSString *url = [NSString stringWithFormat:@"%@",[[features firstObject] stringValue]];
+            if (![url containsString:@"/wap/index.php?ctl=uc_money"]) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+                [[HUDHelper sharedInstance] tipMessage:@"请扫描指定的商家二维码~"];
+                return ;
+            }
             [self showAlertWithTitle:@"确认付款吗" message:nil sureHandler:^{
 //                [self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>]
 //                NSLog(@"%@%@"API_BASE_URL,[[features firstObject] messageString] );
                 [self.navigationController popToRootViewControllerAnimated:YES];
-
+                
                 NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/mapi/index.php%@",[[features firstObject] messageString] ];
                 StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
                 UITableViewController *tab = [UIApplication sharedApplication].keyWindow.rootViewController;

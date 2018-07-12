@@ -60,6 +60,7 @@
 #import "XNGoodsInfoModel.h"
 #import "HWScanViewController.h"
 #import "LogInViewController.h"
+#import "StoreWebViewController.h"
 
 
 #define KHomeArticleCellSection         2   //头条位置
@@ -1027,8 +1028,16 @@
 //选择城市按钮  现在修改为扫码
 - (void)customLeftButton
 {
-    HWScanViewController *vc = [[HWScanViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    if(_fanweApp.is_set_pass){
+        HWScanViewController *vc = [[HWScanViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+         [[HUDHelper sharedInstance] tipMessage:@"请先设置支付密码~"];
+        NSString *urlstring = [NSString stringWithFormat:@"https://app.yitonggo.com/wap/index.php?ctl=uc_money&act=altPass"];
+             StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+ 
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
 ////    [UIView animateWithDuration:0.5 animations:^{
 ////        m.view.frame =CGRectMake(0, 0, kScreenW, kScreenH);
@@ -1050,13 +1059,6 @@
 //
 //    //[self.navigationController pushViewController:[[MessageCenterViewController alloc] init] animated:YES];
 
-}
-
-- (void)checkPayPass {
-    // 查看用户是否已设置支付密码
-    
-    
-    
 }
 
 

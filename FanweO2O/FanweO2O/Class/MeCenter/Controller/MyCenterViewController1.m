@@ -145,22 +145,22 @@
 }
 //聊天按钮点击
 -(void)tap2 {
+    LoginVCshow
     MessageCenterViewController *vc = [[MessageCenterViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 //设置按钮点击
 -(void)tap1 {
+    LoginVCshow
     [self.navigationController pushViewController: [[SetViewController alloc] init] animated:YES];
 }
 
 //头像点击
 -(void)photoClick {
-    if(!_FanweApp.is_login){
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[LogInViewController new] animated:YES completion:nil];
-    }else {
+    LoginVCshow
         //调用相机
-      [self.navigationController pushViewController:[AccountManagementViewController new] animated:YES];
-     }
+    [self.navigationController pushViewController:[AccountManagementViewController new] animated:YES];
+    
 }
 // 设置底部6个按钮
 -(void)setUI {
@@ -205,28 +205,21 @@
         StoreWebViewController *vc = [StoreWebViewController webControlerWithUrlString:urlstring andNavTitle:nil isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
         [self.navigationController pushViewController:vc animated:YES];
     }
+
 }
 
 - (IBAction)moneyClick:(id)sender {
-    if (!_FanweApp.is_login) {
-        LogInViewController *vc = [[LogInViewController alloc] init];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
-    } else {
-        NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_money&act=money_log",
-                              API_LOTTERYOUT_URL];
-        InteractiveWebController *tmpController = [InteractiveWebController webControlerWithUrlString:urlString andNavTitle:@"我的钱包" isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
-        [[AppDelegate sharedAppDelegate] pushViewController:tmpController];
+    LoginVCshow
+    NSString *urlString =[NSString stringWithFormat:@"%@?ctl=uc_money&act=money_log",
+                          API_LOTTERYOUT_URL];
+    InteractiveWebController *tmpController = [InteractiveWebController webControlerWithUrlString:urlString andNavTitle:@"我的钱包" isShowIndicator:YES isHideNavBar:YES isHideTabBar:YES];
+    [[AppDelegate sharedAppDelegate] pushViewController:tmpController];
 
-    }
 }
 
 //设置按钮点击
 -(void)clickIcon:(UIButton *)btn {
-    if (!_FanweApp.is_login) {
-        LogInViewController *vc = [[LogInViewController alloc] init];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
-        return;
-    }
+    LoginVCshow
     if (btn.tag == 1){ //优惠券控制器
         if (kOlderVersion<=2) {
             FWO2OJumpModel *jumpModel =[FWO2OJumpModel new];

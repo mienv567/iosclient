@@ -26,6 +26,16 @@
 #import "MJRefresh.h"
 #import "MBProgressHUD+MJ.h"
 
+// 跳转到登录界面
+
+#define LoginVCshow if (!_FanweApp.is_login) {\
+[[HUDHelper sharedInstance] tipMessage:@"请先登录"];\
+LogInViewController *vc = [[LogInViewController alloc] init];\
+[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];\
+return;\
+}\
+
+
 // 发送通知
 #define NOTIFY_POST(_notifyName,_notifyObject)   [[NSNotificationCenter defaultCenter] postNotificationName:_notifyName object:_notifyObject];
 

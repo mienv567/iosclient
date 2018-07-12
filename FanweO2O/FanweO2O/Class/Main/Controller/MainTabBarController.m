@@ -15,7 +15,7 @@
 #import "MyCenterViewController1.h"
 #import "CategoryViewController.h"
 #import "LogInViewController.h"
-@interface MainTabBarController ()<UITabBarDelegate ,UITabBarControllerDelegate>
+@interface MainTabBarController ()<UITabBarDelegate>
 {
     GlobalVariables *_FanweApp;
 }
@@ -27,13 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.delegate = self;
-    //去除tabbar的横线
     [self.tabBar setClipsToBounds:NO];
     [self bulidTabBarController];
     _FanweApp = [GlobalVariables sharedInstance];
-    
 }
+
 - (void)bulidTabBarController
 {
     [self setupChildViewController:@"首页" viewController:[HomeViewController new] image:@"first_normal" selectedImage:@"first_selected"];
@@ -52,10 +50,10 @@
     } else {
        [self setupChildViewController:@"我的" viewController:[MyCenterViewController1 new] image:@"four_normal" selectedImage:@"four_selected"];
     }
-    
 }
 
 - (void)setupChildViewController:(NSString *)title viewController:(UIViewController *)controller image:(NSString *)image selectedImage:(NSString *)selectedImage {
+    self.delegate = self;
     UITabBarItem *item = [[UITabBarItem alloc]init];
     item.image = [[UIImage imageNamed:image]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     item.selectedImage = [[UIImage imageNamed:selectedImage]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -65,9 +63,10 @@
     BaseNavigationController *navController = [[BaseNavigationController alloc]initWithRootViewController:controller];
     //传图片名字
     navController.imageName =@"goback";
-   
     [self addChildViewController:navController];
-    
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
 }
 
 
@@ -90,19 +89,7 @@
 //    }
 //}
 
-//- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-//    if ([tabBar.items indexOfObject:item] != 4) {
-//        LoginVCshow
-//    }
-//}
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    if (![viewController isKindOfClass:[MyCenterViewController1 class]]) {
-        LogInViewController *vc = [[LogInViewController alloc] init];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
-    }
-    return YES;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

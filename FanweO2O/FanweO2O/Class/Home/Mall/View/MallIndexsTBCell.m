@@ -13,6 +13,7 @@
 #import "UIView+BlocksKit.h"
 #import "FWO2OJumpModel.h"
 #import "FWO2OJump.h"
+#import "LogInViewController.h"
 static NSString *cellIndent =  @"MallIndexsTBCell";
 
 @interface MallIndexsTBCell()
@@ -164,7 +165,6 @@ static NSString *cellIndent =  @"MallIndexsTBCell";
         }
      
     }
-    
 }
 
 - (void)layoutSubviews {
@@ -173,6 +173,7 @@ static NSString *cellIndent =  @"MallIndexsTBCell";
 
 
 - (void)onClick:(id)sender {
+    LoginVCshow
     
     UIButton *btn = (UIButton *)sender;
     MallIndexModel *model = _indexsArray[btn.tag];

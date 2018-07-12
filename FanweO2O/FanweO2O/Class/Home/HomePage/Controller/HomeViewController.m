@@ -61,6 +61,7 @@
 #import "HWScanViewController.h"
 #import "LogInViewController.h"
 #import "StoreWebViewController.h"
+#import "MyCenterViewController1.h"
 
 
 #define KHomeArticleCellSection         2   //头条位置
@@ -81,7 +82,7 @@
 
 
 
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,CustomNavigationViewDelegate,SDCycleScrollViewDelegate,RightLittleButtonOnBottomDelegate,MallIndexsTBCellDelegate,HomeZtCellDelegate,BannerContContainerDelegate,CustomGoodsTBCellDelegate,CityPositioningViewControllerDelegate,FWHeadLineTBCellDelegate,HomeWKZtCellDelegate>
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,CustomNavigationViewDelegate,SDCycleScrollViewDelegate,RightLittleButtonOnBottomDelegate,MallIndexsTBCellDelegate,HomeZtCellDelegate,BannerContContainerDelegate,CustomGoodsTBCellDelegate,CityPositioningViewControllerDelegate,FWHeadLineTBCellDelegate,HomeWKZtCellDelegate, UITabBarControllerDelegate>
 
 
 
@@ -110,6 +111,7 @@
     self.tableView.sectionHeaderHeight = 1;
     self.tableView.sectionFooterHeight = 0;
     self.fd_prefersNavigationBarHidden = YES;
+    self.tabBarController.delegate = self;
     if (self.fanweApp.city_name) {
 //        [_customView.leftButton setTitle:self.fanweApp.city_name forState:UIControlStateNormal];
     }
@@ -968,6 +970,7 @@
 // 点击首页搜索框调用
 - (void)goToDiscoveryViewController
 {
+    LoginVCshow
     DiscoveryViewController *vc = [[DiscoveryViewController alloc] init];
 //    SearchViewController *vc = [[SearchViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
@@ -1028,6 +1031,7 @@
 //选择城市按钮  现在修改为扫码
 - (void)customLeftButton
 {
+    LoginVCshow
     if(_fanweApp.is_set_pass){
         HWScanViewController *vc = [[HWScanViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
@@ -1137,9 +1141,8 @@
         MessageCenterViewController *message =[MessageCenterViewController new];
         message.comeCount=0;
         [self.navigationController pushViewController:message animated:YES];
-    }else
-    {
-       [[UIApplication sharedApplication].keyWindow.rootViewController  presentViewController:[[LogInViewController alloc] init] animated:YES completion:nil];
+    } else {
+      LoginVCshow
     }
 }
 - (NSString *)createHTML:(NSString *)htmlStr {
@@ -1268,6 +1271,17 @@
     [[NSNotificationCenter defaultCenter] postNotification:notification];
     
     [self updateNewData];
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if (!_fanweApp.is_login && ![[self.tabBarController.tabBar selectedItem] isEqual:self.tabBarController.tabBar.items[4]] && ![[self.tabBarController.tabBar selectedItem] isEqual:self.tabBarController.tabBar.items[0]]) {
+        [[HUDHelper sharedInstance] tipMessage:@"请先登录"];
+        LogInViewController *vc = [[LogInViewController alloc] init];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 

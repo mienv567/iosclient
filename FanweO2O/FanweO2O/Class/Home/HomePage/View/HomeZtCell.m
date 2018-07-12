@@ -7,6 +7,7 @@
 //
 
 #import "HomeZtCell.h"
+#import "LogInViewController.h"
 //static NSString *cellIndent =  @"HomeZtCell";
 @interface HomeZtCell()
 {
@@ -123,7 +124,6 @@
 #pragma mark - WebView 代理方法
 #pragma mark 页面加载前(此方法返回false则页面不再请求)
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
     NSString *requestString = [[request URL] absoluteString];
     NSArray *components = [requestString componentsSeparatedByString:@".."];
     NSString *fils = (NSString *)[components objectAtIndex:0];

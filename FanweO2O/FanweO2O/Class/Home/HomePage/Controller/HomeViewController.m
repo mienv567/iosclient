@@ -1028,6 +1028,11 @@
 //选择城市按钮  现在修改为扫码
 - (void)customLeftButton
 {
+    if (!_fanweApp.is_login) {
+        LogInViewController *vc = [[LogInViewController alloc] init];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+        return;
+    }
     if(_fanweApp.is_set_pass){
         HWScanViewController *vc = [[HWScanViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];

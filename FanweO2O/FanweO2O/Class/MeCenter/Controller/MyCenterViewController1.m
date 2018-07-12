@@ -196,6 +196,7 @@
 
 //扫码
 - (IBAction)QRCodeScan:(id)sender {
+    LoginVCshow;
     if(_FanweApp.is_set_pass){
         HWScanViewController *vc = [[HWScanViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];

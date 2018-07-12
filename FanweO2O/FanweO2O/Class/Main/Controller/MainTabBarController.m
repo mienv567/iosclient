@@ -14,7 +14,12 @@
 #import "BaseNavigationController.h"
 #import "MyCenterViewController1.h"
 #import "CategoryViewController.h"
-@interface MainTabBarController ()<UITabBarDelegate>
+#import "LogInViewController.h"
+@interface MainTabBarController ()<UITabBarDelegate ,UITabBarControllerDelegate>
+{
+    GlobalVariables *_FanweApp;
+}
+@property (nonatomic, assign) UITabBarItem *selectItem;
 
 @end
 
@@ -22,9 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
     //去除tabbar的横线
     [self.tabBar setClipsToBounds:NO];
     [self bulidTabBarController];
+    _FanweApp = [GlobalVariables sharedInstance];
     
 }
 - (void)bulidTabBarController
@@ -83,9 +90,19 @@
 //    }
 //}
 
+//- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+//    if ([tabBar.items indexOfObject:item] != 4) {
+//        LoginVCshow
+//    }
+//}
 
-
-
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if (![viewController isKindOfClass:[MyCenterViewController1 class]]) {
+        LogInViewController *vc = [[LogInViewController alloc] init];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
+    }
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

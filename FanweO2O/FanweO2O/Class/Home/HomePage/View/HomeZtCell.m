@@ -8,6 +8,7 @@
 
 #import "HomeZtCell.h"
 #import "LogInViewController.h"
+#import "GlobalVariables.h"
 //static NSString *cellIndent =  @"HomeZtCell";
 @interface HomeZtCell()
 {
@@ -16,6 +17,7 @@
     BOOL _isWebViewDidFinishLoad;
     UIView *_bottomView;
     NSInteger _section;
+    GlobalVariables *_FanweApp;
 }
 @end
 
@@ -25,7 +27,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-      
+        _FanweApp = [GlobalVariables sharedInstance];
     }
     return self;
 }

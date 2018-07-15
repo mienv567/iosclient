@@ -42,7 +42,7 @@
     UIViewController *vc = [[UIViewController alloc]init];
     [self setupChildViewController:@"发现" viewController:vc image:@"second_normal" selectedImage:@"second_selected"];
     
-    ShoppingViewController *shop = [ShoppingViewController webControlerWithUrlString:nil andNavTitle:nil isShowIndicator:NO isHideNavBar:YES isHideTabBar:NO];
+    ShoppingViewController *shop = [ShoppingViewController webControlerWithUrlString:nil andNavTitle:nil isShowIndicator:NO isHideNavBar:NO isHideTabBar:NO];
     [self setupChildViewController:@"订单" viewController:shop image:@"third_normal" selectedImage:@"third_selected"];
     if (kOlderVersion == 1) {
         MyViewController *myVC = [MyViewController webControlerWithUrlString:nil andNavTitle:nil isShowIndicator:NO isHideNavBar:YES isHideTabBar:NO];

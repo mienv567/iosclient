@@ -228,7 +228,7 @@
     NSMutableArray *ne = [globalHelper searchWithSQL:@"select * from @t" toClass:[GlobalVariables class]];
     _fanweApp = [GlobalVariables sharedInstance];
     if (ne.count != 0) {
-        
+
         GlobalVariables *global = [ne lastObject];
         _fanweApp.user_id = global.user_id;
         _fanweApp.user_name = global.user_name;
@@ -237,7 +237,7 @@
         _fanweApp.city_name = global.city_name;
         _fanweApp.session_id = global.session_id;
         _fanweApp.is_login = global.is_login;
-        
+
     }
 
     _httpManager = [NetHttpsManager manager];

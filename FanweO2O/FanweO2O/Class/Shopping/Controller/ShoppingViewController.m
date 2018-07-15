@@ -31,7 +31,7 @@
 {
     self.webView.hidden = YES;
     self.navigationController.navigationBar.hidden = YES;
-    self.tabBarController.tabBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
 }
 - (void)viewWillDisappear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = NO;

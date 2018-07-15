@@ -440,10 +440,10 @@
         }
         return UITableViewAutomaticDimension;
     }else if(indexPath.section == KHomeZt_htm4CellSection) {
-        return 0;
-//        if ([_count2 intValue] !=0) {
-//            return [_count2 intValue];
-//        }
+//        return 0;
+        if ([_count2 intValue] !=0) {
+            return [_count2 intValue];
+        }
     }else if(indexPath.section == KHomeZt_htm5CellSection) {
         if ([_count3 intValue] !=0) {
             return [_count3 intValue];
@@ -540,16 +540,16 @@
         return cell;
     }else if (indexPath.section == KHomeZt_htm4CellSection) {
         
-//        static NSString *cellIndent4 =  @"KGroupZt_htm4CellSection";
-//        HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent4] ;
-//
-//        cell.delegate =  self;
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone; //cell被选中后的颜色不变
-//        cell.backgroundColor = kBackGroundColor;
-//        [cell setTableViewTag:KHomeZt_htm4CellSection];
-//
-//        [cell setCellContent:self.zt4Html isWebViewDidFinishLoad:self.zt4_isWebViewDidFinishLoad];
-//        return cell;
+        static NSString *cellIndent4 =  @"KGroupZt_htm4CellSection";
+        HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent4] ;
+
+        cell.delegate =  self;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone; //cell被选中后的颜色不变
+        cell.backgroundColor = kBackGroundColor;
+        [cell setTableViewTag:KHomeZt_htm4CellSection];
+
+        [cell setCellContent:self.zt4Html isWebViewDidFinishLoad:self.zt4_isWebViewDidFinishLoad];
+        return cell;
     }else if (indexPath.section == KHomeZt_htm5CellSection) {
         static NSString *cellIndent5 =  @"KGroupZt_htm5CellSection";
         HomeZtCell *cell = [HomeZtCell cellWithTableView:tableView cellIndent:cellIndent5] ;
@@ -684,7 +684,7 @@
 #pragma mark  HomeZtCellDelegate
 
 - (void)goDetail:(NSString *)detailType detailId:(NSString *)detailId {
-    
+    LoginVCshow
     FWO2OJumpModel *jump = [FWO2OJumpModel new];
     
     jump.type = [detailType integerValue];
@@ -697,7 +697,7 @@
 }
 
 - (void)goWebView:(NSString *)url {
-    
+    LoginVCshow
 }
 
 #pragma mark 菜单列表代理
@@ -1090,7 +1090,7 @@
                           API_LOTTERYOUT_URL];
     model.url =urlString;
     model.type = 0;
-    model.name = @"方维热点";
+    model.name = @"亿通快讯";
     model.isHideTabBar = YES;
     model.isHideNavBar = YES;
     [FWO2OJump didSelect:model];

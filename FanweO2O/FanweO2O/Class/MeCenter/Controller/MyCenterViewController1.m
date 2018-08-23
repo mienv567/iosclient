@@ -320,7 +320,7 @@
         
         HideIndicatorInView(self.view);
 
-        if ([responseJson[@"is_set_pass"] isEqualToString:@"1" ]) {
+        if (responseJson[@"is_set_pass"] == 1 ) {
                     HWScanViewController *vc = [[HWScanViewController alloc] init];
                     [self.navigationController pushViewController:vc animated:YES];
         } else {
